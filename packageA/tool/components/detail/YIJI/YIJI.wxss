@@ -1,0 +1,43 @@
+.yiji {
+    padding: 10px 0;
+}
+
+.yiji .-title {
+    height: 30px;
+    width: 30px;
+    font-size: 16px;
+    border-radius: 4px;
+    line-height: 30px;
+    text-align: center;
+    margin-left: 10px;
+}
+
+.yiji.-yi .-title {
+    color: var(--highlight-text-color);
+    background: #66bb6a;
+}
+
+.yiji.-ji .-title {
+    color: var(--highlight-text-color);
+    background: #ef5350;
+}
+
+.yiji .-content {
+    position: relative;
+    width: calc(100% - 10px);
+    margin-left: 5px;
+}
+
+.yiji-item {
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    padding: 0 5px;
+    min-width: calc((100% - 100px) / 5);
+    text-align: center;
+    border-radius: 4px;
+    margin: 10px 5px 0;
+    background: var(--dark-module-bg-color);
+    color: var(--normar-text-color);
+}

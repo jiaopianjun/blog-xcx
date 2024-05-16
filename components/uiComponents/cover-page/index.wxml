@@ -1,0 +1,21 @@
+<view class="li-cover-page {{show?'-open':'-close'}} custom-class" id="cover-page" style="height:{{coverPageHeight}}px;{{coverNavigation||size=='fullscreen'?'':'top:var(--navigation-height)'}}">
+    <view bindtap="{{disabledMaskClose?'':'close'}}" catchtouchmove="true" class="-mask" wx:if="{{mask}}"></view>
+    <view class="-container {{square?'-square':''}} container-class" id="container">
+        <header align="{{headerAlign}}" bind:rightevent="{{headerCloseButton?'close':''}}" bind:titleevent="toTop" bindtouchend="{{!disabledTouchHeaderClose&&!disabledTouchAllClose?event.end:'catch'}}" bindtouchstart="{{!disabledTouchHeaderClose&&!disabledTouchAllClose?event.start:'catch'}}" border="{{headerBorder}}" catchtouchmove="{{disableTouch&&!disabledTouchHeaderClose&&!disabledTouchAllClose?event.move:'catch'}}" data-dom="header" data-realcontentheight="{{realContentHeight}}" data-realmainheight="{{realMainHeight}}" indent="{{headerIndent}}" rightIcon="{{headerCloseButton?'icon-close-outline':''}}" subtitle="{{headerSubtitle}}" title="{{headerTitle}}" wx:if="{{header&&!useHeaderSlot}}"></header>
+        <view bindtouchend="{{!disabledTouchHeaderClose&&!disabledTouchAllClose?event.end:'catch'}}" bindtouchstart="{{!disabledTouchHeaderClose&&!disabledTouchAllClose?event.start:'catch'}}" catchtouchmove="{{disableTouch&&!disabledTouchHeaderClose&&!disabledTouchAllClose?event.move:'catch'}}" class="-header" data-dom="header" data-realcontentheight="{{realContentHeight}}" data-realmainheight="{{realMainHeight}}" wx:if="{{useHeaderSlot}}">
+            <slot name="header"></slot>
+        </view>
+        <scroll-view scrollWithAnimation bindscroll="{{event.scroll}}" bindtouchend="{{!disabledTouchAllClose&&!disabledTouchContentClose?event.end:'catch'}}" bindtouchstart="{{!disabledTouchAllClose&&!disabledTouchContentClose?event.start:'catch'}}" catchtouchmove="{{disableTouch&&!disabledTouchAllClose&&!disabledTouchContentClose?event.move:'catch'}}" class="-content content-class" data-dom="content" data-realcontentheight="{{realContentHeight}}" data-realmainheight="{{realMainHeight}}" scrollTop="{{top}}" scrollY="true" style="{{size!='auto'?'height':'max-height'}}:{{maxContentHeight}}px">
+            <view class="-main">
+                <slot wx:if="{{!useHeaderSlot&&!useFooterSlot}}"></slot>
+                <slot name="content" wx:if="{{useHeaderSlot||useFooterSlot}}"></slot>
+            </view>
+        </scroll-view>
+        <li-button block square background="transparent" bind:event="close" bindtouchend="{{!disabledTouchAllClose&&!disableTouchFooterClose?event.end:'catch'}}" bindtouchstart="{{!disabledTouchAllClose&&!disableTouchFooterClose?event.start:'catch'}}" buttonStyle="solid" catchtouchmove="{{disableTouch&&!disabledTouchAllClose&&!disableTouchFooterClose?event.move:'catch'}}" color="var(--text-color-3)" customClass="-close-button" data-dom="footer" data-realcontentheight="{{realContentHeight}}" data-realmainheight="{{realMainHeight}}" icon="icon-arrow-ios-downward-outline" size="large" wx:if="{{closeButton&&!useFooterSlot}}"></li-button>
+        <view bindtouchend="{{!disabledTouchAllClose&&!disableTouchFooterClose?event.end:'catch'}}" bindtouchstart="{{!disabledTouchAllClose&&!disableTouchFooterClose?event.start:'catch'}}" catchtouchmove="{{disableTouch&&!disabledTouchAllClose&&!disableTouchFooterClose?event.move:'catch'}}" class="-footer" data-dom="footer" data-realcontentheight="{{realContentHeight}}" data-realmainheight="{{realMainHeight}}" wx:if="{{useFooterSlot}}">
+            <slot name="footer"></slot>
+        </view>
+        <view class="-safe-area-space" wx:if="{{iphoneX}}"></view>
+    </view>
+</view>
+<wxs module="event" src="cover-page.wxs" />

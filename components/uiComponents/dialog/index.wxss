@@ -1,0 +1,50 @@
+.li-dialog {
+    min-width: 290px!important;
+    max-width: 300px!important;
+}
+
+.li-dialog-content {
+    padding: var(--normal-spacing);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    min-height: 80px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.li-dialog-content text {
+    display: inline-block;
+    font-size: var(--large-text-size);
+    width: 100%;
+}
+
+.li-dialog-content.-center {
+    text-align: center;
+}
+
+.li-dialog-buttons {
+    position: relative;
+    height: 50%;
+    line-height: 50px;
+    width: 100%;
+    font-size: 0;
+    box-sizing: border-box;
+}
+
+.li-dialog-buttons.-border-top {
+    border-top: 1px solid var(--bd-color);
+}
+
+.li-dialog-buttons .-item {
+    width: 50%!important;
+}
+
+.li-dialog-buttons .-item.-cancel {
+    border-right: 1px solid var(--bd-color);
+}
+
+.li-dialog-buttons .-item.-full {
+    width: 100%!important;
+}

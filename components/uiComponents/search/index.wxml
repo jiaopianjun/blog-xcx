@@ -1,0 +1,28 @@
+<view class="li-search {{border?'-border':''}} custom-class" style="{{borderColor?'--navigation-border-color:'+borderColor+';':''}}{{borderWidth>0?'--navigation-border-width:'+borderWidth+'px;':''}}{{record?'--search-record-width:50px;':''}}{{searchType.length>0?'--search-type-width:90px':''}}">
+    <view bindtap="showSearchType" class="-type" wx:if="{{searchType.length>0}}">{{searchType[activeSearchTypeIndex].name}}</view>
+    <view class="-main">
+        <view class="-icon">
+            <text class="iconfont icon-search-outline"></text>
+        </view>
+        <input class="-input" value="{{value}}"></input>
+        <view bindtap="clear" class="-clear-button">
+            <text class="iconfont icon-close-outline"></text>
+        </view>
+    </view>
+    <view bindtap="showRecord" class="-record">
+        <text class="iconfont icon-mic-outline"></text>
+    </view>
+</view>
+<view class="li-search-space" style="height:{{navigationHeight}}px;" wx:if="{{haveHeight}}"></view>
+<popup coverNavigation coverTabbar header headerAlign="center" headerTitle="搜索类型" id="searchType">
+    <li-radio-group bind:change="searchTypeChange">
+        <cell-group>
+            <cell radio useSlot icon="icon-link--outline" title="{{item.name}}" wx:for="{{searchType}}" wx:for-index="idx">
+                <li-radio circle checked="{{activeSearchTypeIndex==idx}}"></li-radio>
+            </cell>
+        </cell-group>
+    </li-radio-group>
+</popup>
+<cover-page id="record">
+    <record bind:recogize="recordRecogize" bind:stop="recordStop"></record>
+</cover-page>

@@ -1,0 +1,9 @@
+<popup coverNavigation coverTabbar header disabledMaskClose="{{disabledMaskClose}}" headerAlign="center" headerBorder="{{false}}" headerTitle="更新提醒" id="update-manager" inDirection="bottom" position="bottom">
+    <view class="update-manager">
+        <view class="-image">
+            <image mode="widthFix" src="../../images/update.svg"></image>
+        </view>
+        <view class="-title">新版本现已就绪</view>
+        <li-button block round bind:event="confirm" customClass="button" disabled="{{logining}}" size="large" text="更新" type="primary"></li-button>
+    </view>
+</popup>

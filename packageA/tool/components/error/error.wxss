@@ -1,0 +1,35 @@
+.error {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    margin-top: -75px;
+    z-index: 1;
+}
+
+.error .-icon {
+    font-size: 56px;
+}
+
+.error .-icon,.error .-title {
+    margin-bottom: 15px;
+    color: var(--normal-text-color);
+}
+
+.error .-title {
+    font-size: 14px;
+}
+
+.error .-btn {
+    -webkit-font-smoothing: subpixel-antialiased!important;
+    overflow-x: hidden;
+    width: 280px;
+    position: relative;
+    margin: 0 auto 10px;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 40px;
+    background: var(--module-bg-color);
+    color: var(--normal-text-color);
+}

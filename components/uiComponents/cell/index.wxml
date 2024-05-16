@@ -1,0 +1,37 @@
+<view class="li-cell {{border?'-border-bottom':''}} {{indent?'-indent':''}} {{disabled||loading?'-mask':''}} {{disabled?'-disabled':''}} custom-class" style="{{indentDistance?'--cell-indent-distance:'+indentDistance+';':''}}{{loading?'--cell-icon-width:25px;':image&&!icon?'--cell-icon-width:35px;':icon&&!image?'--cell-icon-width:25px;':''}}{{rightIcon?'--cell-right-icon-width:25px;':''}}{{'--cell-right-width:'+(rightWidth?rightWidth+'px;':'0px;')}}{{background?'--cell-background:'+background+';':''}}">
+    <view bindlongpress="longPress" bindtap="tap" class="-main" hoverClass="{{hover?'-hover':''}}" hoverStayTime="120">
+        <view class="-background {{background?'-have':'-none'}}"></view>
+        <view class="-content">
+            <button bindcontact="event" binderror="event" bindgetphonenumber="event" bindgetuserinfo="event" bindlaunchapp="event" bindopensetting="event" class="-open-type" openType="{{openType}}" wx:if="{{openType}}"></button>
+            <navigator appId="{{navigatorAppId}}" class="-navigator" delta="{{navigatorDelta}}" extraData="{{navigatorExtraData}}" openType="{{navigatorOpenType}}" path="{{navigatorPath}}" target="{{navigatorTarget}}" url="{{navigatorUrl}}" version="{{navigatorVersion}}" wx:if="{{navigator}}"></navigator>
+            <view class="-icon icon-class" wx:if="{{icon&&!image&&!loading}}">
+                <text class="iconfont {{icon}}"></text>
+            </view>
+            <view class="-image image-class" wx:if="{{image&&!icon&&!loading}}">
+                <image mode="widthFix" src="{{image}}"></image>
+            </view>
+            <view class="-loading" wx:if="{{loading}}">
+                <li-loading color="{{loadingColor}}" size="20px" weight="{{loadingWeight}}"></li-loading>
+            </view>
+            <view class="-title {{icon?'-have-icon':''}} {{titleLineClamp>=1&&titleLineClamp<Infinity?'-text-overflow':''}} title-class" style="{{titleWidth?'max-width:'+titleWidth+';':''}}{{titleLineClamp>=1&&titleLineClamp<Infinity?'--title-line-clamp:'+titleLineClamp+';height:'+titleLineClamp*22+'px':''}}" wx:if="{{title}}">
+        {{title}}
+        <view class="-title-slot">
+                    <slot name="tag"></slot>
+                </view>
+            </view>
+            <view class="-right-icon right-icon-class" wx:if="{{rightIcon}}">
+                <text class="iconfont {{rightIcon}}"></text>
+            </view>
+            <view class="-text _text-overflow {{rightIcon?'-have-right-icon':''}} right-text-class" style="{{titleWidth?'max-width:calc(100% - '+titleWidth+' - var(--cell-icon-width) - var(--cell-right-icon-width));':''}}" wx:if="{{rightText&&!useRightSlot&&!rightImage}}">
+        {{rightText}}</view>
+            <view class="-right-slot {{rightIcon?'-have-right-icon':''}}" style="{{titleWidth?'max-width:calc(100% - '+titleWidth+' - var(--cell-icon-width) - var(--cell-right-icon-width));':''}}" wx:if="{{useRightSlot&&!rightText&&!rightImage}}">
+                <slot name="rightSlot"></slot>
+            </view>
+            <view class="-right-image {{rightIcon?'-have-right-icon':''}} right-image-class" style="{{titleWidth?'max-width:calc(100% - '+titleWidth+' - var(--cell-icon-width) - var(--cell-right-icon-width));':''}}" wx:if="{{rightImage&&!useRightSlot&&!rightText}}">
+                <image mode="widthFix" src="{{rightImage}}"></image>
+            </view>
+            <view class="_clear"></view>
+        </view>
+        <view class="-description" wx:if="{{description}}">{{description}}</view>
+    </view>
+</view>

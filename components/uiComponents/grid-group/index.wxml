@@ -1,0 +1,5 @@
+<view class="li-grid-group custom-class">
+    <header align="{{headerAlign}}" border="{{headerBorder}}" indent="{{headerIndent}}" indentDistance="{{headerIndentDistance}}" rightIcon="{{headerRightIcon}}" rightText="{{headerRightText}}" subtitle="{{headerSubtitle}}" title="{{headerTitle}}" wx:if="{{header}}"></header>
+    <slot></slot>
+    <view class="_clear"></view>
+</view>

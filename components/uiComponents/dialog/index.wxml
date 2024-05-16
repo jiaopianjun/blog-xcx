@@ -1,0 +1,12 @@
+<popup bind:close="close" containerClass="li-dialog" coverNavigation="{{coverNavigation}}" coverTabbar="{{coverTabbar}}" disabledMaskClose="{{disabledMaskClose}}" header="{{title!==''}}" headerAlign="{{headerAlign}}" headerBorder="{{headerBorder}}" headerCloseButton="{{closeButton}}" headerSubtitle="{{subtitle}}" headerTitle="{{title}}" inDirection="center" show="{{show}}" useFooterSlot="{{true}}">
+    <view class="li-dialog-content {{'-'+contentAlign}} content-class" slot="content" wx:if="{{!useSlot}}">
+        <text>{{content}}</text>
+    </view>
+    <view class="li-dialog-slot content-class" slot="content" wx:if="{{useSlot}}">
+        <slot></slot>
+    </view>
+    <view class="li-dialog-buttons {{footerBorder?'-border-top':''}}" slot="footer">
+        <li-button square background="var(--card-bg-color)" bind:event="cancel" buttonStyle="solid" color="{{cancelTextColor}}" customClass="-cancel -item" icon="{{cancelIcon}}" size="large" text="{{cancelText}}" wx:if="{{showCancel}}"></li-button>
+        <li-button square background="var(--card-bg-color)" bind:event="confirm" buttonStyle="solid" color="{{confirmTextColor}}" customClass="-confirm -item {{!showCancel?'-full':''}}" icon="{{confirmIcon}}" openType="{{confirmOpenType}}" size="large" text="{{confirmText}}"></li-button>
+    </view>
+</popup>

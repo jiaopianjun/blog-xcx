@@ -1,0 +1,32 @@
+<view class="li-navigation" style="{{borderColor?'--navigation-border-color:'+borderColor+';':''}}{{borderWidth?'--navigation-border-width:'+borderWidth+';':''}}">
+    <view class="-background {{blur?'-blur':''}}" style="{{background?'--navigation-background:'+background+';':''}}"></view>
+    <view class="-bar"></view>
+    <view class="-slot" wx:if="{{useSlot}}">
+        <slot></slot>
+    </view>
+    <view class="-header" style="{{color?'--navigation-color:'+color:''}}" wx:if="{{!useSlot}}">
+        <view bindtap="iconEvent" class="-icon {{!title&&background=='transparent'?'-center':''}}" wx:if="{{icon&&!loading&&!image}}">
+            <text class="iconfont {{icon}}"></text>
+        </view>
+        <view class="-icon" style="font-size:0" wx:if="{{loading&&icon&&!iimage}}">
+            <li-loading color="{{loadingColor}}" weight="{{loadingWeight}}"></li-loading>
+        </view>
+        <view class="-image" wx:if="{{image&&!loading&&!icon}}">
+            <image class="image-class" mode="widthFix" src="{{image}}"></image>
+        </view>
+        <view class="-image" wx:if="{{image&&loading&&!icon}}">
+            <li-loading color="{{loadingColor}}" weight="{{loadingWeight}}"></li-loading>
+        </view>
+        <view bindtap="titleEvent" class="-normal" wx:if="{{!subtitle}}">
+            <view class="-title _text-overflow" wx:if="{{title}}">{{title}} <text class="iconfont {{titleRightIcon}}" wx:if="{{titleRightIcon}}"></text>
+            </view>
+        </view>
+        <view bindtap="titleEvent" class="-custom" wx:else>
+            <view class="-title _text-overflow" wx:if="{{title}}">{{title}} <text class="iconfont {{titleRightIcon}}" wx:if="{{titleRightIcon}}"></text>
+            </view>
+            <view class="-subtitle _text-overflow" wx:if="{{subtitle}}">{{subtitle}}</view>
+        </view>
+    </view>
+    <view class="-border {{blur?'-blur':''}}" wx:if="{{border}}"></view>
+</view>
+<view class="li-navigation-space" wx:if="{{haveHeight}}"></view>

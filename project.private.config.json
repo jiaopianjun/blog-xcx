@@ -1,0 +1,69 @@
+{
+  "setting": {
+    "compileHotReLoad": true,
+    "urlCheck": false,
+    "bigPackageSizeSupport": false,
+    "preloadBackgroundData": true
+  },
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "评论",
+          "pathName": "pages/comments/comments",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "专题页",
+          "pathName": "pages/topic/topic",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "我的",
+          "pathName": "pages/readlog/readlog",
+          "query": "key=2",
+          "scene": null
+        },
+        {
+          "name": "文章详情",
+          "pathName": "pages/detail/detail",
+          "query": "id=1553",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/theme/theme",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/pages/pages",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/detail/detail",
+          "query": "id=1909",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/my/my",
+          "query": "",
+          "scene": null,
+          "partialCompile": {
+            "enabled": true,
+            "pages": []
+          }
+        }
+      ]
+    }
+  },
+  "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
+  "libVersion": "2.27.3",
+  "projectname": "%E5%8D%9A%E5%AE%A2%E5%B0%8F%E7%A8%8B%E5%BA%8F"
+}

@@ -1,0 +1,203 @@
+/* pages/toy/air/air.wxss */
+page {
+  box-sizing: border-box;
+  padding: 40rpx;
+}
+
+.air {
+  padding: 40rpx;
+}
+
+.air .title {
+  font-size: 60rpx;
+  text-align: center;
+  color: #2196f3;
+}
+
+.air .tips {
+  text-align: center;
+  margin: 40rpx auto;
+  display: flex;
+  justify-content: center;
+}
+.air .tips .tipsIcon {
+  width: 44rpx;
+  height: 44rpx;
+  position: relative;
+  bottom: 6rpx;
+  margin-right: 10rpx;
+}
+.air .tips text {
+  color: #64b5f6;
+  margin: 0 8rpx;
+}
+.airCont {
+  box-sizing: border-box;
+  background-color: rgb(255, 255, 255);
+  height: 280rpx;
+  border: 1px solid rgb(224, 224, 224);
+  border-radius: 40rpx;
+  box-shadow: rgb(0 0 0 / 20%) 0px 3px 3px -2px, rgb(0 0 0 / 14%) 0px 3px 4px 0px, rgb(0 0 0 / 12%) 0px 1px 8px 0px;
+  position: relative;
+  border-radius: 10px;
+  border-bottom-left-radius: 20rpx;
+  border-bottom-right-radius: 20rpx;
+}
+.airCont .pig {
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 50rpx;
+}
+.airCont .airContLine {
+  position: absolute;
+  bottom: 35rpx;
+  width: 100%;
+  left: 0;
+  border: 1px solid rgb(224, 224, 224);
+}
+
+.status {
+  width: 10rpx;
+  height: 10rpx;
+  background: #999;
+  border-radius: 50%;
+  position: absolute;
+  right: 40rpx;
+  bottom: 25rpx;
+}
+
+.onstatus {
+  background: chartreuse;
+}
+
+.airCont .ee {
+  position: absolute;
+  top: 30rpx;
+  left: 30rpx;
+  width: 80rpx;
+  height: 100rpx;
+}
+.airCont .showValue {
+  width: 100rpx;
+  height: 100rpx;
+}
+.airCont .showValue .state {
+  position: relative;
+  height: 50rpx;
+}
+.airCont .showValue .state image {
+  position: absolute;
+  top: 0;
+  width: 36rpx;
+  height: 36rpx;
+}
+
+.airCont .showValue .state .sun {
+  height: 50rpx;
+  width: 50rpx;
+  left: -8rpx;
+}
+
+.airCont .showValue {
+  position: absolute;
+  right: 60rpx;
+  top: 30rpx;
+  font-family: "Digital-7 Mono";
+  color: #999;
+}
+.airCont .showValue .value {
+  position: relative;
+  font-size: 36rpx;
+  width: 90rpx;
+  height: 50rpx;
+}
+.airCont .showValue .value text {
+  position: absolute;
+  right: 0;
+}
+
+.wind {
+  height: 50rpx;
+  position: relative;
+  margin-top: 24px;
+  display: flex;
+  justify-content: center
+}
+
+.windLine {
+  background-color: rgb(187, 187, 187);
+  width: 8rpx;
+  height: 50rpx;
+}
+
+.windLine:nth-child(2) {
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+.windLine:first-child {
+  transform: rotate(15deg);
+}
+
+.windLine:last-child {
+  transform: rotate(-15deg);
+}
+
+.funArea {
+  width: 80%;
+  margin: 80rpx auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.funArea .cold {
+  background-color: rgb(63, 81, 181);
+}
+
+.funArea .switch {
+  background-color: rgb(245, 0, 87);
+}
+
+.funArea .open {
+  background-color: rgb(76, 175, 80);
+}
+
+.funArea .hot {
+  background-color: orange;
+  color: white;
+}
+
+.funArea image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.addSub {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.addSub view,
+.funArea view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  box-shadow: rgb(0 0 0 / 20%) 0px 3px 5px -1px, rgb(0 0 0 / 14%) 0px 6px 10px 0px, rgb(0 0 0 / 12%) 0px 1px 18px 0px;
+  color: rgba(0, 0, 0, 0.87);
+  background-color: rgb(224, 224, 224);
+  margin: 0rpx auto 40rpx;
+}
+
+.addSub image {
+  width: 30rpx;
+  height: 30rpx;
+}

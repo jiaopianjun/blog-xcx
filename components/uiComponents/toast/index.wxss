@@ -1,0 +1,80 @@
+.li-toast {
+    --toast-background: #000;
+    --toast-background-opacity: .7;
+    --toast-text-color: #fff;
+    --in-transform: scale3d(1,1,1);
+    --out-transform: scale3d(.5,.5,.5);
+    position: fixed;
+    max-width: 160px;
+    min-width: 100px;
+    border-radius: var(--card-border-radius);
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    z-index: 999;
+    text-align: center;
+    transform: translate3d(-50%,-50%,0);
+}
+
+.li-toast-mask {
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    top: var(--navigation-height);
+}
+
+.li-toast .-content {
+    position: relative;
+    z-index: 2;
+    color: var(--toast-text-color);
+    box-sizing: border-box;
+    border-radius: var(--card-border-radius);
+    overflow: hidden;
+    min-height: 20px;
+    line-height: 20px;
+    transition: all .1s;
+}
+
+.li-toast.-close .-content {
+    transform: var(--out-transform);
+    opacity: 0;
+}
+
+.li-toast.-open .-content {
+    transform: var(--in-transform);
+    opacity: 1;
+}
+
+.li-toast .-content .-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--toast-background);
+    opacity: var(--toast-background-opacity);
+    z-index: -1;
+}
+
+.li-toast .-content .-icon {
+    font-size: 50px;
+}
+
+.li-toast .-content .-icon,.li-toast .-content .-loading {
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    display: inline-block;
+    padding-top: var(--normal-spacing);
+}
+
+.li-toast .-content .-loading {
+    font-size: 0;
+}
+
+.li-toast .-content .-text {
+    padding: var(--normal-spacing);
+    word-wrap: break-word;
+    word-break: normal;
+    font-size: var(--normal-text-size);
+}

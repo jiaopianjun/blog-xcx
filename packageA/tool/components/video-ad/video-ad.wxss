@@ -1,0 +1,15 @@
+.video-ad {
+    background: var(--darker-module-bg-color);
+    border-radius: 6px;
+    overflow: hidden;
+    z-index: 999;
+}
+
+.video-ad,ad {
+    position: relative;
+}
+
+ad {
+    width: 100%;
+    margin: auto;
+}

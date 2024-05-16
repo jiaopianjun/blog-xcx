@@ -1,0 +1,118 @@
+.theme-container {
+    height: 320px;
+    width: 100%;
+    background: var(--module-bg-color);
+}
+
+.theme-container .-theme .-color .-item {
+    height: 200px;
+    position: relative;
+}
+
+.theme-container .-theme .-color .-item view {
+    height: 100%;
+    width: 100%;
+    background: var(--theme-color);
+}
+
+.theme-container .-theme .-title {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 200px;
+    width: 100%;
+}
+
+.theme-container .-theme .-title .-bg {
+    position: absolute;
+    display: block;
+    height: 60px;
+    width: 150px;
+    left: 50%;
+    margin-left: -75px;
+    top: 50%;
+    margin-top: -30px;
+    background: var(--module-bg-color);
+    opacity: .8;
+}
+
+.theme-container .-theme .-title .-bg::before {
+    content: "";
+    border: 2px solid var(--module-bg-color);
+    opacity: .8;
+}
+
+.theme-container .-theme .-title .-bg::before,.theme-container .-theme .-title .-id {
+    position: absolute;
+    display: block;
+    height: 70px;
+    line-height: 70px;
+    width: 160px;
+    left: 50%;
+    margin-left: -80px;
+    top: 50%;
+    margin-top: -35px;
+    box-sizing: border-box;
+}
+
+.theme-container .-theme .-title .-id {
+    z-index: 2;
+    color: var(--dark-text-color);
+}
+
+.theme-container .-theme .-name {
+    height: 50px;
+    line-height: 50px;
+    font-size: 28px;
+}
+
+.theme-container .-theme .-state {
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 5px;
+    margin-top: 2px;
+    font-size: 14px;
+    background: var(--theme-color);
+    border: 1px solid var(--module-bg-color);
+    color: var(--highlight-text-color);
+    box-sizing: border-box;
+    transition: all .3s;
+    border-radius: 4px;
+    min-width: 70px;
+}
+
+.theme-container .-theme .-state.-active {
+    background: var(--module-bg-color);
+    color: var(--theme-color);
+    border: 1px solid var(--theme-color);
+}
+
+.theme-container .-theme .-state.-disabled {
+    background: var(--dark-module-bg-color);
+    color: var(--light-text-color);
+    border: 1px solid var(--module-bg-color);
+}
+
+.dot {
+    position: absolute;
+    bottom: 12px;
+    width: 100%;
+    height: 10px;
+    text-align: center;
+}
+
+.dot .-item {
+    width: 6px;
+    height: 6px;
+    margin: 3px 4px;
+    display: inline-block;
+    border-radius: 5px;
+    background: var(--lighter-text-color);
+    transition: all .3s;
+}
+
+.dot .-item.-active {
+    opacity: 1;
+    background: var(--theme-color);
+}

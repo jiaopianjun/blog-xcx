@@ -1,0 +1,52 @@
+.tip {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.tip .-icon {
+    font-size: 56px;
+    height: 60px;
+    line-height: 60px;
+    padding: 20px 0;
+    color: var(--theme-color);
+}
+
+.tip .-title {
+    font-size: 24px;
+    height: 30px;
+    line-height: 30px;
+    color: var(--theme-color);
+}
+
+.tip .-description {
+    font-size: 12px;
+    line-height: 20px;
+    height: 90px;
+    margin-top: 10px;
+    color: var(--normal-color);
+    overflow: auto;
+    display: flex;
+    -webkit-overflow-scrolling: touch;
+    justify-content: center;
+    align-items: Center;
+}
+
+.tip .-description .-position {
+    display: inline-block;
+}
+
+.tip .-btn {
+    position: relative;
+    height: 50px;
+    margin: 10px auto auto;
+    line-height: 50px;
+    text-align: center;
+    width: 200px;
+    border-radius: 25px;
+    font-size: 16px;
+    background: var(--theme-color);
+    color: var(--highlight-text-color);
+}

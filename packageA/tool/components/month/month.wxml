@@ -1,0 +1,23 @@
+<view class="weather" wx:if="{{!loading&&!error&&auth}}">
+    <view class="-info">
+        <view class="-temp">{{data.temperature}}°</view>
+        <view class="-right">
+            <view class="-type">
+                <text class="-text">{{data.skycon.zh}}</text>
+                <view class="_clear"></view>
+            </view>
+            <view class="-wind">{{data.wind.dir}}{{data.wind.lv}}级</view>
+        </view>
+        <view class="_clear"></view>
+    </view>
+    <image class="-icon" src="../../icon/{{data.skycon.icon}}.svg"></image>
+    <view class="_clear"></view>
+</view>
+<view class="btn" wx:if="{{!auth&&!loading}}">
+    <button openType="openSetting"></button>
+    <text>无法加载天气信息，点击授权位置信息</text>
+</view>
+<view bindtap="getWeather" class="btn" wx:if="{{error&&!loading}}">加载天气信息失败，点击重试</view>
+<view class="loading" wx:if="{{loading}}">
+    <my-loading></my-loading>
+</view>

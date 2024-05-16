@@ -1,0 +1,50 @@
+<template name="tempCommonList">
+  <view class="post-list">
+    <block 
+      wx:for="{{postsList}}" 
+      wx:key="index" 
+      wx:if="{{item.category_name !== 'app分享'}}">
+      <view 
+        class="list-item-ad" 
+        index="{{index}}" 
+        wx:if="{{index%item.listAdEvery ==0  && index!=0 && item.listAd =='1' && item.listAdId !=''  && listAdsuccess}}">
+        <block wx:if="{{(index/item.listAdEvery)%2==0}}">
+          <ad unit-id="{{item.videoAdId}}" ad-type="video" ad-theme="white" binderror="adbinderror"></ad>
+        </block>
+        <block wx:else>
+          <ad unit-id="{{item.listAdId}}" ad-intervals="30" binderror="adbinderror"></ad>
+        </block>
+      </view>
+      <view 
+        class="post-item ui-BG ui-BG-card" 
+        index="{{index}}" 
+        id="{{item.id}}" 
+        bindtap="redictDetail">
+        <view 
+          class="post-img" 
+          style="height: {{item.format == 'image' ? '420rpx' : ''}}">
+          <image 
+            src="{{item.post_medium_image}}" 
+            mode="aspectFill" 
+            style="height: {{item.format == 'image' ? '420rpx' : ''}}"
+            class="post-img"></image>
+          <view class="post-img-type" wx:if="{{item.format == 'image'}}">
+            <image 
+              mode="widthFix" 
+              src="/images/typeImage.svg" 
+              class="typeImage" />
+          </view>
+        </view>
+        <view class="post-desc" wx:if="{{item.format != 'image'}}">
+          <view class="post-title">
+            <text>{{item.title.rendered}}</text>
+          </view>
+          <view class="post-data">
+            <text># {{item.category_name}}</text>
+            <text>{{item.newdate}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</template>

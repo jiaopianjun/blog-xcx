@@ -1,0 +1,38 @@
+.logo {
+    position: relative;
+    margin: 15px auto;
+}
+
+.logo,.logo image {
+    height: 60px;
+    width: 60px;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.version {
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.version .-text {
+    vertical-align: bottom;
+}
+
+.version .-tag,.version .-text {
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+}
+
+.version .-tag {
+    vertical-align: top;
+    background: var(--theme-color);
+    padding: 0 5px;
+    border-radius: 2px;
+    color: var(--highlight-text-color);
+    margin-left: 5px;
+    font-size: 11px;
+}

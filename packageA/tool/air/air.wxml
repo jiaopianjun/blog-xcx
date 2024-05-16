@@ -1,0 +1,47 @@
+<view class="air">
+  <view class="title">
+    便携小空调
+  </view>
+  <view class="tips">
+    <image src="air/tip.png" class="tipsIcon"></image> 为你的夏日带去<text>丝丝的清凉</text>！
+  </view>
+  <view class="airCont">
+    <image class="pig" src="{{switch ? 'air/onpig.png' : 'air/pig.png'}}"></image>
+    <view class="airContLine"></view>
+    <image src="air/00.png" class="ee"></image>
+    <view class="status {{switch ? 'onstatus' : ''}}"></view>
+    <view class="showValue" wx:if="{{switch}}">
+      <view class="state">
+        <image src="air/xh.png" wx:if="{{!isHot}}"></image>
+        <image src="air/sun.png" wx:if="{{isHot}}" class="sun"></image>
+      </view>
+      <view class="value">
+        {{value}} <text>°C</text>
+      </view>
+    </view>
+  </view>
+  <view class="wind">
+    <view class="windLine" wx:if="{{switch}}"></view>
+    <view class="windLine" wx:if="{{switch}}"></view>
+    <view class="windLine" wx:if="{{switch}}"></view>
+  </view>
+  <view class="funArea">
+    <view class="cold" bindtap="cold">
+      <image src="air/cold.png"></image>
+    </view>
+    <view class="switch {{switch ? 'open' : ''}}" bindtap="switch">
+      <image src="air/switch.png"></image>
+    </view>
+    <view class="hot" bindtap="hot">
+      <image src="air/hot.png"></image>
+    </view>
+  </view>
+  <view class="addSub">
+    <view class="add" bindtap="add">
+      <image src="air/b3.png"></image>
+    </view>
+    <view class="sub" bindtap="sub">
+      <image src="air/b4.png"></image>
+    </view>
+  </view>
+</view>

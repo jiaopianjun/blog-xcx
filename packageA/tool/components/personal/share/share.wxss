@@ -1,0 +1,38 @@
+.share .-item {
+    height: 120px;
+    float: left;
+    width: 50%;
+    color: var(--theme-color);
+}
+
+.share .-item .-icon {
+    margin-top: 30px;
+    font-size: 24px;
+}
+
+.share .-item .-icon,.share .-item .-name {
+    display: block;
+    height: 30px;
+    line-height: 30px;
+}
+
+.share .-item .-name {
+    font-size: 12px;
+}
+
+.share .get-user-info-button {
+    right: 0;
+}
+
+.share .get-user-info-button,.share .share-button {
+    position: absolute;
+    z-index: 1;
+    height: 120px;
+    width: 50%;
+    top: 0;
+    opacity: 0;
+}
+
+.share .share-button {
+    left: 0;
+}

@@ -1,0 +1,48 @@
+<import src="../../templates/copyright.wxml" />
+<import src="../../templates/login-popup.wxml" />
+<ui-sys tabbar>
+  <ui-navbar back="{{false}}" isSlot>
+    <view class="flex-center flex-sub">分类</view>
+  </ui-navbar>
+  <view class="ui-BG-card" style="margin: 22rpx;">
+    <form catchsubmit="formSubmit" catchreset="formReset" id="search-form">
+      <view class="ui-search-bar ">
+        <view class="ui-search-form">
+          <text class="ui-search-icon _icon-search" />
+          <input class="ui-search-input ui-search-text-left" value="" id="search-input" name="input" confirm-type="search" placeholder="搜索你感兴趣的内容..." bindconfirm="formSubmit" />
+          <text class="ui-search-close {{emptyIcon}}" wx:if="{{searchVal && isEmpty}}" catchtap="onTapEmpty" />
+        </view>
+        <view class="ui-search-action">
+          <button slot="right" class="ui-btn ui-BG-Main round sm" form-type="submit">搜索</button>
+        </view>
+      </view>
+    </form>
+  </view>
+  <view class="ui-grid ui-cols-2">
+    <view 
+      class="ui-item" 
+      wx:key="id" 
+      wx:for="{{categoriesList}}" 
+      bindtap="redictIndex"
+      wx:if="{{item.name != 'app分享'}}">
+      <view 
+        style="background:url({{item.category_thumbnail_image || item.cover}}) no-repeat;background-size: cover; background-position: center;"
+        class="ui-item-box ui-BG ui-BG-card">
+        <view 
+          class="ui-card-content" 
+          data-item="{{item.name}}" 
+          data-id="{{item.id}}" >
+          <view class="title"> 
+            <text class="text">{{item.name}} </text>
+          </view>
+          <text class="text-xs">{{item.count}}篇文章 </text>
+          <text class="text-sm text-linecut-2 dec">{{item.description}} </text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 未登录时弹出的登录框 -->
+  <template 
+    is="login-popup" 
+    data="{{show: isLoginPopup, userInfo: userInfo}}"></template>
+</ui-sys>

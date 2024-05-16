@@ -1,0 +1,7 @@
+<view class="li-record" hoverClass="li-record-hover" hoverStayTime="120">
+    <view class="-result">{{showResult}}</view>
+    <view class="-button -{{recordManagerStatus}}">
+        <li-button block round background="var(--record-button-color)" bind:touchend="endStreamRecord" bind:touchstart="streamRecord" color="var(--highlight-color)" customClass="-start" icon="icon-mic-outline" loading="{{recordManagerStatus=='stop'&&recording}}"></li-button>
+        <li-button block round background="var(--record-button-color)" bind:event="authRecord" color="var(--highlight-color)" customClass="-auth" icon="icon-mic-outline" openType="openSetting" wx:if="{{recordScope=='no'}}"></li-button>
+    </view>
+</view>

@@ -1,0 +1,4 @@
+<view bindtap="switch" class="switch">
+    <view class="-background {{state?'-active':''}}" style="{{color?'border:1px solid '+color:''}}"></view>
+    <view class="-dot {{state?'-active':''}}" style="{{color?'background:'+color:''}}"></view>
+</view>

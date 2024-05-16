@@ -1,0 +1,28 @@
+{
+  "enablePullDownRefresh": true,
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "",
+  "backgroundColor": "#183338",
+  "backgroundTextStyle": "light",
+  "usingComponents": {
+      "star": "../components/star/star",
+      "tab-bar": "../components/personal/tab-bar/tab-bar",
+      "share": "../components/personal/share/share",
+      "date": "../components/detail/date/date",
+      "term": "../components/detail/term/term",
+      "god-position": "../components/detail/god-position/god-position",
+      "lunar": "../components/detail/lunar/lunar",
+      "YIJI": "../components/detail/YIJI/YIJI",
+      "weather": "../components/weather/weather",
+      "history": "../components/detail/history/history",
+      "container": "../components/personal/container/container",
+      "navigation": "/components/uiComponents/navigation/index",
+      "my-loading": "../components/loading/loading",
+      "page-background": "../components/personal/page-background/page-background",
+      "col": "../components/col/col",
+      "row": "../components/row/row",
+      "tip": "../components/tip/tip",
+      "error": "../components/error/error"
+  }
+}

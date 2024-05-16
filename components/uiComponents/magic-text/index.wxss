@@ -1,0 +1,34 @@
+.li-magic-text.blink .-item {
+    opacity: 0;
+    --blink-start-color: var(--theme-color);
+    --blink-end-color: var(--text-color-1);
+    color: var(--blink-start-color);
+}
+
+.li-magic-text.blink .-in {
+    animation: blinkin 1s forwards;
+}
+
+@-webkit-keyframes blinkin {
+    from {
+        opacity: 0;
+        color: var(--blink-start-color);
+    }
+
+    to {
+        opacity: 1;
+        color: var(--blink-end-color);
+    }
+}
+
+@keyframes blinkin {
+    from {
+        opacity: 0;
+        color: var(--blink-start-color);
+    }
+
+    to {
+        opacity: 1;
+        color: var(--blink-end-color);
+    }
+}

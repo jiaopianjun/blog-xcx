@@ -1,0 +1,3 @@
+<view class="li-content {{indent?'-padding':''}} custom-class">
+    <slot></slot>
+</view>

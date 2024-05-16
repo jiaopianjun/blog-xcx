@@ -1,0 +1,38 @@
+.update-manager {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 0 30px 30px;
+}
+
+.update-manager .-image {
+    position: relative;
+    margin: 30px 0;
+}
+
+.update-manager .-image image {
+    width: 200px;
+}
+
+.update-manager .-title {
+    font-size: var(normal-text-size);
+    height: 30px;
+    line-height: 30px;
+    color: var(--text-color-2);
+    margin-bottom: 30px;
+}
+
+.update-manager .-btn {
+    position: relative;
+    margin: auto;
+    height: 50px;
+    margin-top: var(--normal-spacing);
+    line-height: 50px;
+    text-align: center;
+    width: 200px;
+    border-radius: 25px;
+    font-size: 16px;
+    background: var(--theme-color);
+    color: var(--highli-text-color);
+}

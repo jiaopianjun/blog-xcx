@@ -1,0 +1,62 @@
+.li-number-keyboard {
+    background: var(--card-bg-color);
+    padding: var(--normal-spacing);
+    box-sizing: border-box;
+}
+
+.li-number-keyboard .-bar {
+    min-height: 30px;
+    width: 100%;
+    border-bottom: 1px solid var(--bd-color);
+    box-sizing: border-box;
+    position: relative;
+    margin-bottom: var(--normal-spacing);
+    display: flex;
+    align-items: center;
+    padding-bottom: var(--normal-spacing);
+}
+
+.li-number-keyboard .-bar .-key {
+    position: relative;
+    float: left;
+    width: 120px;
+    height: 30px;
+    line-height: 30px;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.li-number-keyboard .-bar .-value {
+    position: relative;
+    float: right;
+    width: calc(100% - 120px);
+    min-height: 30px;
+    text-align: right;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 30px;
+    word-wrap: break-word;
+    padding-left: var(--normal-spacing);
+    border-left: 1px solid var(--bd-color);
+    box-sizing: border-box;
+}
+
+.li-number-keyboard .-keyboard-key {
+    margin-bottom: var(--normal-spacing);
+    font-size: 20px!important;
+    font-weight: 700;
+}
+
+.li-number-keyboard .-keyboard-key.-nmb {
+    margin-bottom: 0;
+}
+
+.li-number-keyboard .-keyboard-key.-delete {
+    font-weight: 400;
+}
+
+.li-number-keyboard .-confirm {
+    margin-top: var(--normal-spacing);
+    height: 170px!important;
+    line-height: 170px!important;
+}

@@ -1,0 +1,14 @@
+<view class="top-scrollbar {{scrollbarPosition=='pagetop'?'-top':''}} {{scrolling||!scrollbarAutoHide?'-active':''}}" id="top-scrollbar" style="width:{{scrollbarWidth+'px;'}}{{scrollbarBackground?'--content-scrollbar-background:'+scrollbarBackground:''}}" wx:if="{{scrollbar&&scrollbarType=='top'}}"></view>
+<scroll-view scrollY bindrefresherabort="{{event.onAbort}}" bindrefresherpulling="{{event.onPulling}}" bindrefresherrefresh="{{event.onRefresh}}" bindrefresherrestore="{{event.onRestore}}" bindscroll="{{scrollbarType=='normal'?'onScrollWithRightScrollbar':'onScrollWithTopScrollbar'}}" class="li-content" data-havenavigation="{{haveNavigation}}" data-havetabbar="{{haveTabbar}}" data-navigationheight="{{navigationHeight}}" data-scrollbar="{{scrollbar}}" data-tabbarheight="{{tabbarHeight}}" data-windowheight="{{systemInfo.windowHeight}}" data-windowwidth="{{systemInfo.windowWidth}}" id="scroll-view" refresherDefaultStyle="none" refresherEnabled="{{refresherEnabled}}" refresherThreshold="{{refresherEnabled?80:''}}" refresherTriggered="{{refresherTriggered}}" scrollTop="{{scrollTop}}" scrollWithAnimation="{{true}}">
+    <view class="-navigation-space" wx:if="{{haveNavigation}}"></view>
+    <view class="-refresher" id="refresher" slot="refresher" style="{{haveNavigation?'top:'+navigationHeight+'px;':''}}{{'height:'+refresherThreshold+'px;'}}{{refresherStyle}}" wx:if="{{refresherEnabled}}">
+        <slot name="loading"></slot>
+    </view>
+    <view class="-main {{indent?'-padding':''}} content-class">
+        <slot name="content" wx:if="{{useLoadingSlot}}"></slot>
+        <slot wx:else></slot>
+    </view>
+    <view class="-tabbar-space" wx:if="{{haveTabbar}}"></view>
+    <view class="-scrollbar {{scrolling||!scrollbarAutoHide?'-active':''}}" id="scrollbar" style="height:{{scrollbarHeight}}px;transform:translateY({{scrollbarTop}}px);transition-origion:{{transitionOrigin}};{{scrollbarBackground?'--content-scrollbar-background:'+scrollbarBackground:''}}" wx:if="{{scrollbar&&scrollbarType=='normal'}}"></view>
+</scroll-view>
+<wxs module="event" src="content.wxs" />

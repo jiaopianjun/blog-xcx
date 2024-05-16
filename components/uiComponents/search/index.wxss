@@ -1,0 +1,75 @@
+.li-search {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    top: 0;
+    left: 0;
+    background: var(--card-bg-color);
+    box-sizing: border-box;
+    padding: 0 var(--normal-spacing);
+    --search-type-width: 0px;
+    --search-record-width: 0px;
+}
+
+.li-search .-type {
+    float: left;
+    width: calc(var(--search-type-width) - 10px);
+    border-radius: 20px;
+    margin-right: var(--normal-spacing);
+}
+
+.li-search .-record,.li-search .-type {
+    position: relative;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: var(--dark-bg-color);
+    margin-top: var(--small-spacing);
+}
+
+.li-search .-record {
+    float: right;
+    width: 40px;
+    border-radius: 50%;
+}
+
+.li-search .-main {
+    position: relative;
+    float: left;
+    width: calc(100% - var(--search-type-width) - var(--search-record-width));
+    height: 40px;
+    margin-top: var(--small-spacing);
+    background: var(--dark-bg-color);
+    border-radius: 20px;
+}
+
+.li-search .-main .-icon {
+    height: 40px;
+    width: 40px;
+    float: left;
+    text-align: center;
+    line-height: 40px;
+}
+
+.li-search .-main .-input {
+    height: 40px;
+    width: calc(100% - 80px);
+    float: left;
+}
+
+.li-search .-main .-clear-button {
+    height: 40px;
+    width: 40px;
+    float: left;
+    text-align: center;
+    line-height: 40px;
+}
+
+.li-search.-border {
+    border-bottom: var(--navigation-border-width) solid var(--navigation-border-color);
+}
+
+.li-search-space {
+    position: relative;
+    width: 100%;
+}

@@ -1,0 +1,10 @@
+{
+    "component": true,
+    "usingComponents": {
+
+        "li-button": "/components/uiComponents/button/index",
+        "popup": "/components/uiComponents/popup/index",
+        "dialog": "/components/uiComponents/dialog/index"
+ 
+    }
+}

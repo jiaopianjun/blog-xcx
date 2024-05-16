@@ -1,0 +1,117 @@
+.li-radio {
+    position: relative;
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    --radio-border-radius: 6px;
+    --radio-dot-border-radius: 4px;
+    --radio-checked-color: var(--theme-color);
+    --radio-unchecked-color: var(--bd-color);
+}
+
+.li-radio.-circle {
+    --radio-border-radius: 50%;
+    --radio-dot-border-radius: 50%;
+}
+
+.li-radio .-radio {
+    height: 20px;
+    width: 20px;
+    float: left;
+    box-sizing: border-box;
+    position: relative;
+    top: var(--small-spacing);
+    margin-right: var(--small-spacing);
+    border-radius: var(--radio-border-radius);
+}
+
+.li-radio .-radio .-background {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    left: 0;
+    top: 0;
+    border: 2px solid var(--radio-unchecked-color);
+    box-sizing: border-box;
+    border-radius: var(--radio-border-radius);
+    transition: all .1s;
+}
+
+.li-radio.-checked .-radio .-background {
+    border: 10px solid var(--radio-checked-color);
+}
+
+.li-radio.-checked.-disabled .-radio {
+    opacity: .5;
+    background: none;
+}
+
+.li-radio.-disabled .-radio {
+    background: rgba(var(--bd-color-rgb),.2);
+}
+
+.li-radio .-radio.-normal .-dot {
+    position: absolute;
+    width: 4px;
+    height: 10px;
+    border: 2px solid var(--highlight-color);
+    border-top: 0;
+    border-left: 0;
+    transform: rotate(45deg);
+    top: 3px;
+    left: 7px;
+    opacity: 0;
+    transition: all .1s;
+}
+
+.li-radio.-checked .-radio.-normal .-dot {
+    opacity: 1;
+}
+
+.li-radio .-radio.-dot .-dot {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: var(--radio-dot-border-radius);
+    top: 6px;
+    left: 6px;
+    transform: scale3d(0);
+    opacity: 0;
+    background: var(--highlight-color);
+    transition: all .1s;
+}
+
+.li-radio.-checked .-radio.-dot .-dot {
+    transform: scale3d(1);
+    opacity: 1;
+}
+
+.li-radio .-icon {
+    position: relative;
+    margin-right: var(--small-spacing);
+    line-height: 30px;
+    height: 30px;
+    width: 20px;
+    vertical-align: center;
+    font-size: 20px;
+    float: left;
+    color: var(--radio-unchecked-color);
+    transition: all .1s;
+}
+
+.li-radio.-checked .-icon {
+    color: var(--radio-checked-color);
+}
+
+.li-radio .-title {
+    font-size: var(--normal-text-size);
+    height: 30px;
+    line-height: 30px;
+    position: relative;
+    float: left;
+    width: var(--title-width);
+}
+
+.li-radio.-disabled .-title {
+    opacity: .5;
+}

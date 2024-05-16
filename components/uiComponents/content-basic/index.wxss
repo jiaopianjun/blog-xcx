@@ -1,0 +1,12 @@
+.li-content {
+    position: relative;
+    width: 100%;
+    top: 0;
+    z-index: 0;
+    min-height: var(--content-height);
+    box-sizing: border-box;
+}
+
+.li-content.-padding {
+    padding: var(--large-spacing);
+}

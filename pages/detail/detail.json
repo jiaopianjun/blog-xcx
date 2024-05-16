@@ -1,0 +1,9 @@
+{
+    "enablePullDownRefresh": false,
+    "backgroundTextStyle": "dark",
+    "usingComponents": {
+        "poster": "../../templates/components/wxa-plugin-canvas-poster/poster/index",
+        "mp-html": "/components/mp-html/index",
+        "htmltowxml": "/components/html2wxml/html2wxml"
+    }
+}

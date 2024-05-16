@@ -1,0 +1,117 @@
+.li-navigation {
+    --navigation-border-color: var(--darker-bg-color);
+    --navigation-border-width: 1px;
+    --navigation-background: rgba(var(--card-bg-color-rgb),.5);
+    --navigation-color: var(--text-color-1);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transform: translate3d(0,0,0);
+    box-sizing: border-box;
+    height: var(--navigation-height);
+}
+
+.li-navigation .-border {
+    width: 100%;
+    height: var(--navigation-border-width);
+    background: var(--navigation-border-color);
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+}
+
+.li-navigation .-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--navigation-background);
+    z-index: 0;
+}
+
+.li-navigation .-background.-blur {
+    backdrop-filter: blur(15px);
+}
+
+.li-navigation .-bar {
+    position: relative;
+    width: 100%;
+    height: var(--statusbar-height);
+    z-index: 1;
+}
+
+.li-navigation .-header {
+    position: relative;
+    padding: 0 var(--large-spacing);
+    color: var(--navigation-color);
+    z-index: 1;
+    height: var(--navigation-header-content-height);
+    line-height: var(--navigation-header-content-height);
+}
+
+.li-navigation .-icon {
+    font-size: 24px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    float: left;
+    border-radius: 15px;
+    margin-top: calc((var(--navigation-header-content-height) - 30px) / 2);
+}
+
+.li-navigation .-icon.-center {
+    text-align: center;
+    background: var(--card-bg-color);
+}
+
+.li-navigation .-normal {
+    position: relative;
+    float: left;
+}
+
+.li-navigation .-normal .-title {
+    font-size: var(--small-title-size);
+    font-weight: 700;
+    max-width: calc(var(--window-width) - var(--menu-width) - 60px);
+}
+
+.li-navigation .-icon+.-custom {
+    width: calc(100% - 30px);
+}
+
+.li-navigation .-custom {
+    position: relative;
+    float: left;
+    height: 100%;
+    width: 100%;
+}
+
+.li-navigation .-custom .-title {
+    font-size: var(--normal-text-size);
+    height: 18px;
+    line-height: 18px;
+    font-weight: 700;
+    top: calc(var(--navigation-header-content-height - 34px) / 2);
+}
+
+.li-navigation .-custom .-subtitle,.li-navigation .-custom .-title {
+    width: 100%;
+    position: absolute;
+    max-width: calc(var(--window-width) - var(--menu-width) - 60px);
+}
+
+.li-navigation .-custom .-subtitle {
+    font-size: 12px;
+    height: 14px;
+    line-height: 14px;
+    bottom: calc((var(--navigation-header-content-height) - 34px) / 2);
+}
+
+.li-navigation-space {
+    position: relative;
+    width: 100%;
+    z-index: 0;
+    transform: translate3d(0,0,0);
+    height: var(--navigation-height);
+}

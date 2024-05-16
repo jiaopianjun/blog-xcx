@@ -1,0 +1,32 @@
+.word {
+    opacity: 0;
+    color: red;
+}
+
+.in {
+    animation: in 1s forwards;
+}
+
+@-webkit-keyframes in {
+    from {
+        opacity: 0;
+        color: red;
+    }
+
+    to {
+        opacity: 1;
+        color: #000;
+    }
+}
+
+@keyframes in {
+    from {
+        opacity: 0;
+        color: red;
+    }
+
+    to {
+        opacity: 1;
+        color: #000;
+    }
+}

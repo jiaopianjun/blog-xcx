@@ -1,0 +1,30 @@
+<popup coverNavigation coverTabbar disabledMaskClose header headerAlign="center" headerBorder="{{false}}" headerTitle="授权登录" inDirection="bottom" position="bottom" show="{{showLogin}}">
+    <view class="login">
+        <view class="-main">
+            <view class="-avatar">
+                <open-data type="userAvatarUrl"></open-data>
+            </view>
+            <view class="-connect-group">
+                <view class="-item {{logining?'-flash':''}}"></view>
+                <view class="-item {{logining?'-flash':''}}"></view>
+                <view class="-item {{logining?'-flash':''}}"></view>
+            </view>
+            <view class="-logo">
+                <image src="../../../images/logo.svg"></image>
+            </view>
+            <view class="_clear"></view>
+        </view>
+        <view class="-content">
+            <view>LightlyUI申请使用你的账号信息</view>
+            <view>（昵称、头像、地区及性别）</view>
+        </view>
+        <view class="-buttons">
+            <li-button block round background="var(--darker-bg-color)" bind:event="close" color="var(--text-color-2)" customClass="button" disabled="{{logining}}" size="large" text="暂不授权" type="primary"></li-button>
+            <li-button block round bind:event="saveUser" customClass="button" disabled="{{logining}}" openType="getUserInfo" size="large" text="授权" type="primary" wx:if="{{!error}}"></li-button>
+            <li-button block round bind:event="reGetSaveUser" customClass="button" disabled="{{logining}}" openType="getUserInfo" size="large" text="授权" type="primary" wx:if="{{error}}"></li-button>
+            <view class="_clear"></view>
+        </view>
+    </view>
+    <view></view>
+</popup>
+<notify id="li-notify"></notify>

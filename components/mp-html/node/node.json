@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "my-audio": "../audio/audio",
+    "node": "./node"
+  }
+}

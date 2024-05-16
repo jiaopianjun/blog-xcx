@@ -1,0 +1,106 @@
+.li-tabbar {
+    --tabbar-color: var(--text-color-1);
+    --tabbar-selected-color: var(--theme-color);
+    --tabbar-background: rgba(var(--card-bg-color-rgb),.5);
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    box-sizing: border-box;
+    padding: var(--small-spacing) 0;
+    background: var(--tabbar-background);
+    backdrop-filter: blur(15px);
+    color: var(--tabbar-color);
+    transition: transform .3s;
+    transition: transform .3s,-webkit-transform .3s;
+}
+
+.li-tabbar.-open {
+    transform: translate3d(0,0,0);
+}
+
+.li-tabbar.-close {
+    transform: translate3d(0,100%,0);
+}
+
+.li-tabbar-space {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    z-index: 3;
+}
+
+.li-tabbar .-item {
+    position: relative;
+    height: 40px;
+    text-align: center;
+    float: left;
+}
+
+.li-tabbar .-item .-icon {
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    font-size: 24px;
+    transition: all .3s;
+}
+
+.li-tabbar .-item .-icon.-active {
+    color: var(--tabbar-selected-color);
+}
+
+.li-tabbar .-item .-name {
+    height: 24px;
+    line-height: 24px;
+    font-size: var(--normal-text-size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    transition: all .3s;
+}
+
+.li-tabbar .-item .-name.-active {
+    color: var(--tabbar-selected-color);
+}
+
+.li-tabbar .-item .-name.-with-icon {
+    height: 16px;
+    line-height: 16px;
+    font-size: var(--small-text-size);
+}
+
+.li-tabbar .-item .-name.-with-icon.-active {
+    opacity: 0;
+}
+
+.li-tabbar .-item .-dot {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    bottom: var(--small-spacing);
+    transition: all .3s;
+    background: var(--tabbar-selected-color);
+    opacity: 0;
+    left: 50%;
+    transform: translate3d(-50%,80px,0);
+}
+
+.li-tabbar .-item .-dot.-active {
+    opacity: 1;
+    transform: translate3d(-50%,0,0);
+}
+
+.li-tabbar .-dot {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    left: 0;
+    bottom: var(--normal-spacing);
+    transition: all .3s;
+    background: var(--tabbar-selected-color);
+}

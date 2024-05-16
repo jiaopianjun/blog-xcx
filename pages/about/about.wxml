@@ -1,0 +1,19 @@
+<import src="../../templates/copyright.wxml" />
+
+<ui-sys title="关于我">
+  <view class="ui-BG-card ui-BG" style="display:{{display}}">
+    <template is="tempHeader" />
+    <view class="wrapper">
+      <view class="excerpt">
+        <mp-html content="{{ pageData.post_content }}" bindlinktap="wxParseTagATap" copy-link="{{true}}" selectable="{{true}}" lazy-load="{{true}}" markdown="{{true}}" />
+      </view>
+      <view style='text-align:center'>
+        <view class="gotowebpage-button ui-BG-Main" formType="submit" size="mini" bindtap="gotowebpage">打开“{{webSiteName}}”网站</view>
+        <modal title="{{dialog.title}}" hidden="{{dialog.hidden}}" no-cancel bindconfirm="confirm">{{dialog.content}}</modal>
+      </view>
+    </view>
+    <view class="copyright">
+      <template is="tempCopyright" data="{{webSiteName:webSiteName,domain:domain}}" />
+    </view>
+  </view>
+</ui-sys>

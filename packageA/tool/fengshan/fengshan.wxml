@@ -1,0 +1,35 @@
+<View class="main {{isFullScreen?'full-screen':''}}" style="height: 100vh;overflow: hidden; ">
+  <view class="container">
+    <view class="fan-container">
+      <view class="fan">
+        <image class="back" src="imgs/back.png"></image>
+        <image class="blades {{speedDirection}}" src="imgs/fanleaf.png" style="transform: rotate({{deg}}deg)"></image>
+        <image class="front" src="imgs/front.png"></image>
+        <view class="body lv-{{level}}">11
+          <image class="pole" mode="scaleToFill" src="imgs/pole.png"></image>
+          <image class="light-lv1" src="imgs/greenlight-1.png"></image>
+          <image class="light-lv2" src="imgs/greenlight-2.png"></image>
+          <image class="light-lv3" src="imgs/greenlight-3.png"></image>
+        </view>
+      </view>
+    </view>
+    <view class="control-panel">
+      <view bindtouchstart="setGuide" class="btns" data-guide-type="1" style="margin-right: 48rpx">
+        <button bindtouchstart="tapBtn" class="btn level-0" data-level="0" hoverClass="open"></button>
+        <view class="btns-guide {{guide_1_showed?'hide':'show'}}">
+          <text>{{i18n.controlBtnOff[language]||i18n.controlBtnOff.en}}</text>
+        </view>
+      </view>
+      <view bindtouchstart="setGuide" class="btns" data-guide-type="2">
+        <button bindtouchstart="tapBtn" class="btn level-1 {{level===1?'open':''}}" data-level="1" hoverClass="press"></button>
+        <button bindtouchstart="tapBtn" class="btn level-2 {{level===2?'open':''}}" data-level="2" hoverClass="press"></button>
+        <button bindtouchstart="tapBtn" class="btn level-3 {{level===3?'open':''}}" data-level="3" hoverClass="press"></button>
+        <view class="btns-guide {{guide_2_showed?'show':'show'}}">
+          <view>{{i18n.controlBtnLow[language]||i18n.controlBtnLow.en}}</view>
+          <view>{{i18n.controlBtnMed[language]||i18n.controlBtnMed.en}}</view>
+          <view>{{i18n.controlBtnHigh[language]||i18n.controlBtnHigh.en}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</View>

@@ -1,0 +1,19 @@
+.toolIndex{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  top: 0;
+}
+.toolIndex .toolList {
+  padding: 10rpx;
+  background-color: snow;
+}
+.toolList .toolBox {
+  background-color: sandybrown;
+  font-size: 30rpx;
+  padding: 30rpx;
+  border-radius: 10rpx;
+  color: #fff;
+  margin-bottom: 20rpx;
+}

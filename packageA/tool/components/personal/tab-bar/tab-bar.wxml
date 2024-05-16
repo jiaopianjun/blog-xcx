@@ -1,0 +1,7 @@
+<view class="tab-bar" style="height: calc(50px + constant(safe-area-inset-bottom));height: calc(50px + env(safe-area-inset-bottom));">
+    <view class="-item {{active==idx?'-active':''}}" style="width:{{100/tabBar.length}}%" wx:for="{{tabBar}}" wx:for-index="idx" wx:key="idx">
+        <view bindtap="event" class="iconfont {{item.icon}} -content" data-index="{{idx}}" hoverClass="_hover"></view>
+    </view>
+    <view class="_clear"></view>
+</view>
+<view class="tab-bar-relative" style="height: calc(50px + constant(safe-area-inset-bottom));height: calc(50px + env(safe-area-inset-bottom));"></view>

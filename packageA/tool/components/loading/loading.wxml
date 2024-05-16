@@ -1,0 +1,10 @@
+<view class="loading-container custom-class">
+    <view class="-content">
+        <view class="-error" wx:if="{{error}}">
+            <text class="iconfont {{errorIcon}}"></text>
+        </view>
+        <view class="-event" wx:if="{{error}}">{{errorText}}</view>
+        <view class="-loading" wx:else></view>
+        <view class="-tip" wx:if="{{tip&&!error}}">{{tip}}</view>
+    </view>
+</view>

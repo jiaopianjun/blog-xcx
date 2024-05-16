@@ -1,0 +1,15 @@
+{
+    "component": true,
+    "usingComponents": {
+        "video-ad": "../video-ad/video-ad",
+        "container": "../personal/container/container",
+        "navigation": "./navigation",
+        "my-loading": "../loading/loading",
+        "page-background": "../personal/page-background/page-background",
+        "col": "../col/col",
+        "row": "../row/row",
+        "tip": "../tip/tip",
+        "error": "../error/error",
+        "banner-ad": "../banner-ad/banner-ad"
+    }
+}

@@ -1,0 +1,85 @@
+var onScrollWithTopScrollbar = (function(e, ownerInstance) {
+    var instance = ownerInstance.selectComponent('#top-scrollbar');
+    if (!e.currentTarget.dataset.scrollbar) {
+        ownerInstance.triggerEvent('scroll', e);
+        return
+    };
+    ownerInstance.callMethod('scrolling');
+    var scrollTop = e.detail.scrollTop;
+    var windowHeight = e.currentTarget.dataset.windowheight;
+    var windowWidth = e.currentTarget.dataset.windowwidth;
+    var widthHeightRatio = windowWidth / windowHeight;
+    var scrollHeight = e.detail.scrollHeight - windowHeight;
+    var windowScrollRatio = windowHeight / scrollHeight;
+    var scrollbarWidth = Math.ceil(scrollTop * widthHeightRatio * windowScrollRatio);
+    if (scrollTop >= scrollHeight) {
+        instance.setStyle('width:' + windowWidth + 'px');
+        return
+    };
+    if (scrollTop <= 0) {
+        instance.setStyle('width:0px');
+        return
+    };
+    instance.setStyle('width:' + scrollbarWidth + 'px')
+});
+var onScrollWithRightScrollbar = (function(e, ownerInstance) {
+    var instance = ownerInstance.selectComponent('#scrollbar');
+    if (!e.currentTarget.dataset.scrollbar) {
+        ownerInstance.triggerEvent('scroll', e);
+        return
+    };
+    ownerInstance.callMethod('scrolling');
+    var navigationHeight = e.currentTarget.dataset.havenavigation ? e.currentTarget.dataset.navigationheight : 0;
+    var tabbarHeight = e.currentTarget.dataset.havetabbar ? e.currentTarget.dataset.tabbarheight : 0;
+    var scrollTop = e.detail.scrollTop;
+    var scrollHeight = e.detail.scrollHeight - navigationHeight - tabbarHeight;
+    var windowHeight = e.currentTarget.dataset.windowheight - navigationHeight - tabbarHeight;
+    var windowScrollRatio = windowHeight / scrollHeight;
+    var scrollbarHeight = windowScrollRatio * windowHeight - 6;
+    var scrollbarTop = scrollTop * windowScrollRatio + navigationHeight + 3;
+    if (scrollTop + windowHeight >= scrollHeight) {
+        instance.setStyle('transform:translateY(' + windowHeight - (scrollbarHeight - (scrollTop + windowHeight - scrollHeight) * windowScrollRatio) + navigationHeight - 3 + 'px);height:' + scrollbarHeight - (scrollTop + windowHeight - scrollHeight) * windowScrollRatio + 'px;');
+        return
+    };
+    if (scrollTop <= 0) {
+        instance.setStyle('transform:translateY(' + navigationHeight + 3 + 'px);height:' + scrollbarHeight + scrollTop * windowScrollRatio + 'px;transition-origion:top');
+        return
+    };
+    instance.setStyle('transform:translateY(' + scrollbarTop + 'px);height:' + scrollbarHeight + 'px;transition-origion:bottom')
+});
+var onRestore = (function(e, ownerInstance) {
+    var instance = ownerInstance.selectComponent('#refresher');
+    instance.setStyle(({
+        opacity: 0,
+        transform: "scale(0)",
+    }));
+    ownerInstance.triggerEvent('refresherrestore')
+});
+var onPulling = (function(e, ownerInstance) {
+    var instance = ownerInstance.selectComponent('#refresher');
+    var p = Math.min(e.detail.dy / 80, 1);
+    instance.setStyle(({
+        opacity: p,
+        transform: "scale(" + p + ")",
+    }));
+    ownerInstance.triggerEvent('refresherpulling')
+});
+var onRefresh = (function(e, ownerInstance) {
+    ownerInstance.triggerEvent('refresherrefresh')
+});
+var onAbort = (function(e, ownerInstance) {
+    var instance = ownerInstance.selectComponent('#refresher');
+    instance.setStyle(({
+        opacity: 0,
+        transform: "scale(0)",
+    }));
+    ownerInstance.triggerEvent('refresherabort')
+});
+module.exports = ({
+    onPulling: onPulling,
+    onRefresh: onRefresh,
+    onAbort: onAbort,
+    onRestore: onRestore,
+    onScrollWithTopScrollbar: onScrollWithTopScrollbar,
+    onScrollWithRightScrollbar: onScrollWithRightScrollbar,
+});

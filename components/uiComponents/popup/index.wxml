@@ -1,0 +1,21 @@
+<view class="li-popup {{show?'-open':'-close'}} -in-{{inDirection}} -{{position}} {{coverNavigation?'-cover-navigation':''}}" style="{{coverNavigation?'':'top:var(--navigation-height)'}};{{'--popup-height:'+popupHeight}}px;">
+    <view bindtap="{{disabledMaskClose?'':'close'}}" catchtouchmove="true" class="-mask" wx:if="{{mask}}"></view>
+    <view class="-container container-class">
+        <header align="{{headerAlign}}" bind:rightevent="{{headerCloseButton?'close':''}}" bind:titleevent="toTop" border="{{headerBorder}}" catchtouchmove="true" indent="{{headerIndent}}" rightIcon="{{headerCloseButton?'icon-close-outline':''}}" subtitle="{{headerSubtitle}}" title="{{headerTitle}}" wx:if="{{header&&!useHeaderSlot}}"></header>
+        <view catchtouchmove="catch" class="-header" wx:if="{{useHeaderSlot}}">
+            <slot name="header"></slot>
+        </view>
+        <scroll-view scrollWithAnimation catchtouchmove="{{realMainHeight<=realContentHeight?'catch':''}}" class="-content content-class" scrollTop="{{top}}" scrollY="true" style="max-height:{{maxContentHeight}}px">
+            <view class="-main">
+                <slot name="content" wx:if="{{useHeaderSlot||useFooterSlot}}"></slot>
+                <slot wx:else></slot>
+            </view>
+        </scroll-view>
+        <view catchtouchmove="catch" class="-footer" wx:if="{{useFooterSlot}}">
+            <slot name="footer"></slot>
+        </view>
+    </view>
+    <view catchtap="close" class="-close-button" wx:if="{{closeButton}}">
+        <text class="iconfont icon-close-outline"></text>
+    </view>
+</view>

@@ -1,0 +1,30 @@
+<view class="history" wx:if="{{!loading}}">
+    <view class="-title" style="{{limit>=100?'text-align:center;':''}}">
+        <view bindtap="showChange" class="-type" hoverClass="_hover" style="{{limit>=100?'width:100%;':''}}">{{limit<100?'历史 · ':''}}{{active==0?'大事记':active==1?'出生':'逝世'}}
+      <text class="iconfont icon-arrow-ios-downward-o"></text>
+        </view>
+        <view bindtap="toHistory" class="-more" hoverClass="_hover" wx:if="{{limit<100}}">more</view>
+        <view class="_clear"></view>
+    </view>
+    <view class="_clear"></view>
+    <view class="-content">
+        <view class="-item" wx:if="{{idx<limit}}" wx:for="{{data[active].lists}}" wx:for-index="idx">
+            <view class="-year">{{item.year}}年</view>
+            <view class="-event">{{history.format(item.title)}}</view>
+            <view class="_clear"></view>
+        </view>
+    </view>
+</view>
+<popup customClass="type" show="{{showChange}}">
+    <view class="choose-history-type">
+        <cell-group correction="{{false}}">
+            <cell bind:event="change" mode="common" name="大事记" rightIcon="{{active==0?'icon-checkmark-outline':false}}"></cell>
+            <cell bind:event="change" mode="common" name="出生" rightIcon="{{active==1?'icon-checkmark-outline':false}}"></cell>
+            <cell bind:event="change" mode="common" name="逝世" rightIcon="{{active==2?'icon-checkmark-outline':false}}"></cell>
+        </cell-group>
+    </view>
+</popup>
+<view class="loading" wx:if="{{loading}}">
+    <my-loading></my-loading>
+</view>
+<wxs module="history" src="util.wxs" />

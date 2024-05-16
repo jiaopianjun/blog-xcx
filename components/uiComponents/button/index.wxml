@@ -1,0 +1,18 @@
+<view class="li-button custom-class {{square?'-square':''}} {{round?'-round':''}} {{block?'-block _clearfix':''}} -{{size}} -{{buttonStyle}} {{'-'+type}} {{disabled||loading?'-mask':''}} {{disabled?'-disabled':''}}" style="{{borderWidth?'--button-border-width:'+borderWidth+';':''}}{{borderColor?'--button-border-color:'+borderColor+';':''}}{{background?'--button-background:'+background+';':''}}{{color?'--button-text-color:'+color+';':''}}{{gradientColor?'--button-text-gradient-color:'+gradientColor+';':''}}">
+    <view catchlongpress="longPress" catchtap="tap" class="-main" hoverClass="{{hover?'-hover':''}}" hoverStayTime="120">
+        <button bindcontact="event" binderror="event" bindgetphonenumber="event" bindgetuserinfo="event" bindlaunchapp="event" bindopensetting="event" class="-open-type" openType="{{openType}}" wx:if="{{openType}}"></button>
+        <navigator appId="{{navigatorAppId}}" class="-navigator" delta="{{navigatorDelta}}" extraData="{{navigatorExtraData}}" openType="{{navigatorOpenType}}" path="{{navigatorPath}}" target="{{navigatorTarget}}" url="{{navigatorUrl}}" version="{{navigatorVersion}}" wx:if="{{navigator}}"></navigator>
+        <view class="-border {{borderColor?'-color':''}}" style="{{borderColor?'filter:none':''}}" wx:if="{{buttonStyle!='solid'}}"></view>
+        <view class="-background {{type||background?'-have':'-none'}}" wx:if="{{buttonStyle!='hollow'}}"></view>
+        <view class="-text" wx:if="{{!loading}}">
+            <text class="iconfont -icon {{icon}} icon-class" style="padding-right:var(--small-spacing)" wx:if="{{icon&&text}}"></text>
+            <text class="iconfont -icon {{icon}} icon-class" wx:if="{{icon&&!text}}"></text>
+            <text class="{{gradientColor?'-gradient':''}}">{{text}}</text>
+            <text class="iconfont {{rightIcon}} right-icon-class" wx:if="{{rightIcon}}"></text>
+            <view class="_clear"></view>
+        </view>
+        <view class="-loading" wx:if="{{loading}}">
+            <li-loading color="{{loadingColor}}" customClass="-button-loading" text="{{loadingText}}" vertical="{{false}}" weight="{{loadingWeight}}"></li-loading>
+        </view>
+    </view>
+</view>

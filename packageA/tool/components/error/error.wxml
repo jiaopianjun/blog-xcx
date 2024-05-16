@@ -1,0 +1,7 @@
+<view class="error _{{darkMode}}">
+    <view class="-icon">
+        <text class="iconfont {{icon}}"></text>
+    </view>
+    <view class="-title">{{title}}</view>
+    <view bindtap="event" class="-btn">{{buttonText}}</view>
+</view>

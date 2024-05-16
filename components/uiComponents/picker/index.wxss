@@ -1,0 +1,34 @@
+.li-picker {
+    position: relative;
+    --picker-cancel-color: var(--text-color-3);
+    --picker-confirm-color: var(--theme-color);
+    --picker-title-color: var(--text-color-1);
+}
+
+.active-column {
+    height: 50px;
+    box-sizing: border-box;
+    z-index: -1;
+    background: var(--dark-bg-color);
+}
+
+.li-picker .-picker {
+    width: 100%;
+    height: 250px;
+}
+
+.picker-view-mask {
+    opacity: 0;
+}
+
+.li-picker .-picker .-column {
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: var(--normal-text-size);
+    transition: all .1s;
+}
+
+.li-picker .-mask {
+    border-radius: 4px;
+}

@@ -1,0 +1,18 @@
+var bem = require('bem.wxs').bem;
+var memoize = require('memoize.wxs').memoize;
+
+function isSrc(url) {
+    return (url.indexOf('http') === 0 || url.indexOf('data:image') === 0 || url.indexOf('//') === 0)
+};
+
+function weather(skycon) {
+    var skycon = skycon.toString();
+    var replaceString = getRegExp('/D/', 'g');
+    return (skycon.replace(replaceString, ' '))
+};
+module.exports = ({
+    bem: memoize(bem),
+    isSrc: isSrc,
+    memoize: memoize,
+    weather: weather,
+});

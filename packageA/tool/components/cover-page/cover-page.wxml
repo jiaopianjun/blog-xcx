@@ -1,0 +1,11 @@
+<view class="cover-page custom-class {{show?'-open':'-close'}}">
+    <view bindtap="close" catchtouchmove="true" class="-mask"></view>
+    <scroll-view bindscroll="move" catchtouchmove="{{disableTouch?'disableTouch':''}}" class="-content" scrollTop="{{scrollTop}}" scrollY="true" style="max-height:{{maxHeight}}px">
+        <view class="-main" style="padding-bottom:{{showCancle?'50px':''}}">
+            <slot></slot>
+        </view>
+    </scroll-view>
+    <view bindtap="close" catchtouchmove="true" class="-cancle" wx:if="{{showCancle}}">
+        <text class="iconfont icon-jiantou"></text>
+    </view>
+</view>

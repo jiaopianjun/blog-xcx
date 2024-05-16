@@ -1,0 +1,12 @@
+<popup bind:cancleEvent="cancle" maskCancle="{{maskCancle}}" show="{{show}}">
+    <view class="tip">
+        <view class="-icon" wx:if="{{icon}}">
+            <text class="iconfont {{icon}}" style="{{iconColor?'color:'+iconColor:''}}"></text>
+        </view>
+        <view class="-title {{realtime.skycon}}_{{theme}}" wx:if="{{title}}">{{title}}</view>
+        <view class="-description" wx:if="{{description}}">
+            <view class="-position">{{description}}</view>
+        </view>
+        <view bindtap="confirm" class="-btn" hoverClass="_hover" style="{{btnColor?'background:'+btnColor:''}}">{{btnText}}</view>
+    </view>
+</popup>

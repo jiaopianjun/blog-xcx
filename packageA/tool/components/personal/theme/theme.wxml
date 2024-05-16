@@ -1,0 +1,21 @@
+<popup bind:cancleEvent="cancle" show="{{show}}">
+    <swiper bindchange="swipe" circular="true" class="theme-container" current="{{activeThemeIndex}}" duration="300">
+        <swiper-item class="-theme" wx:for="{{theme}}" wx:for-index="idx" wx:key="idx">
+            <row customClass="-color">
+                <col customClass="-item" span="24">
+                    <view class="_{{item.id}} _{{darkMode}}"></view>
+                </col>
+            </row>
+            <view class="-title">
+                <text class="-bg"></text>
+                <text class="-id">{{item.id}}</text>
+            </view>
+            <view class="-name">{{item.name}}</view>
+            <view class="-state -active _{{theme[activeThemeIndex].id}} _{{darkMode}}" data-theme="{{item.id}}" wx:if="{{activeTheme===item.id}}">当前使用</view>
+            <view bindtap="changeTheme" class="-state _{{theme[activeThemeIndex].id}} _{{darkMode}}" data-theme="{{item.id}}" wx:if="{{activeTheme!==item.id}}">启用</view>
+        </swiper-item>
+    </swiper>
+    <view class="dot">
+        <view class="-item {{activeThemeIndex===idx?'-active':''}} _{{skycon}} _{{theme[activeThemeIndex].id}}" wx:for="{{theme}}" wx:for-index="idx"></view>
+    </view>
+</popup>

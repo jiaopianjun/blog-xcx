@@ -1,0 +1,72 @@
+var firstX = 0;
+var firstY = 0;
+var isTop = false;
+var isBottom = false;
+var isPulling = false;
+var realContentHeight = 0;
+var realMainHeight = 0;
+var touchDistance = 0;
+var start = (function(e) {
+    firstX = e.touches[(0)].pageX;
+    firstY = e.touches[(0)].pageY;
+    realContentHeight = e.currentTarget.dataset.realcontentheight;
+    realMainHeight = e.currentTarget.dataset.realmainheight
+});
+var move = (function(e, ownerInstance) {
+    var instance = ownerInstance.selectComponent('#container');
+    var dom = e.currentTarget.dataset.dom;
+    var currentX = e.touches[(0)].pageX;
+    var currentY = e.touches[(0)].pageY;
+    var touchX = currentX - firstX;
+    var touchY = currentY - firstY;
+    if (touchY >= 0) {
+        if ((!isBottom && !isPulling) || (realMainHeight <= realContentHeight) || dom != 'content') {
+            instance.setStyle('transform:translate3d(0,' + touchY + 'px,0)!important;transition: all 0s');
+            touchDistance = touchY
+        }
+    }
+});
+var end = (function(e, ownerInstance) {
+    var instance = ownerInstance.selectComponent('#container');
+    var closeDistance = realContentHeight * 0.3;
+    closeDistance = closeDistance >= 120 ? 120 : (closeDistance <= 30 ? 30 : closeDistance);
+    if (touchDistance > closeDistance) {
+        ownerInstance.callMethod('close')
+    } else {
+        ownerInstance.callMethod('open')
+    };
+    clearStyle(instance);
+    firstX = 0;
+    firstY = 0;
+    touchDistance = 0
+});
+
+function clearStyle(instance) {
+    instance.setStyle('')
+};
+var scroll = (function(e) {
+    var realContentHeight = e.currentTarget.dataset.realcontentheight;
+    var realMainHeight = e.currentTarget.dataset.realmainheight;
+    if (e.detail.scrollTop + realContentHeight >= realMainHeight) {
+        isBottom = true
+    } else {
+        isBottom = false
+    };
+    if (e.detail.scrollTop == 0) {
+        isTop = true
+    } else {
+        isTop = false
+    };
+    if (e.detail.scrollTop < 0) {
+        isPulling = true
+    } else {
+        isPulling = false
+    }
+});
+module.exports = ({
+    start: start,
+    move: move,
+    end: end,
+    scroll: scroll,
+    clearStyle: clearStyle,
+});

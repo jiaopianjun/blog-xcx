@@ -1,0 +1,3 @@
+<view class="video-ad" style="display:{{ad?'block':'none'}}">
+    <ad adTheme="{{darkMode=='dark'?'black':'white'}}" adType="video" binderror="adError" bindload="adLoad" style="transform:scale3d({{scale}},{{scale}},{{scale}})" unitId="adunit-5239fba8346437a6"></ad>
+</view>

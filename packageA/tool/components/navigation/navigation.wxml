@@ -1,0 +1,20 @@
+<view class="navigation custom-class {{transparent?'-transparent':''}}" style="height:{{navigationHeight}}px;padding-top:{{barHeight}}px;line-height:{{navigationHeight-barHeight}}px">
+    <view class="-custom" wx:if="{{subtitle}}">
+        <view bindtap="event" hoverClass="{{event?'_hover':''}}" style="height:{{navigationHeight-barHeight}}px;">
+            <view class="-icon {{!title&&transparent?'-center':''}}" style="margin-top:{{(navigationHeight-barHeight-30)/2}}px" wx:if="{{icon}}">
+                <text class="iconfont {{icon}}"></text>
+            </view>
+            <view class="-title _text-overflow" style="top:{{(navigationHeight-barHeight-32)/2}}px;max-width:{{windowWidth-menuInfo.width-60}}px;left:{{icon?30:''}}px" wx:if="{{title}}">{{title}}</view>
+            <view class="-subtitle _text-overflow" style="bottom:{{(navigationHeight-barHeight-32)/2}}px;max-width:{{windowWidth-menuInfo.width-60}}px;left:{{icon?30:''}}px" wx:if="{{subtitle}}">{{subtitle}}</view>
+        </view>
+    </view>
+    <view class="-common" wx:else>
+        <view bindtap="event" hoverClass="{{event?'_hover':''}}">
+            <view class="-icon {{!title&&transparent?'-center':''}}" style="margin-top:{{(navigationHeight-barHeight-30)/2}}px" wx:if="{{icon}}">
+                <text class="iconfont {{icon}}"></text>
+            </view>
+            <view class="-title _text-overflow" style="max-width:{{windowWidth-menuInfo.width-60}}px;" wx:if="{{title}}">{{title}}</view>
+        </view>
+    </view>
+</view>
+<view class="navigation-relative" style="height:{{navigationHeight}}px;" wx:if="{{height}}"></view>

@@ -1,0 +1,29 @@
+.li-card {
+    background: var(--card-bg-color);
+    width: 100%;
+    border-radius: var(--card-border-radius);
+    margin-bottom: var(--normal-spacing);
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+.li-card.-last {
+    margin-bottom: 0;
+}
+
+.li-card .-card-content {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.li-card .-card-content::before {
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+.li-card .-card-content.-indent {
+    padding: var(--normal-spacing);
+}

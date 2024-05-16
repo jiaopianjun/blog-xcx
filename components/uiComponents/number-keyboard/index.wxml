@@ -1,0 +1,38 @@
+<view class="li-number-keyboard custom-class">
+    <view class="-bar" wx:if="{{name}}">
+        <view class="-key">{{name}}</view>
+        <view class="-value">{{value}}</view>
+        <view class="_clear"></view>
+    </view>
+    <row gutter="10">
+        <col span="18">
+            <row gutter="10">
+                <col customClass="-keys" span="8">
+                    <li-button block background="var(--darker-bg-color)" bind:event="click" buttonStyle="solid" color="var(--text-color-1)" customClass="-keyboard-key" data-value="1" size="large" text="1"></li-button>
+                    <li-button block background="var(--darker-bg-color)" bind:event="click" buttonStyle="solid" color="var(--text-color-1)" customClass="-keyboard-key" data-value="2" size="large" text="2"></li-button>
+                    <li-button block background="var(--darker-bg-color)" bind:event="click" buttonStyle="solid" color="var(--text-color-1)" customClass="-keyboard-key" data-value="3" size="large" text="3"></li-button>
+                </col>
+                <col customClass="-keys" span="8">
+                    <li-button block background="var(--darker-bg-color)" bind:event="click" buttonStyle="solid" color="var(--text-color-1)" customClass="-keyboard-key" data-value="4" size="large" text="4"></li-button>
+                    <li-button block background="var(--darker-bg-color)" bind:event="click" buttonStyle="solid" color="var(--text-color-1)" customClass="-keyboard-key" data-value="5" size="large" text="5"></li-button>
+                    <li-button block background="var(--darker-bg-color)" bind:event="click" buttonStyle="solid" color="var(--text-color-1)" customClass="-keyboard-key" data-value="6" size="large" text="6"></li-button>
+                </col>
+                <col customClass="-keys" span="8">
+                    <li-button block background="var(--darker-bg-color)" bind:event="click" buttonStyle="solid" color="var(--text-color-1)" customClass="-keyboard-key" data-value="7" size="large" text="7"></li-button>
+                    <li-button block background="var(--darker-bg-color)" bind:event="click" buttonStyle="solid" color="var(--text-color-1)" customClass="-keyboard-key" data-value="8" size="large" text="8"></li-button>
+                    <li-button block background="var(--darker-bg-color)" bind:event="click" buttonStyle="solid" color="var(--text-color-1)" customClass="-keyboard-key" data-value="9" size="large" text="9"></li-button>
+                </col>
+                <col customClass="-keys" span="{{digit?'16':'24'}}">
+                    <li-button block background="var(--darker-bg-color)" bind:event="click" buttonStyle="solid" color="var(--text-color-1)" customClass="-keyboard-key -nmb" data-value="0" size="large" text="0"></li-button>
+                </col>
+                <col customClass="-keys" span="8" wx:if="{{digit}}">
+                    <li-button block background="var(--darker-bg-color)" bind:event="click" buttonStyle="solid" color="var(--text-color-1)" customClass="-keyboard-key -nmb" data-value="." size="large" text="."></li-button>
+                </col>
+            </row>
+        </col>
+        <col customClass="-keys" span="6">
+            <li-button block background="var(--darker-bg-color)" bind:event="click" bind:longpress="clear" buttonStyle="solid" color="var(--text-color-1)" customClass="-keyboard-key -delete" data-value="delete" icon="icon-backspace-outline" size="large"></li-button>
+            <li-button block background="var(--theme-color)" bind:event="click" buttonStyle="solid" color="var(--highlight-color)" customClass="-confirm" data-value="confirm" size="large" text="确定"></li-button>
+        </col>
+    </row>
+</view>

@@ -1,0 +1,363 @@
+Object.defineProperty(exports, "__esModule", {
+    value: !0
+}), exports.default = [ {
+    term: "小寒",
+    hou: "初候",
+    houName: "雁北乡",
+    houDes: "一岁之气，雁凡四候。如十二月雁北乡者，乃大雁，雁之父母也。正月侯雁北者，乃小雁，雁之子也。盖先行者其大，随后者其小也。此说出晋干宝，宋人述之以为的论。"
+}, {
+    term: "小寒",
+    hou: "二候",
+    houName: "鹊始巢",
+    houDes: "鹊知气至，故为来岁之巢。"
+}, {
+    term: "小寒",
+    hou: "三候",
+    houName: "雉雊",
+    houDes: "雊，句姤二音，雉鸣也。雉火畜，感于阳而后有声。"
+}, {
+    term: "大寒",
+    hou: "初候",
+    houName: "鸡乳",
+    houDes: "鸡，水畜也，得阳气而卵育，故云乳。"
+}, {
+    term: "大寒",
+    hou: "二候",
+    houName: "征鸟厉疾",
+    houDes: "征鸟，鹰隼之属，杀气盛极，故猛厉迅疾而善于击也。"
+}, {
+    term: "大寒",
+    hou: "三候",
+    houName: "水泽腹坚",
+    houDes: "阳气未达，东风未至，故水泽正结而坚。"
+}, {
+    term: "立春",
+    hou: "初候",
+    houName: "东风解冻",
+    houDes: "阳和至而坚凝散也。"
+}, {
+    term: "立春",
+    hou: "二候",
+    houName: "蛰虫始振",
+    houDes: "振，动也。"
+}, {
+    term: "立春",
+    hou: "三候",
+    houName: "鱼陟负冰",
+    houDes: "陟，言积，升也，高也。阳气已动，鱼渐上游而近于冰也。"
+}, {
+    term: "雨水",
+    hou: "初候",
+    houName: "獭祭鱼",
+    houDes: "此时鱼肥而出，故獭而先祭而后食。"
+}, {
+    term: "雨水",
+    hou: "二候",
+    houName: "候雁北",
+    houDes: "自南而北也。"
+}, {
+    term: "雨水",
+    hou: "初候",
+    houName: "草木萌动",
+    houDes: "是为可耕之候。"
+}, {
+    term: "惊蛰",
+    hou: "初候",
+    houName: "桃始华",
+    houDes: "阳和发生，自此渐盛。"
+}, {
+    term: "惊蛰",
+    hou: "二候",
+    houName: "仓庚鸣",
+    houDes: "黄鹂也。"
+}, {
+    term: "惊蛰",
+    hou: "三候",
+    houName: "鹰化为鸠",
+    houDes: "鸷鸟也。此时鹰化为鸠，至秋则鸠复化为鹰。"
+}, {
+    term: "春分",
+    hou: "初候",
+    houName: "玄鸟至",
+    houDes: "燕来也。"
+}, {
+    term: "春分",
+    hou: "二候",
+    houName: "雷乃发声",
+    houDes: "雷者阳之声，阳在阴内不得出，故奋激而为雷。"
+}, {
+    term: "春分",
+    hou: "三候",
+    houName: "始电",
+    houDes: "电者阳之光，阳气微则光不见，阳盛欲达而抑于阴。其光乃发，故云始电。"
+}, {
+    term: "清明",
+    hou: "初候",
+    houName: "桐始华",
+    houDes: "桐始华。"
+}, {
+    term: "清明",
+    hou: "二候",
+    houName: "田鼠化为鴽",
+    houDes: "田鼠化为鴽，牡丹华；鴑音如，鹌鹑属，鼠阴类。阳气盛则鼠化为鴽，阴气盛则鴽复化为鼠。"
+}, {
+    term: "清明",
+    hou: "三候",
+    houName: "虹始见",
+    houDes: "虹，音洪，阴阳交会之气，纯阴纯阳则无，若云薄漏日，日穿雨影，则虹见。"
+}, {
+    term: "谷雨",
+    hou: "初候",
+    houName: "萍始生",
+    houDes: "萍始生。"
+}, {
+    term: "谷雨",
+    hou: "二候",
+    houName: "鸣鸠拂其羽",
+    houDes: "鸣鸠拂其羽，飞而两翼相排，农急时也。"
+}, {
+    term: "谷雨",
+    hou: "三候",
+    houName: "戴胜降于桑",
+    houDes: "戴胜降于桑，织网之鸟，一名戴鵀，阵于桑以示蚕妇也，故曰女功兴而戴鵀鸣。"
+}, {
+    term: "立夏",
+    hou: "初候",
+    houName: "蝼蝈鸣",
+    houDes: "蝼蛄也，诸言蚓者非。"
+}, {
+    term: "立夏",
+    hou: "二候",
+    houName: "蚯蚓出",
+    houDes: "蚯蚓阴物，感阳气而出。"
+}, {
+    term: "立夏",
+    hou: "三候",
+    houName: "王瓜生",
+    houDes: "王瓜色赤，阳之盛也。"
+}, {
+    term: "小满",
+    hou: "初候",
+    houName: "苦菜秀",
+    houDes: "火炎上而味苦，故苦菜秀。"
+}, {
+    term: "小满",
+    hou: "二候",
+    houName: "靡草死",
+    houDes: "葶苈之属。"
+}, {
+    term: "小满",
+    hou: "三候",
+    houName: "麦秋至",
+    houDes: "秋者，百谷成熟之期。此时麦熟，故曰麦秋。"
+}, {
+    term: "芒种",
+    hou: "初候",
+    houName: "螳螂生",
+    houDes: "俗名刀螂，说文名拒斧。"
+}, {
+    term: "芒种",
+    hou: "二候",
+    houName: "鹃始鸣",
+    houDes: "鹃，屠畜切，伯劳也。"
+}, {
+    term: "芒种",
+    hou: "三候",
+    houName: "反舌无声",
+    houDes: "百舌，鸟也。"
+}, {
+    term: "夏至",
+    hou: "初候",
+    houName: "鹿角解",
+    houDes: "阳兽也，得阴气而解。"
+}, {
+    term: "夏至",
+    hou: "二候",
+    houName: "蜩始鸣",
+    houDes: "蜩，音蜩，蝉也。"
+}, {
+    term: "夏至",
+    hou: "三候",
+    houName: "半夏生",
+    houDes: "药名也，阳极阴生。"
+}, {
+    term: "小暑",
+    hou: "初候",
+    houName: "温风至",
+    houDes: "温风至。"
+}, {
+    term: "小暑",
+    hou: "二候",
+    houName: "蟋蜂居壁",
+    houDes: "白露降"
+}, {
+    term: "小暑",
+    hou: "三候",
+    houName: "鹰始挚",
+    houDes: "挚，言至，鹰感阴气，乃生杀心，学习击搏之事。"
+}, {
+    term: "大暑",
+    hou: "初候",
+    houName: "腐草为萤",
+    houDes: "离明之极，故幽类化为明类。"
+}, {
+    term: "大暑",
+    hou: "二候",
+    houName: "土润溽暑",
+    houDes: "溽，音辱，湿也。"
+}, {
+    term: "大暑",
+    hou: "三候",
+    houName: "大雨行时",
+    houDes: "大雨行时。"
+}, {
+    term: "立秋",
+    hou: "初候",
+    houName: "凉风至",
+    houDes: "凉风至。"
+}, {
+    term: "立秋",
+    hou: "二候",
+    houName: "白露降",
+    houDes: "白露降。"
+}, {
+    term: "立秋",
+    hou: "三候",
+    houName: "寒蝉鸣",
+    houDes: "蝉小而青赤色者。"
+}, {
+    term: "处暑",
+    hou: "初候",
+    houName: "鹰乃祭鸟",
+    houDes: "鹰，杀鸟。不敢先尝，示报本也。"
+}, {
+    term: "处暑",
+    hou: "二候",
+    houName: "天地始肃",
+    houDes: "清肃也，寨也。"
+}, {
+    term: "处暑",
+    hou: "三候",
+    houName: "禾乃登",
+    houDes: "稷为五谷之长，首熟此时。"
+}, {
+    term: "白露",
+    hou: "初候",
+    houName: "鸿雁来",
+    houDes: "自北而南也。一曰：大曰鸿，小曰雁。"
+}, {
+    term: "白露",
+    hou: "二候",
+    houName: "玄鸟归",
+    houDes: "燕去也。"
+}, {
+    term: "白露",
+    hou: "三候",
+    houName: "群鸟养羞",
+    houDes: "羞，粮食也。养羞以备冬月。"
+}, {
+    term: "秋分",
+    hou: "初候",
+    houName: "雷始收声",
+    houDes: "雷于二月阳中发生，八月阴中收声。"
+}, {
+    term: "秋分",
+    hou: "二候",
+    houName: "蛰虫坯户",
+    houDes: "坯，昔培。坯户，培益其穴中之户窍而将蛰也。"
+}, {
+    term: "秋分",
+    hou: "三候",
+    houName: "水始涸",
+    houDes: "国语曰：辰角见而雨毕，天根见而水涸，雨毕而除道，水涸而成梁。辰角者，角宿也。天根者，氐房之间也。见者，旦见于东方也。辰角见九月本，天根见九月末，本末相去二十一余。"
+}, {
+    term: "寒露",
+    hou: "初候",
+    houName: "鸿雁来宾",
+    houDes: "宾，客也。先至者为主，后至者为宾，盖将尽之谓。"
+}, {
+    term: "寒露",
+    hou: "二候",
+    houName: "雀入大水为蛤",
+    houDes: "飞者化潜，阳变阴也。"
+}, {
+    term: "寒露",
+    hou: "三候",
+    houName: "菊有黄花",
+    houDes: "诸花皆不言，而此独言之，以其华于阴而独盛于秋也。"
+}, {
+    term: "霜降",
+    hou: "初候",
+    houName: "豺乃祭兽",
+    houDes: "孟秋鹰祭鸟，飞者形小而杀气方萌，季秋豺祭兽，走者形大而杀气乃盛也。"
+}, {
+    term: "霜降",
+    hou: "二候",
+    houName: "草木黄落",
+    houDes: "阳气去也。"
+}, {
+    term: "霜降",
+    hou: "三候",
+    houName: "蛰虫咸俯",
+    houDes: "俯，蛰伏也。"
+}, {
+    term: "立冬",
+    hou: "初候",
+    houName: "水始冻",
+    houDes: "水始冰。"
+}, {
+    term: "立冬",
+    hou: "二候",
+    houName: "地始冻",
+    houDes: "地始冻。"
+}, {
+    term: "立冬",
+    hou: "三候",
+    houName: "雉入大水为蜃",
+    houDes: "蜃，蚌属。"
+}, {
+    term: "小雪",
+    hou: "初候",
+    houName: "虹藏不见",
+    houDes: "虹藏不见，季春阳胜阴，故虹见；孟冬阴胜阳，故藏而不见。"
+}, {
+    term: "小雪",
+    hou: "二候",
+    houName: "天气上升",
+    houDes: "天气上升，地气下降。"
+}, {
+    term: "小雪",
+    hou: "三候",
+    houName: "闭塞而成冬",
+    houDes: "阳气下藏地中，阴气闭固而成冬。"
+}, {
+    term: "大雪",
+    hou: "初候",
+    houName: "鹖鴠不鸣",
+    houDes: "鹖鴠，音曷旦，夜鸣求旦之鸟，亦名寒号虫，乃阴类而求阳者，兹得一阳之生，故不鸣矣。"
+}, {
+    term: "大雪",
+    hou: "二候",
+    houName: "虎始交",
+    houDes: "虎本阴类。感一阳而交也。"
+}, {
+    term: "大雪",
+    hou: "三候",
+    houName: "荔挺出",
+    houDes: "荔，一名马蔺，叶似蒲而小，根可为刷。"
+}, {
+    term: "冬至",
+    hou: "初候",
+    houName: "蚯蚓结",
+    houDes: "阳气未动，屈首下向，阳气已动，回首上向，故屈曲而结。"
+}, {
+    term: "冬至",
+    hou: "二候",
+    houName: "麇角解",
+    houDes: "阴兽也。得阳气而解。"
+}, {
+    term: "冬至",
+    hou: "三候",
+    houName: "水泉动",
+    houDes: "水泉动，天一之阳生也。"
+} ];

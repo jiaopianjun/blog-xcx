@@ -1,0 +1,18 @@
+<view bindtap="{{mode==='common'?'event':''}}" class="cell {{first?'-first':''}} {{last?'-last':''}} {{noBorderBottom?'_no-border-bottom':''}}" data-index="{{index}}" hoverClass="{{mode!=='switch'?'_hover':''}}">
+    <view class="-icon" wx:if="{{icon}}">
+        <text class="iconfont {{icon}}"></text>
+    </view>
+    <view class="-name _text-overflow">{{name}}</view>
+    <view class="-right-icon" wx:if="{{mode!=='switch'&&rightIcon}}">
+        <text class="iconfont {{rightIcon}}"></text>
+    </view>
+    <view class="-arraw" wx:if="{{mode!=='switch'&&rightIcon===''}}">
+        <text class="iconfont icon-arrow-ios-forward-ou"></text>
+    </view>
+    <view class="-switch" wx:if="{{mode==='switch'}}">
+        <my-switch bind:event="event" state="{{state}}"></my-switch>
+    </view>
+    <button bindcontact="event" binderror="event" bindgetphonenumber="event" bindgetuserinfo="event" bindlaunchapp="event" bindopensetting="event" class="_open-type-btn" openType="{{openType}}" wx:if="{{mode==='openType'}}"></button>
+    <view class="_clear"></view>
+    <view class="-description" wx:if="{{description}}">{{description}}</view>
+</view>

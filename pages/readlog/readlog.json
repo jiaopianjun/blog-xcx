@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "scan-login": "/components/scan-login/scan-login"
+  }
+}

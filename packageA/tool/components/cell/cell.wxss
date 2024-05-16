@@ -1,0 +1,66 @@
+.cell {
+    position: relative;
+    line-height: 30px;
+    border-bottom: 1px solid var(--normal-bd-color);
+    padding: 10px 0;
+}
+
+.cell .-icon {
+    margin-right: 5px;
+    vertical-align: center;
+    font-size: 18px;
+}
+
+.cell .-icon,.cell .-name {
+    position: relative;
+    line-height: 30px;
+    height: 30px;
+    float: left;
+}
+
+.cell .-name {
+    font-size: 14px;
+    width: calc(100% - 70px);
+}
+
+.cell .-arraw,.cell .-right-icon {
+    font-size: 18px;
+    line-height: 30px;
+    height: 30px;
+    position: relative;
+    float: right;
+}
+
+.cell .-switch {
+    position: relative;
+    float: right;
+    top: 5px;
+}
+
+.cell .-description {
+    font-size: 12px;
+    line-height: 20px;
+    color: var(--light-text-color);
+    text-align: left;
+}
+
+.cell.-first {
+    padding-top: 0;
+}
+
+.cell.-last {
+    padding-bottom: 0;
+}
+
+.cell._no-border-bottom {
+    border-bottom: 0;
+}
+
+._open-type-btn {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}

@@ -1,0 +1,87 @@
+::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+    color: transparent;
+}
+
+.li-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: 0;
+}
+
+.li-content .-refresher {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity: 0;
+    position: relative;
+    z-index: 0;
+}
+
+.li-content .-navigation-space {
+    position: relative;
+    width: 100%;
+    height: var(--navigation-height);
+}
+
+.li-content .-main {
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    min-height: var(--content-height);
+}
+
+.li-content .-main.-padding {
+    padding: var(--large-spacing);
+    box-sizing: border-box;
+}
+
+.li-content .-tabbar-space {
+    position: relative;
+    width: 100%;
+    height: var(--tabbar-height);
+}
+
+.li-content .-scrollbar {
+    --content-scrollbar-background: rgba(0,0,0,0.5);
+    top: 0;
+    position: fixed;
+    width: 3px;
+    background: var(--content-scrollbar-background);
+    border-radius: 3px;
+    transition: right .3s;
+    right: -3px;
+    will-change: tranform;
+}
+
+.li-content .-scrollbar.-active {
+    right: 2px;
+}
+
+.top-scrollbar {
+    --content-scrollbar-background: var(--theme-color);
+    position: fixed;
+    width: 0;
+    height: 2px;
+    background: var(--content-scrollbar-background);
+    border-radius: 3px;
+    transition: right .3s;
+    transition: opacity .3s;
+    z-index: 9999;
+    opacity: 0;
+    will-change: scroll-position;
+}
+
+.top-scrollbar.-top {
+    top: 0;
+}
+
+.top-scrollbar.-active {
+    opacity: 1;
+}

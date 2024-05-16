@@ -1,0 +1,951 @@
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+  height: 0;
+  visibility: hidden;
+  clear: both;
+}
+p
+
+.head {
+  position: relative;
+  color: #374646;
+  padding: 20rpx 30rpx 0;
+  margin-bottom: 50rpx;
+}
+
+.head .slgan {
+  border-top: 8rpx solid #374646;
+  border-bottom: 8rpx solid #374646;
+  display: flex;
+  height: 150rpx;
+  align-items: center;
+}
+
+.head .slgan .logoTitle {
+  line-height: 50rpx;
+  font-size: 60rpx;
+  height: 50rpx;
+}
+
+.head .slgan .slganIcon {
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 10rpx;
+}
+
+.head .slgan .date {
+  flex: 2;
+  font-size: 30rpx;
+  text-align: right;
+  line-height: 1.5;
+}
+
+.head .weather {
+  margin-top: 55rpx;
+  font-size: 26rpx;
+  line-height: 40rpx;
+  text-align: center;
+  background: orange;
+  color: #fff;
+  padding: 10rpx;
+  border-radius: 6rpx;
+}
+
+.newsList {
+  position: relative;
+  height: auto;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 30rpx;
+  background: #fff;
+}
+.newsList .list {
+  position: relative;
+  font-size: 30rpx;
+  color: #374646;
+  padding-left: 36rpx;
+  margin-bottom: 30rpx;
+  padding-bottom: 30rpx;
+  line-height: 1.4;
+}
+
+.newsList .list::before {
+  position: absolute;
+  left: 0;
+  top: 10rpx;
+  content: '';
+  width: 14rpx;
+  height: 14rpx;
+  background: #fff;
+  border-radius: 50%;
+  border: 5rpx solid #374646;
+}
+
+.list:last-child {
+  border: 0;
+  margin: 0;
+}
+
+.pic {
+  padding: 0;
+  background: #DF6D4F;
+  text-align: center;
+}
+
+.pic image {
+  width: 100%;
+}
+
+.load {
+  min-height: 100vh;
+  background-color: #374646;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  position: relative;
+}
+.load .msg {
+  font-size: 26rpx;
+  color: #ffab91;
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  transform: translate(-50%, -55%);
+}
+
+.load .btn {
+  width: 220rpx;
+  height: 40rpx;
+  border: 1rpx solid #F64B25;
+  font-size: 24rpx;
+  padding: 20rpx;
+  color: #F64B25;
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -55%);
+}
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes configure-clockwise {
+  0% {
+    transform: rotate(0);
+  }
+
+  25% {
+    transform: rotate(90deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  75% {
+    transform: rotate(270deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes configure-xclockwise {
+  0% {
+    transform: rotate(45deg);
+  }
+
+  25% {
+    transform: rotate(-45deg);
+  }
+
+  50% {
+    transform: rotate(-135deg);
+  }
+
+  75% {
+    transform: rotate(-225deg);
+  }
+
+  100% {
+    transform: rotate(-315deg);
+  }
+}
+
+@keyframes pulse {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  to {
+    opacity: .25;
+    transform: scale(.75);
+  }
+}
+
+
+.spinner-box {
+  width: 300rpx;
+  height: 300rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -40%);
+}
+
+
+.circle-border {
+  width: 150rpx;
+  height: 150rpx;
+  padding: 3rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: rgb(63, 249, 220);
+  background: linear-gradient(0deg, rgba(63, 249, 220, 0.1) 33%, rgba(63, 249, 220, 1) 100%);
+  animation: spin .8s linear 0s infinite;
+}
+
+.circle-core {
+  width: 100%;
+  height: 100%;
+  background-color: #37474f;
+  border-radius: 50%;
+}
+
+.configure-border-1 {
+  width: 230rpx;
+  height: 230rpx;
+  padding: 6rpx;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffab91;
+  animation: configure-clockwise 3s ease-in-out 0s infinite alternate;
+}
+
+.configure-border-2 {
+  width: 230rpx;
+  height: 230rpx;
+  padding: 6rpx;
+  /* left: -230px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(63, 249, 220);
+  transform: rotate(45deg);
+  animation: configure-xclockwise 3s ease-in-out 0s infinite alternate;
+}
+
+.configure-core {
+  width: 100%;
+  height: 100%;
+  background-color: #37474f;
+}
+
+
+
+
+
+
+
+/* .clearfix {*zoom: 1;} */
+.clearfix:before, 
+.clearfix:after{
+  content:"";
+  display:table;
+  height:0;
+  visibility:hidden;
+  clear:both;
+}
+.index{
+  position: relative;
+  width: auto;
+  height: auto;
+  margin:0 auto;
+  user-select: none;
+}
+.main{
+  position: relative;
+  width: 720rpx;
+  height: auto;
+  margin:0 auto;
+  background:#C4CFD9;
+  color:#666;
+  padding:20rpx 15rpx;
+}
+.load{
+  background: #FFE57B;
+  padding:0;
+  width: 750rpx;
+  min-height: 750rpx;
+}
+.index .homePage{
+  position: relative;
+  width:100%;
+  height: auto;
+}
+
+.air,
+.life,
+.aqi,
+.daily,
+.hourly,
+.opt{
+  width: 644rpx;
+  margin:0 auto;
+  margin-bottom: 40rpx;
+  background: #fff;
+  padding:30rpx;
+  border-radius: 8rpx;
+}
+.onlocation{
+  font-size: 30rpx;
+  color: rgba(60,95,129,0.7);
+  margin-bottom: 12rpx;
+}
+.updatetime{
+  font-size: 22rpx;
+  color: rgba(60,95,129,0.7);
+}
+/*实时天气*/
+.homePage .air{
+  min-height: 350rpx;
+}
+.air .airpic{
+  position: relative;
+  height: 200rpx;
+}
+.air .airpic .img{
+  width: 200rpx;
+  height: 200rpx;
+  position: absolute;
+  right: 0rpx;
+  top:0rpx;
+}
+.air .airpic .img.sunshine{
+  animation: round 2s infinite;
+  transition: all .3s linear;
+}
+@keyframes round {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(180deg);
+  }
+}
+.air .airhourly{
+  font-size: 100rpx;
+  color:#3C5F81;
+}
+.air .airhourly .c{
+  font-size: 70rpx;
+}
+.air .airdetail{
+  font-size: 35rpx;
+  padding-left:8rpx;
+  word-spacing: 12rpx; 
+  margin:10rpx 0 10rpx 0;
+  color:#3C5F81;
+}
+.air .airpredict{
+  font-size: 25rpx;
+  word-spacing: 12rpx; 
+  margin-top:20rpx;
+}
+
+/*生活指数*/
+.life .boxcont{
+  border:1rpx solid rgba(60,95,129,0.5);
+}
+.life .box{
+  float: left;
+  width: 212rpx;
+  height: 212rpx;
+  text-align: center;
+}
+.life .box:nth-child(3n + 1),
+.life .box:nth-child(3n + 2){
+  border-right:1rpx solid rgba(60,95,129,0.5);
+  border-bottom:1rpx solid rgba(60,95,129,0.5);
+}
+.life .box:nth-child(3n + 3){
+  border-bottom:1rpx solid rgba(60,95,129,0.5);
+}
+
+.life .box:last-child{
+  border-bottom: none;
+}
+
+.life .box .text{
+  display: inline-block;
+  width: 90%;
+  text-align: center;
+  line-height: 2;
+  font-size: 26rpx;
+}
+.life .box .boxname{
+  font-size: 23rpx;
+  color:#3C5F81;
+}
+.life .box .img{
+  margin-top:20rpx;
+  width: 80rpx;
+  height: 80rpx;
+}
+/*空气质量*/
+.aqi{
+  min-height: 40rpx;
+  overflow: hidden;
+  overflow-x:auto;
+}
+.aqi .aqiInfo{
+  width: 100%;
+  max-height: 100rpx;
+  font-size: 24rpx;
+}
+/*提示*/
+.tips{
+  font-size: 30rpx;
+  color:#3C5F81;
+  margin-bottom: 15rpx;
+}
+
+/*七天预报*/
+.daily .list{
+  display: flex;
+  box-sizing: border-box;
+  height: 100rpx;
+  padding:0 2%;
+  line-height: 100rpx;
+  border-bottom: 1rpx solid #fff;
+  margin:0 auto;
+  background:rgba(60,95,129,0.1);
+  border-radius: 5rpx;
+}
+.daily .list .time{
+  width: 41%;
+  font-size: 12px;
+}
+.daily .list .status{
+  position: relative;
+  width: 36%;
+  text-align: center;
+  font-size: 12px;
+}
+.daily .list .status .img{
+  position: relative;
+  width: 50rpx;
+  height: 50rpx;
+  display: inline-block;
+  top: 17rpx;
+  margin-right: 4rpx;
+}
+.daily .list .wd{
+  width: 23%;
+  text-align: right;
+  font-size: 12px;
+}
+.daily .more{
+  width: 80%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 29rpx;
+  background:rgba(60,95,129,0.5);
+  margin:30rpx auto;
+  border-radius: 40rpx;
+  color:#fff;
+}
+
+/*24小时预报*/
+.hourly .cont{
+  width: 100%;
+  max-height: 240rpx;
+  overflow: hidden;
+  overflow-x: auto;
+}
+.cont .contbox{
+  height: 100%;
+  width: 2400rpx;
+  white-space: nowrap;
+}
+.contlist{
+  float: left;
+  width: 100rpx;
+  height: 240rpx;
+}
+.contlist .contlistTime,
+.contlist .contlistPic,
+.contlist .contlistTemp{
+  font-size: 28rpx;
+  line-height: 60rpx;
+  height: 60rpx;
+  text-align: center;
+}
+.contlist .contlistPic .img{
+  width: 50rpx;
+  height: 50rpx;
+}
+/*设置*/
+.opt{
+  text-align: center;
+  height: 80rpx;
+}
+.opt .btn{
+  display: inline-block;
+  margin:0 50rpx;
+  width: 80rpx;
+  height: 80rpx;
+  padding:0;
+  border:none;
+  background:none;
+}
+.opt .btn .img{
+  width: 80rpx;
+  height: 80rpx;
+}
+
+/*选择地区*/
+.selectArea,
+.detailPage{
+  position: relative;
+  width: 720rpx;
+  height: auto;
+  padding: 20rpx 0;
+}
+.nomargin{
+  margin-top: 0;
+}
+.selectArea{
+  background: #fff;
+  border-radius: 5rpx;
+}
+.selectAreaBox{
+  width:680rpx;
+  margin:0 auto;
+}
+.selectArea .input{
+  position: relative;
+  width: 680rpx;
+  height: 100rpx;
+  margin-bottom:40rpx;
+}
+.input .imgicon{
+  position: absolute;
+  left: 17rpx;
+  top: 21rpx;
+  width: 48rpx;
+  height: 48rpx;
+} 
+.input .clear{
+  position: absolute;
+  right: 97rpx;
+  top: 0rpx;
+  width: 87rpx;
+  height: 90rpx;
+} 
+.input .clear .clearicon{
+  position: absolute;
+  top:21rpx;
+  right: 10rpx;
+  width: 48rpx;
+  height: 48rpx;
+}
+.input .sureBtn{
+  position: relative;
+  width: 96rpx;
+  height: 92rpx;
+  background: rgba(60,95,129,1);
+  float: left;
+}
+.sureBtn .sureicon{
+  position: absolute;
+  left:50%;
+  top:50%;
+  transform: translate(-50%,-50%);
+  width: 48rpx;
+  height: 48rpx;
+}
+.selectArea .input .Jinput{
+  float: left;
+  width: 416rpx;
+  padding: 0rpx 85rpx 0 80rpx;
+  height: 88rpx;
+  border: 2rpx solid rgba(60,95,129,0.5);
+  font-size: 28rpx;
+}
+.selectArea .hisCity{
+  margin-bottom: 40rpx;
+  padding: 0 20rpx;
+}
+.selectArea .recCity{
+  padding: 0 20rpx;
+}
+.selectArea .recCityBtn,
+.selectArea .hisCityBtn{
+  display: inline-block;
+  padding:10rpx 25rpx;
+  min-height: 45rpx;
+  line-height: 45rpx;
+  font-size: 25rpx;
+  border:2rpx solid #999;
+  border-radius: 4rpx;
+  margin:10rpx;
+  color:#999;
+}
+.getLocation .getLocationimg{
+  position: relative;
+  top:5rpx;
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+}
+
+/*详情*/
+.detailPage .onDetail,
+.detailPage .aqiDetail,
+.detailPage .lifeDetail{
+  background: #fff;
+  border-radius: 5rpx;
+  margin-bottom: 25rpx;
+  padding:25rpx;
+}
+.onDetail .li,
+.aqiDetail .li{
+  float: left;
+  width: 290rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 27rpx;
+}
+.onDetail .li:nth-child(2n),
+.aqiDetail .li:nth-child(2n){
+  float: right;
+}
+
+.onDetail .li view,
+.aqiDetail .li view{
+  float: left;
+  width: 50%;
+  height: 60rpx;
+  color: #999;
+}
+.onDetail .li view.livalue,
+.aqiDetail .li view.livalue,
+.cardTime .li .livalue{
+  text-align: right;
+  color:rgba(29, 53, 76, 0.7);
+}
+.aqiDetail .li .liname{
+  width: 80%
+}
+.aqiDetail .li view.livalue{
+  width: 20%;
+}
+
+.lifeDetail .lifecard{
+  min-height: 60rpx;
+  font-size: 27rpx;
+  margin-bottom: 20rpx;
+  padding: 20rpx;
+  background: rgba(181, 212, 243, 0.3);
+}
+.lifecard .lifecardname{
+  height: 100%;
+}
+.lifeDetail .lifecard:last-child{
+  border-bottom: none;
+  margin-bottom: 0;
+}
+.lifecardname text{
+  color:rgba(29, 53, 76, 0.7);
+}
+.lifecard .lifecarddetail{
+  height: 100%;
+  margin-top: 15rpx;
+  color:rgba(29, 53, 76, 0.7);
+}
+
+
+/*多日天气预报*/
+.dailyDetail .card{
+  background: #fff;
+  border-radius: 5rpx;
+  margin-bottom: 25rpx;
+  padding:25rpx;
+}
+.card .time{
+  font-size: 12px;
+  height: 35rpx;
+}
+.card .time view{
+  float: left;
+  width: 50%;
+  height: 35rpx;
+}
+.card .time view:last-child{
+  float: right;
+  text-align: right;
+}
+.cardTime{
+  padding:15rpx;   
+  background: rgba(181, 212, 243, 0.3);
+  margin-top: 25rpx;
+}
+.cardTime .tips{
+  font-size: 27rpx;
+}
+.cardTime .li{
+  width: 46%;
+  float: left;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 26rpx;
+  color:#999;
+}
+.cardTime .li view{
+  float: left;
+  width: 50%;
+  height: 40rpx;
+  line-height: 40rpx;
+}
+.cardTime .li:nth-child(2n){
+  float: right;
+}
+.cardTime .li view.livalue{
+  text-align: right;
+}
+
+/*返回*/
+.back{
+  position: relative;
+  /* top:20rpx; */
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  background: #fff;
+  box-shadow: 1rpx 5rpx 10rpx rgba(0,0,0,0.2);
+  /* left:50%;
+  transform: translate(-50%,0); */
+  z-index: 8;
+  margin-bottom: 20rpx;
+}
+.back .backIcon{
+  height: 100rpx;
+  width: 80rpx;
+  text-align: center;
+}
+.back .backIcon .img{
+  display: inline-block;
+  margin-top:25rpx;
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.loading{
+  position: relative;
+}
+.loading .loadingimg{
+  position: absolute;
+  top:45%;
+  width: 100%;
+  height: 530rpx;
+  transform: translate(0,-50%);
+}
+.loading .text{
+  width: 100%;
+  text-align: center;
+  color:#fff;
+  font-size: 30rpx;
+  position: absolute;
+  top:70%;
+  transform: translate(0,-50%);
+  letter-spacing: 10rpx;
+}
+
+.loading .btn{
+  position: absolute;
+  top:78%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  border:2rpx solid #fff;
+  color:#fff;
+  padding:20rpx 40rpx;
+  width: 150rpx;
+  min-height: 50rpx;
+  font-size: 30rpx;
+  line-height: 50rpx;
+  /*margin:0 auto;*/
+  text-align: center;
+}
+
+.savepic{
+  position: relative;
+  bottom: 40rpx;
+  right: 40rpx;
+  width: 100rpx;
+  height: 100rpx;
+  background: green;
+  color: #fff;
+  text-align: center;
+  line-height: 100rpx;
+  z-index: 12;
+  border-radius: 50%;
+  font-size: 25rpx;
+  text-decoration: none;
+}
+canvasdrawer{
+  opacity: 0;
+}
+.saveimage{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top:0;
+  left:0;
+  background: rgba(0,0,0,0.5);
+  z-index: 18
+}
+.saveimage .saveimageCont{
+  position: absolute;
+  left:50%;
+  top:10rpx;
+  transform: translate(-50%,0);
+  width: 680rpx;
+  height: 100%;
+  background: rgba(60,95,129,0.2);
+  overflow: hidden;
+  overflow-y:auto;
+  box-shadow: 2rpx 2rpx 20rpx rgba(60,95,129,0.2);
+}
+.saveimage .saveimageCont image{
+  width: 680rpx;
+  max-height:2220rpx;
+}
+
+.saveimage .picbox{
+  width:100%;
+  height:910rpx;
+  background: #fff;
+}
+
+.saveimage .tips{
+  position: absolute;
+  display: inline-block;
+  width: 300rpx;
+  height: 40rpx;
+  background: #fff;
+  color:#000;
+  text-align: center;
+  line-height: 40rpx;
+  bottom: 150rpx;
+  left:50%;
+  margin-left:-150rpx;
+}
+.saveimage .saveClose{
+  position: absolute;
+  bottom: 50rpx;
+  left:50%;
+  margin-left: -32rpx;
+  display: inline-block;
+  width: 64rpx;
+  height: 64rpx;
+}
+.saveimage .saveClose image{
+  width: 64rpx;
+  height: 64rpx;
+}
+.keep{
+  position:fixed;
+  bottom:30rpx;
+  /* width:382rpx; */
+  padding:0 40rpx;
+  height:80rpx;
+  left:50%;
+  transform: translate(-50%,0);
+  border-radius:40rpx;
+  background-color:#3C5F81;
+  border:3px solid #fff;
+  box-sizing: border-box;
+  font-size:30rpx;
+  font-family: PingFang-SC-Medium;
+  color:#fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.keep2{
+  bottom:140rpx;
+}
+
+.saveimage .loading {
+  width:100%;
+  height: 100%;
+  position: fixed;
+  background: #FFE57B;
+  top:0;
+  left:0;
+  z-index:99;
+}
+.saveimage .loading image{
+  width: 800rpx;
+  height: 600rpx;
+  position: absolute;
+  left:50%;
+  top:50%;
+  transform: translate(-50%,-50%)
+}
+button::after{
+  border: none;
+}
+
+.public{
+  position: fixed;
+  top:0;
+  height: 150rpx;
+  margin-bottom: 20rpx;
+  border:25rpx solid #C4CFD9;
+  line-height: 150rpx;
+  z-index: 10;
+  width: 100%;
+  box-sizing: border-box;
+  background: #fff;
+}
+.public text{
+  display: block;
+  float: left;
+  width: 40%;
+  height: 100%;
+  line-height: 100rpx;
+  padding-left:15rpx;
+  color:#999;
+}
+.public .watch{
+  float: right;
+  width: 200rpx;
+  height: 80%;
+  font-size: 34rpx;
+  text-align: center;
+  background: #FFE57B;
+  color:#999;
+  margin:10rpx;
+}

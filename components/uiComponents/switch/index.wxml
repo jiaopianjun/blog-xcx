@@ -1,0 +1,16 @@
+<view catchtap="{{!disabled&&!loading?'event':''}}" class="li-switch custom-class -normal {{block?'-block':''}} {{round?'-round':''}}" style="{{checkedBackgroundColor?'--switch-checked-background-color:'+checkedBackgroundColor+';':''}}{{uncheckedBackgroundColor?'--switch-unchecked-background-color:'+uncheckedBackgroundColor+';':''}}{{checkedDotColor?'--switch-checked-dot-color:'+checkedDotColor+';':''}}{{uncheckedDotColor?'--switch-unchecked-dot-color:'+uncheckedDotColor+';':''}}{{checkedBorderColor?'--switch-checked-border-color:'+checkedBorderColor+';':''}}{{uncheckedBorderColor?'--switch-unchecked-border-color:'+uncheckedBorderColor+';':''}}{{checkedTextColor?'--switch-checked-text-color:'+checkedTextColor+';':''}}{{uncheckedTextColor?'--switch-unchecked-text-color:'+uncheckedTextColor+';':''}}{{height?'--switch-height:'+height+';':''}}{{width?'--switch-width:'+width+';':''}}" wx:if="{{type=='normal'}}">
+    <view class="-disabled" wx:if="{{disabled}}"></view>
+    <view class="-background {{checked?'-active':''}} {{border?'-border':''}}"></view>
+    <view class="-dot {{checked?'-active':''}}">
+        <text class="-icon iconfont {{checked?checkedIcon:uncheckedIcon}}" wx:if="{{!disabled&&!loading&&(checkedIcon||uncheckedIcon)}}"></text>
+        <li-loading thin customClass="-switch-loading" wx:if="{{loading}}"></li-loading>
+    </view>
+</view>
+<view catchtap="{{!disabled&&!loading?'event':''}}" class="li-switch custom-class -material {{block?'-block':''}} {{round?'-round':''}}" style="{{checkedColor?'--switch-checked-color:'+checkedColor+';':''}}{{uncheckedColor?'--switch-unchecked-color:'+uncheckedColor+';':''}}{{checkedTextColor?'--switch-checked-text-color:'+checkedTextColor+';':''}}{{uncheckedTextColor?'--switch-unchecked-text-color:'+uncheckedTextColor+';':''}}{{height?'--switch-height:'+height+';':''}}{{width?'--switch-width:'+width+';':''}}" wx:if="{{type=='material'}}">
+    <view class="-background {{checked?'-active':''}}" style="{{color?'border:1px solid '+color:''}}"></view>
+    <view class="-dot {{checked?'-active':''}}" style="{{color?'background:'+color:''}}">
+        <text class="-disabled-icon iconfont icon-slash-outline" wx:if="{{disabled}}"></text>
+        <text class="-icon iconfont {{checked?checkedIcon:uncheckedIcon}}" wx:if="{{!disabled&&!loading&&(checkedIcon||uncheckedIcon)}}"></text>
+        <li-loading thin customClass="-switch-loading" wx:if="{{loading}}"></li-loading>
+    </view>
+</view>

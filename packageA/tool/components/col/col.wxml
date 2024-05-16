@@ -1,0 +1,6 @@
+<view class="{{utils.bem( 'col',[span] )}} {{offset?'col-offset-'+offset:''}}" style="{{style}}">
+    <view class="custom-class">
+        <slot></slot>
+    </view>
+</view>
+<wxs module="utils" src="../wxs/utils.wxs" />

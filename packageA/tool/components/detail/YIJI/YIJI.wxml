@@ -1,0 +1,21 @@
+<view wx:if="{{!refresh}}">
+    <view class="yiji -yi">
+        <view class="-title">宜</view>
+        <view class="_clear"></view>
+        <view class="-content">
+            <view class="yiji-item yiji-item-yi" wx:for="{{li.huangli.yiji.yi}}">{{li.huangli.yiji.yi.length<=0||li.huangli.yiji.yi[0]==''?'暂无':item}}</view>
+            <view class="_clear"></view>
+        </view>
+    </view>
+    <view class="yiji -ji">
+        <view class="-title">忌</view>
+        <view class="_clear"></view>
+        <view class="-content">
+            <view class="yiji-item yiji-item-ji" wx:for="{{li.huangli.yiji.ji}}">{{li.huangli.yiji.ji.length<=0||li.huangli.yiji.ji[0]==''?'暂无':item}}</view>
+            <view class="_clear"></view>
+        </view>
+    </view>
+</view>
+<view class="loading" wx:if="{{refresh}}">
+    <my-loading></my-loading>
+</view>

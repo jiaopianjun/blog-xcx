@@ -1,0 +1,16 @@
+<view class="li-loading custom-class {{block?'-block':''}} {{'-'+type}}" style="{{size&&(type=='circle'||type=='dot-rotate'||type=='cube-blink')?'--loading-size:'+size+';':''}}{{color?'--loading-color:'+color+';':''}}{{textSize?'--text-size:'+textSize+';':''}}{{textColor?'--loading-text-color:'+textColor+';':''}}{{weight<=0?'--loading-border-width:2px;':'--loading-border-width:'+weight+';'}}">
+    <view class="-circle" wx:if="{{type=='circle'}}"></view>
+    <view class="-dot-rotate" wx:if="{{type=='dot-rotate'}}">
+        <view></view>
+        <view></view>
+        <view></view>
+        <view></view>
+    </view>
+    <view class="-cube-blink" wx:if="{{type=='cube-blink'}}">
+        <view></view>
+        <view></view>
+        <view></view>
+        <view></view>
+    </view>
+    <view class="-text text-class {{vertical?'-vertical':'-horizontal'}}" wx:if="{{text}}">{{text}}</view>
+</view>

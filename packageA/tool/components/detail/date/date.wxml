@@ -1,0 +1,27 @@
+<view wx:if="{{!refresh}}">
+    <view class="today-day">
+        <view class="today-day-text">{{li.yangli.date.num.day}}</view>
+        <view class="today-day-corner" wx:if="{{li.yangli.date.num.day==1}}">st</view>
+        <view class="today-day-corner" wx:elif="{{li.yangli.date.num.day==2}}">nd</view>
+        <view class="today-day-corner" wx:elif="{{li.yangli.date.num.day==3}}">rd</view>
+        <view class="today-day-corner" wx:else>th</view>
+    </view>
+    <view class="today-date">{{li.yangli.date.num.year}}年{{li.yangli.date.num.month}}月 {{li.yangli.date.zh.week}}</view>
+    <view class="today-date-cn">
+        <text class="today-date-cn-text">农历{{li.nongli.date.zh.month}}{{li.nongli.date.zh.day}}</text>
+        <text class="today-date-cn-animal">{{li.nongli.animals}}年</text>
+    </view>
+    <view class="today-date-ganzhi">
+        <text class="today-date-cn-item">{{li.ganzhili.year}}年</text>
+        <text class="today-date-cn-item">{{li.ganzhili.month}}月</text>
+        <text class="today-date-cn-item">{{li.ganzhili.day}}日</text>
+    </view>
+    <view class="today-date-other">
+        <text class="today-date-cn-item">{{li.yangli.astro}}</text>
+        <text class="today-date-cn-item">第{{li.yangli.weeksAndDays.weeks}}周</text>
+        <text class="today-date-cn-item">第{{li.yangli.weeksAndDays.days}}天</text>
+    </view>
+</view>
+<view class="loading" wx:if="{{refresh}}">
+    <my-loading></my-loading>
+</view>

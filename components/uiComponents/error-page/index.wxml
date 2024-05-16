@@ -1,0 +1,11 @@
+<view class="error-page custom-class" style="{{cancelButtonBackground?'--cancel-button-background:'+cancelButtonBackground+';':''}}{{cancelButtonColor?'--cancel-button-color:'+cancelButtonColor+';':''}}{{confirmButtonBackground?'--confirm-button-background:'+confirmButtonBackground+';':''}}{{confirmButtonColor?'--confirm-button-color:'+confirmButtonColor+';':''}}">
+    <view class="-content">
+        <view class="-icon">
+            <text class="iconfont {{icon}}"></text>
+        </view>
+        <view class="-title">{{title}}</view>
+        <li-button block round background="var(--cancel-button-background)" bind:event="cancel" color="var(--cancel-button-color)" customClass="-button -cancel {{confirmButton?'-half':-full}}" openType="{{cancelButtonOpenType}}" size="large" text="{{cancelButtonText}}" wx:if="{{cancelButton}}"></li-button>
+        <li-button block round background="var(--confirm-button-background)" bind:event="confirm" color="var(--confirm-button-color)" customClass="-button -confirm {{cancelButton?'-half':-full}}" openType="{{confirmButtonOpenType}}" size="large" text="{{confirmButtonText}}" wx:if="{{confirmButton}}"></li-button>
+        <view class="_clear"></view>
+    </view>
+</view>

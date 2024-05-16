@@ -1,0 +1,263 @@
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+  height: 0;
+  visibility: hidden;
+  clear: both;
+}
+
+.head {
+  position: relative;
+  color: #374646;
+  padding: 20rpx 30rpx 0;
+  margin-bottom: 50rpx;
+}
+
+.head .slgan {
+  border-top: 8rpx solid #374646;
+  border-bottom: 8rpx solid #374646;
+  display: flex;
+  height: 150rpx;
+  align-items: center;
+}
+
+.head .slgan .logoTitle {
+  line-height: 50rpx;
+  font-size: 60rpx;
+  height: 50rpx;
+}
+
+.head .slgan .slganIcon {
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 10rpx;
+}
+
+.head .slgan .date {
+  flex: 2;
+  font-size: 30rpx;
+  text-align: right;
+  line-height: 1.5;
+}
+
+.head .weather {
+  margin-top: 55rpx;
+  font-size: 26rpx;
+  line-height: 40rpx;
+  text-align: center;
+  background: orange;
+  color: #fff;
+  padding: 10rpx;
+  border-radius: 6rpx;
+}
+
+.newsList {
+  position: relative;
+  height: auto;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 30rpx;
+  background: #fff;
+}
+.newsList .list {
+  position: relative;
+  font-size: 30rpx;
+  color: #374646;
+  padding-left: 36rpx;
+  margin-bottom: 20rpx;
+  padding-bottom: 20rpx;
+  line-height: 1.4;
+}
+
+.newsList .list::before {
+  position: absolute;
+  left: 0;
+  top: 10rpx;
+  content: '';
+  width: 14rpx;
+  height: 14rpx;
+  background: #fff;
+  border-radius: 50%;
+  border: 5rpx solid #374646;
+}
+
+.list:last-child {
+  border: 0;
+  margin: 0;
+}
+
+.pic {
+  padding: 0;
+  background: #DF6D4F;
+  text-align: center;
+}
+
+.pic image {
+  width: 100%;
+}
+
+.load {
+  min-height: 100vh;
+  background-color: #374646;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  position: relative;
+}
+.load .msg {
+  font-size: 26rpx;
+  color: #ffab91;
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  transform: translate(-50%, -55%);
+}
+
+.load .btn {
+  width: 220rpx;
+  height: 40rpx;
+  border: 1rpx solid #F64B25;
+  font-size: 24rpx;
+  padding: 20rpx;
+  color: #F64B25;
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -55%);
+}
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes configure-clockwise {
+  0% {
+    transform: rotate(0);
+  }
+
+  25% {
+    transform: rotate(90deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  75% {
+    transform: rotate(270deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes configure-xclockwise {
+  0% {
+    transform: rotate(45deg);
+  }
+
+  25% {
+    transform: rotate(-45deg);
+  }
+
+  50% {
+    transform: rotate(-135deg);
+  }
+
+  75% {
+    transform: rotate(-225deg);
+  }
+
+  100% {
+    transform: rotate(-315deg);
+  }
+}
+
+@keyframes pulse {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  to {
+    opacity: .25;
+    transform: scale(.75);
+  }
+}
+
+
+.spinner-box {
+  width: 300rpx;
+  height: 300rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -40%);
+}
+
+
+.circle-border {
+  width: 150rpx;
+  height: 150rpx;
+  padding: 3rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: rgb(63, 249, 220);
+  background: linear-gradient(0deg, rgba(63, 249, 220, 0.1) 33%, rgba(63, 249, 220, 1) 100%);
+  animation: spin .8s linear 0s infinite;
+}
+
+.circle-core {
+  width: 100%;
+  height: 100%;
+  background-color: #37474f;
+  border-radius: 50%;
+}
+
+.configure-border-1 {
+  width: 230rpx;
+  height: 230rpx;
+  padding: 6rpx;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffab91;
+  animation: configure-clockwise 3s ease-in-out 0s infinite alternate;
+}
+
+.configure-border-2 {
+  width: 230rpx;
+  height: 230rpx;
+  padding: 6rpx;
+  /* left: -230px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(63, 249, 220);
+  transform: rotate(45deg);
+  animation: configure-xclockwise 3s ease-in-out 0s infinite alternate;
+}
+
+.configure-core {
+  width: 100%;
+  height: 100%;
+  background-color: #37474f;
+}
+
+
+

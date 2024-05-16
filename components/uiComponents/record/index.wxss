@@ -1,0 +1,113 @@
+.li-record {
+    width: 100%;
+    position: relative;
+    --record-button-color: var(--theme-color);
+}
+
+.li-record .-result {
+    min-height: 20px;
+    line-height: 20px;
+    padding: var(--normal-spacing) 0;
+    text-align: center;
+    width: 100%;
+}
+
+.li-record .-button {
+    position: relative;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    left: 50%;
+    transform: translate3d(-50%,0,0);
+    margin: 30px 0;
+}
+
+.li-record .-button .-auth {
+    position: absolute;
+    height: 60px;
+    width: 60px;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    opacity: 0;
+}
+
+.li-record .-button .-start {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 24px;
+}
+
+.li-record .-button .-start text {
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    transform: translate3d(-50%,0,0);
+}
+
+.li-record .-button::before {
+    content: "";
+    position: absolute;
+    background: var(--record-button-color);
+    width: 100%;
+    height: 100%;
+    opacity: .5;
+    z-index: 0;
+    left: 0;
+    top: 0;
+    border-radius: 50%;
+    transform: scale3d(1,1,1);
+    transition: all .3s;
+}
+
+.li-record .-button.-begin::before,.li-record .-button.-start::before {
+    transform: scale3d(1.4,1.4,1.4);
+}
+
+.li-record .-button.-end::before {
+    transform: scale3d(1,1,1);
+}
+
+.li-record .-button::after {
+    content: "";
+    position: absolute;
+    width: calc(100% + 2px);
+    height: calc(100% + 2px);
+    left: -1px;
+    top: -1px;
+    border: 1px solid var(--record-button-color);
+    box-sizing: border-box;
+    opacity: 0;
+    z-index: 0;
+    border-radius: 50%;
+}
+
+.li-record .-button.-begin::after {
+    transform: scale3d(1.4,1.4,1.4);
+    animation: record 2s infinite;
+}
+
+@-webkit-keyframes record {
+    0% {
+        transform: scale3d(1.4,1.4,1.4);
+        opacity: .5;
+    }
+
+    100% {
+        transform: scale3d(1.8,1.8,1.8);
+        opacity: 0;
+    }
+}
+
+@keyframes record {
+    0% {
+        transform: scale3d(1.4,1.4,1.4);
+        opacity: .5;
+    }
+
+    100% {
+        transform: scale3d(1.8,1.8,1.8);
+        opacity: 0;
+    }
+}

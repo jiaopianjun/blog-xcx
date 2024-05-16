@@ -1,0 +1,20 @@
+.li-date-time-picker {
+    --picker-cancel-color: var(--text-color-3);
+    --picker-confirm-color: var(--theme-color);
+    --picker-title-color: var(--text-color-1);
+}
+
+.li-date-time-picker .-content {
+    text-align: center;
+}
+
+.li-date-time-picker .-column {
+    font-weight: 700;
+}
+
+.li-date-time-picker .-to {
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    font-size: var(--normal-text-size);
+}

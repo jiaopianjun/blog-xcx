@@ -1,0 +1,9 @@
+<view class="li-picker-header">
+    <view bindtap="cancel" class="-cancel">取消</view>
+    <view class="-title _text-overflow">{{title}}</view>
+    <view bindtap="confirm" class="-confirm" wx:if="{{!loading}}">确定</view>
+    <view class="-loading" wx:if="{{loading}}">
+        <li-loading color="var(--picker-confirm-color)" customClass="loading"></li-loading>
+    </view>
+    <view class="_clear"></view>
+</view>

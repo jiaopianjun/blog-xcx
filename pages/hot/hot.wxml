@@ -1,0 +1,47 @@
+<import src="../../templates/copyright.wxml" />
+<ui-sys tabbar>
+  <ui-navbar back="{{false}}" isSlot>
+    <view class="flex-center flex-sub">文章中心</view>
+  </ui-navbar>
+  <view class="tab-bar ui-BG">
+    <block wx:for="{{topBarItems}}" wx:key="id">
+      <view 
+        class="tab-item {{item.selected ? 'tab-Selected': '' }}" 
+        catchtap="onTapTag" 
+        id="{{item.id}}">{{item.name}}</view>
+    </block>
+  </view>
+  <view class="container">
+    <view class="showerror" style="display:{{showerror}}">
+      <text class="cicon-wifi-off text-xsl"></text>
+      <view class="errortext">
+        暂时无法访问网络
+        <view class="">
+          <button class="more-button" bindtap="reload" size="mini" bindtap="reload">重新加载</button>
+        </view>
+      </view>
+    </view>
+
+    <view style="display:{{showallDisplay}}">
+      <view class="post-list">
+        <block wx:key="id" wx:for="{{postsList}}">
+          <view 
+            class="post-item ui-BG ui-BG-card" 
+            index="{{index}}" 
+            id="{{item.post_id}}" 
+            bindtap="redictDetail">
+            <view class="post-desc">
+              <view class="post-title text-lg ui-TC">
+                <text>{{item.post_title}}</text>
+              </view>
+              <view class="post-data ui-TC-3 text-xs">
+                <text>{{item.post_date}}</text>
+              </view>
+            </view>
+            <image src="{{item.post_thumbnail_image}}" mode="aspectFill" class="post-img"></image>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+</ui-sys>

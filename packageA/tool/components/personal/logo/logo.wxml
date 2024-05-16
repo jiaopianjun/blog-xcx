@@ -1,0 +1,6 @@
+<view class="logo">
+    <image src="../../../images/logo.svg"></image>
+</view>
+<view class="version">
+    <text class="-text">Mini Calendar 2.0.0</text>
+</view>

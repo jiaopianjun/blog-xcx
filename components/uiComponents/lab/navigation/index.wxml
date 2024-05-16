@@ -1,0 +1,23 @@
+<view class="li-navigation custom-class" style="{{borderColor?'--navigation-border-color:'+borderColor+';':''}}{{borderWidth>0?'--navigation-border-width:'+borderWidth+'px;':''}}">
+    <view class="-background {{blur?'-blur':''}}" style="{{background?'--navigation-background:'+background+';':''}}"></view>
+    <view class="-bar"></view>
+    <view class="-header" style="{{color?'--navigation-color:'+color:''}}">
+        <view bindtap="iconEvent" class="-icon {{!title&&background=='transparent'?'-center':''}}" wx:if="{{icon&&!loading}}">
+            <text class="iconfont {{icon}}"></text>
+        </view>
+        <view class="-icon" style="font-size:0" wx:if="{{loading}}">
+            <li-loading color="{{loadingColor}}" customClass="loading"></li-loading>
+        </view>
+        <view bindtap="titleEvent" class="-normal" wx:if="{{!subtitle}}">
+            <view class="-title _text-overflow" wx:if="{{title}}">{{title}} <text class="iconfont {{titleRightIcon}}" wx:if="{{titleRightIcon}}"></text>
+            </view>
+        </view>
+        <view bindtap="titleEvent" class="-custom" wx:else>
+            <view class="-title _text-overflow" wx:if="{{title}}">{{title}} <text class="iconfont {{titleRightIcon}}" wx:if="{{titleRightIcon}}"></text>
+            </view>
+            <view class="-subtitle _text-overflow" wx:if="{{subtitle}}">{{subtitle}}</view>
+        </view>
+    </view>
+    <view class="-border {{blur?'-blur':''}}" wx:if="{{border}}"></view>
+</view>
+<view class="li-navigation-space" wx:if="{{haveHeight}}"></view>

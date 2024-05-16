@@ -1,0 +1,52 @@
+<container>
+  <navigation back="{{back}}" background="{{background}}" bind:iconevent="iconEvent" bind:titleevent="titleEvent" blur="{{blur}}" border="{{border}}" borderColor="{{borderColor}}" borderWidth="{{borderWidth}}" color="{{color}}" haveHeight="{{haveHeight}}" icon="{{icon}}" image="{{image}}" loading="{{loading}}" loadingColor="{{loadingColor}}" subtitle="{{subtitle}}" title="{{title}}" titleRightIcon="{{titleRightIcon}}" useSlot="{{useSlot}}">
+    <view class="navigation-slot" wx:if="{{useSlot}}">slot</view>
+  </navigation>
+  <view class="coutDown clearfix" wx:if="{{!load}}">
+    <image class="img" src="https://blogimg.lieme.cn/FvcfdnAQvj2dBwQLB87_mEFvphPi"></image>
+    <view class="nowText">
+      现在是
+    </view>
+    <view class="nowText">{{time}}</view>
+    <view class="nowText">
+      {{nowNongli}}
+    </view>
+    <view class="cont">
+      <view class="text">
+        距离<text>{{year}}</text>年春节还有
+      </view>
+      <view class="countdownText">
+        {{day}}
+        <text>天</text>
+        {{hour}}
+        <text>时</text>
+        {{minute}}
+        <text>分</text>
+        {{second}}
+        <text>秒</text>
+      </view>
+      <view class="nextTime">
+        {{nextDate}} 春节 {{nextWeek}}
+      </view>
+      <view class="nextNongli">
+        {{nextNongli}}
+      </view>
+    </view>
+
+    <button class="share" open-type='share'>
+      分享给好友
+    </button>
+  </view>
+  <view class="load" wx:if="{{load}}">
+    <view class="spinner-box">
+      <view class="configure-border-1">
+        <view class="configure-core"></view>
+      </view>
+      <view class="configure-border-2">
+        <view class="configure-core"></view>
+      </view>
+    </view>
+    <text class="msg" wx:if="{{!loadError}}">稍等片刻...</text>
+    <text class="btn" wx:if="{{loadError}}" bindtap="back">加载失败，点击返回</text>
+  </view>
+</container>

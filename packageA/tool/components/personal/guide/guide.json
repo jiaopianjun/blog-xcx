@@ -1,0 +1,16 @@
+{
+    "component": true,
+    "usingComponents": {
+        "popup": "../../popup/popup",
+        "video-ad": "../../video-ad/video-ad",
+        "container": "../container/container",
+        "navigation": "../../navigation/navigation",
+        "my-loading": "../../loading/loading",
+        "page-background": "../page-background/page-background",
+        "col": "../../col/col",
+        "row": "../../row/row",
+        "tip": "../../tip/tip",
+        "error": "../../error/error",
+        "banner-ad": "../../banner-ad/banner-ad"
+    }
+}

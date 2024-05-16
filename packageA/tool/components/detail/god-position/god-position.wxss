@@ -1,0 +1,51 @@
+.index-number .-item .-col8 {
+    text-align: center;
+    position: relative;
+    height: 60px;
+    padding: 10px 0;
+}
+
+.index-number .-item .-col8 .-icon {
+    font-size: 20px;
+    height: 30px;
+    line-height: 30px;
+    color: var(--theme-color);
+}
+
+.index-number .-item .-col8 .-key {
+    font-size: 14px;
+    height: 20px;
+    line-height: 20px;
+    margin-top: 5px;
+    color: var(--normal-text-color);
+}
+
+.index-number .-item .-col8 .-value {
+    font-size: 14px;
+    margin-top: 5px;
+    height: 20px;
+    line-height: 20px;
+    color: var(--theme-color);
+}
+
+._border-right::after {
+    height: 100%;
+    width: 1px;
+    right: 0;
+    top: 0;
+    left: auto;
+}
+
+._border-bottom::before,._border-right::after {
+    content: "";
+    position: absolute;
+    background: var(--normal-bd-color);
+    transform: scale(1);
+}
+
+._border-bottom::before {
+    height: 1px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}

@@ -1,0 +1,203 @@
+/* pages/my/my.wxss */
+page {
+  padding-bottom: 25%;
+  background-color: #f1f1f1 !important;
+}
+/* 用户信息 */
+.userinfo {
+  overflow: hidden;
+  height: 400rpx;
+  position: relative;
+  z-index: -1;
+  text-align: center;
+  padding-top: 200rpx;
+}
+
+/* 用户 */
+.info_scan {
+  float: right;
+}
+.info_right {
+  float: right;
+  min-width: 80rpx;
+  text-align: center;
+  display: block;
+}
+
+.info_right .exit {
+  margin-left: 10rpx;
+}
+.info_bg {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 0;
+  z-index: -1;
+  top: -30%;
+}
+.info_avatar {
+  height: 180rpx;
+  width: 180rpx;
+  overflow: hidden;
+  position: relative;
+  border-radius: 50%;
+}
+.info_user {
+  display: block;
+  margin: 24rpx 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #fff;
+}
+
+.info_name {
+  display: inline-block;
+  height: 45rpx;
+  line-height: 45rpx;
+  margin-right: 20rpx;
+  color: #fff;
+  font-size: 18px;
+}
+.info_user .login {
+  border: 1px solid #fff;
+  width: 200rpx;
+  padding: 10rpx 0;
+  border-radius: 6rpx;
+  margin: 0 auto;
+}
+.info_lv {
+  margin-top: 8rpx;
+  font-size: 12px;
+  height: 12px;
+  line-height: 12px;
+  padding: 5rpx 8rpx;
+  overflow: hidden;
+}
+
+.info_uid {
+  display: block;
+  height: 22px;
+  line-height: 22px;
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #fff;
+  font-weight: 300;
+}
+
+.tags {
+  display: inline-block;
+  color: #fff;
+  padding: 10rpx 30rpx;
+  background: rgba(0,0,0,0.2);
+  border-radius: 6rpx;
+}
+.scan-free {
+  color: var(--ui-TC) !important;
+}
+
+.scan-free::after {
+  border: solid var(--ui-TC) !important;
+}
+
+.kefubtn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 4em;
+  width: 100%;
+  opacity: 0;
+}
+
+
+.ui-item {
+  display: block;
+  padding: 24rpx 0 20rpx;
+  text-align: center;
+}
+
+.ui-menu-item {
+
+  padding: 0;
+}
+
+.ui-title {
+
+  padding-left: 10rpx;
+}
+
+.cicon-service-fill {
+  color: #F37D7D;
+}
+
+.cicon-weixin {
+  font-size: 15px;
+  color: #FFB300;
+}
+
+.cicon-service {
+  color: #9DCA08;
+}
+
+.cicon-settings {
+  color: #087cca;
+}
+
+.cicon-avatar {
+  color: #ca0880;
+}
+
+.cicon-creative {
+  color: #91B9EB;
+}
+
+.cicon-clothes {
+  font-size: 13px;
+  color: #FFB300;
+}
+
+/* 编辑弹窗 */
+.pop-input {
+  background-color: #f5f5f5;
+  padding: 24rpx 12rpx;
+  border-radius: 12rpx;
+  width: auto;
+}
+
+.pop-edit {
+
+  padding: 24rpx 24rpx 120rpx 24rpx;
+
+}
+
+.pop-header {
+  text-align: center;
+  padding-bottom: 24rpx;
+}
+
+.pop-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 34rpx 0;
+}
+
+.pop-footer .btn-cancel {
+  color: #999;
+}
+
+.pop-footer button {
+  margin: 0;
+}
+
+.pop-header .title {
+  font-weight: 500;
+}
+
+
+.loginout {
+  text-align: center;
+  color: red;
+}

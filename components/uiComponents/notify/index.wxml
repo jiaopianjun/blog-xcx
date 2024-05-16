@@ -1,0 +1,9 @@
+<view class="li-notify {{show?'-open':'-close'}} -in-{{position}} {{'-'+type}} {{shadow?'-box-shadow':''}}" style="{{background?'--notify-background:'+background+';':''}}{{color?'--notify-color:'+color+';':''}}{{shadowColor?'--notify-shadow-color:'+shadowColor+';':''}}{{borderColor?'--notify-border-color:'+borderColor+';':''}}{{borderWidth?'--notify-border-width:'+borderWidth+';':''}}">
+    <view class="-content">
+        <view class="-icon" wx:if="{{icon}}">
+            <text class="iconfont {{icon}}"></text>
+        </view>
+        <view class="-text" id="text" style="{{icon?'padding-left:40px;':''}}{{closeButton?'padding-right:40px;':''}};text-align:justify">{{content}}</view>
+        <li-button round background="rgba(0,0,0,.1)" bind:event="close" buttonStyle="solid" color="var(--notify-color)" customClass="-close-button" icon="icon-close-outline" size="mini" wx:if="{{closeButton}}"></li-button>
+    </view>
+</view>

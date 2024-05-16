@@ -1,0 +1,8 @@
+<view class="li-picker">
+    <picker-header bind:cancel="cancel" bind:confirm="confirm" loading="{{changing}}" title="{{title}}" wx:if="{{header}}"></picker-header>
+    <picker-view bindchange="change" bindpickend="end" bindpickstart="start" bindtap="tap" catchtouchmove="catchtouchmove" class="-picker" indicatorClass="active-column" maskClass="picker-view-mask" style="height:{{rows*50}}px" value="{{value}}">
+        <picker-view-column data-index="{{idx}}" wx:for="{{data}}" wx:for-index="idx">
+            <view class="-column column-class {{itemIndex==value[idx]?'-active':''}}" wx:for="{{item}}" wx:for-index="itemIndex">{{item}}</view>
+        </picker-view-column>
+    </picker-view>
+</view>

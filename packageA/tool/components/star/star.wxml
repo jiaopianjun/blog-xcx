@@ -1,0 +1,7 @@
+<view class="like" style="top:{{navigationHeight+5}}px" wx:if="{{display}}">
+    <view class="-text">点击<text class="iconfont icon-menu"></text>添加到我的小程序</view>
+    <view class="-triangle" style="right:{{windowWidth-menuInfo.right+menuInfo.width-43}}px;"></view>
+    <view bindtap="setStorage" class="-btn" hoverClass="_hover">
+        <text class="-close iconfont icon-close-outline"></text>
+    </view>
+</view>

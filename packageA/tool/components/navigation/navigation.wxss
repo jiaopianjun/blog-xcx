@@ -1,0 +1,88 @@
+.navigation {
+    background: var(--module-bg-color);
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 15px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    transform: translate3d(0,0,0);
+    color: var(--theme-color);
+}
+
+.navigation.-transparent {
+    background: none;
+}
+
+.navigation-relative {
+    position: relative;
+    width: 100%;
+}
+
+.navigation .-common {
+    position: relative;
+}
+
+.navigation .-common .-icon {
+    font-size: 24px;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    line-height: 30px;
+    float: left;
+    position: relative;
+}
+
+.navigation .-common .-icon.-center {
+    text-align: center;
+}
+
+.navigation .-common .-title {
+    font-size: 16px;
+}
+
+.navigation .-custom {
+    position: relative;
+}
+
+.navigation .-custom .-icon {
+    font-size: 24px;
+    width: 30px;
+    text-align: left;
+    float: left;
+    height: 30px;
+    border-radius: 15px;
+    line-height: 30px;
+}
+
+.navigation .-custom .-icon.-center {
+    text-align: center;
+}
+
+.navigation .-common .-icon.-center::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background: var(--dark-module-bg-color);
+    opacity: .5;
+    z-index: 0;
+}
+
+.navigation .-custom .-title {
+    font-size: 14px;
+    height: 18px;
+    line-height: 18px;
+    position: absolute;
+}
+
+.navigation .-custom .-subtitle {
+    font-size: 10px;
+    height: 14px;
+    line-height: 14px;
+    position: absolute;
+}

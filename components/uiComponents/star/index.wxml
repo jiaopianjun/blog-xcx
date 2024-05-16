@@ -1,0 +1,7 @@
+<view class="li-star" style="{{background?'--star-background:'+background+';':''}}{{color?'--star-color:'+color+';':''}}" wx:if="{{show}}">
+    <view class="-text _text-overflow">{{text?text:'添加到我的小程序'}}</view>
+    <view class="-triangle"></view>
+    <view bindtap="setStorage" class="-close-button">
+        <text class="iconfont icon-close-outline"></text>
+    </view>
+</view>

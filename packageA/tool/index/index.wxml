@@ -1,0 +1,12 @@
+<container>
+  <view class="toolIndex">
+    <view class="toolList">
+      <view class="toolBox" bindtap="goBtn" data-url="https://web.lieme.cn/clock/clock.html">
+        时钟
+      </view>
+      <view class="toolBox" bindtap="goBtn" data-url="https://web.lieme.cn/zan/zan.html">
+        集赞
+      </view>
+    </view>
+  </view>
+</container>

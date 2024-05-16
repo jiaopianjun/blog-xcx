@@ -1,0 +1,8 @@
+<view class="li-card custom-class {{last?'-last':''}}" style="{{header?'padding-top:0':''}}">
+    <header align="{{headerAlign}}" border="{{headerBorder}}" indent="{{headerIndent}}" indentDistance="{{headerIndentDistance}}" rightIcon="{{headerRightIcon}}" rightText="{{headerRightText}}" subtitle="{{headerSubtitle}}" title="{{headerTitle}}" useSlot="{{useHeaderSlot}}" wx:if="{{header&&!useHeaderSlot}}"></header>
+    <slot name="header" wx:if="{{useHeaderSlot}}"></slot>
+    <view class="-card-content content-class {{contentIndent?'-indent':''}}">
+        <slot name="content" wx:if="{{useHeaderSlot}}"></slot>
+        <slot wx:else></slot>
+    </view>
+</view>

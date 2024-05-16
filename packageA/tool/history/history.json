@@ -1,0 +1,13 @@
+{
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "",
+  "backgroundColor": "#183338",
+  "backgroundTextStyle": "light",
+  "usingComponents": {
+    "container": "/components/uiComponents/container-basic/index",
+    "content": "/components/uiComponents/content-basic/index",
+    "li-button": "/components/uiComponents/button/index",
+    "navigation": "/components/uiComponents/navigation/index"
+  }
+}

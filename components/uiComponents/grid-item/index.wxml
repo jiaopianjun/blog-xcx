@@ -1,0 +1,12 @@
+<view bindlongpress="longPress" bindtap="tap" class="li-grid-item {{borderBottom?'_border-bottom':''}} {{borderRight?'_border-right':''}} {{borderTop?'_border-top':''}} custom-class" hoverClass="{{hover?'-li-grid-hover':''}}" hoverStayTime="120" style="{{style}}">
+    <button bindcontact="event" binderror="event" bindgetphonenumber="event" bindgetuserinfo="event" bindlaunchapp="event" bindopensetting="event" class="-open-type" openType="{{openType}}" wx:if="{{openType&&!navigator}}"></button>
+    <navigator appId="{{navigatorAppId}}" class="-navigator" delta="{{navigatorDelta}}" extraData="{{navigatorExtraData}}" openType="{{navigatorOpenType}}" path="{{navigatorPath}}" target="{{navigatorTarget}}" url="{{navigatorUrl}}" version="{{navigatorVersion}}" wx:if="{{navigator&&!openType}}"></navigator>
+    <view class="-content">
+        <view class="-icon icon-class" wx:if="{{icon}}">
+            <text class="iconfont {{icon}}"></text>
+        </view>
+        <view class="-lable lable-class" style="margin-top:{{icon?'var(--small-spacing)':''}}" wx:if="{{lable}}">{{lable}}</view>
+        <view class="-title title-class _text-overflow" style="margin-top:{{icon||lable?'var(--small-spacing)':''}}" wx:if="{{title}}">{{title}}</view>
+        <slot></slot>
+    </view>
+</view>

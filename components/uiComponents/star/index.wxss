@@ -1,0 +1,51 @@
+.li-star {
+    --star-background: var(--theme-color);
+    --star-color: var(--highlight-color);
+    position: fixed;
+    border-radius: 10px;
+    padding-left: var(--normal-spacing);
+    font-size: var(--normal-text-size);
+    background: var(--star-background);
+    color: var(--star-color);
+    right: var(--large-spacing);
+    height: 40px;
+    line-height: 40px;
+    z-index: 2;
+    transform: translate3d(0,0,0);
+    top: calc(var(--navigation-height) + var(--small-spacing));
+    max-width: calc(100% - var(--large-spacing) * 2);
+    box-sizing: border-box;
+}
+
+.li-star .-triangle {
+    position: absolute;
+    top: -8px;
+    right: 20px;
+    width: 0;
+    height: 0;
+    text-align: center;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 8px solid var(--star-background);
+    right: calc(var(--window-width) - var(--menu-right) + var(--menu-width) - 43px);
+}
+
+.li-star .-text {
+    position: relative;
+    float: left;
+    max-width: calc(var(--window-width) - 60px - var(--large-spacing) * 2);
+}
+
+.li-star .-close-button {
+    position: relative;
+    float: left;
+    margin-left: var(--normal-spacing);
+    height: 40px;
+    line-height: 40px;
+    width: 40px;
+    text-align: center;
+    background: rgba(0,0,0,.1);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-size: var(--large-text-size);
+}

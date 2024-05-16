@@ -1,0 +1,11 @@
+<scroll-view scrollY bindrefresherabort="onAbort" bindrefresherpulling="onPulling" bindrefresherrefresh="onRefresh" bindrefresherrestore="onRestore" bindscroll="scroll" class="li-scroll-view custom-class" refresherDefaultStyle="none" refresherEnabled="{{refresherEnabled}}" refresherThreshold="{{refresherEnabled?80:''}}" refresherTriggered="{{refresherTriggered}}" scrollTop="{{scrollTop}}" scrollWithAnimation="{{true}}" style="{{maxHeight>0?'max-height:'+maxHeight+'px':''}}">
+    <view class="-refresher" slot="refresher" style="{{navigationHaveHeight?'top:'+navigationHeight+'px;':''}}{{'height:'+refresherThreshold+'px;'}}{{refresherStyle}}" wx:if="{{refresherEnabled}}">
+        <slot name="loading"></slot>
+    </view>
+    <view class="-main">
+        <slot name="content" wx:if="{{useLoadingSlot}}"></slot>
+        <slot wx:else></slot>
+    </view>
+    <view style="width:2rpx;height:2rpx;bottom:-2rpx;position:absolute;"></view>
+    <view class="-scrollbar {{scrolling?'-active':''}}" style="height:{{scrollbarHeight}}px;transform:translate3d(0,{{scrollbarTop}}px,0);" wx:if="{{scrollbar}}"></view>
+</scroll-view>

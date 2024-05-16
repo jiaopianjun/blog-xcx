@@ -1,0 +1,61 @@
+.guide-container {
+    height: 320px;
+    width: 100%;
+    background: var(--module-bg-color);
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.guide-container .-image {
+    width: 140px;
+    height: 140px;
+    line-height: 60px;
+    margin: 20px 0;
+}
+
+.guide-container .-title {
+    font-size: 24px;
+    height: 30px;
+    line-height: 30px;
+    color: var(--dark-text-color);
+}
+
+.guide-container .-description {
+    font-size: 12px;
+    line-height: 20px;
+    height: 70px;
+    margin-top: 10px;
+    color: var(--normal-color);
+    overflow: auto;
+    display: flex;
+    -webkit-overflow-scrolling: touch;
+    justify-content: center;
+    align-items: Center;
+}
+
+.guide-container .-description .-position {
+    display: inline-block;
+}
+
+.dot {
+    position: absolute;
+    bottom: 12px;
+    width: 100%;
+    height: 10px;
+    text-align: center;
+}
+
+.dot .-item {
+    width: 6px;
+    height: 6px;
+    margin: 3px 4px;
+    display: inline-block;
+    border-radius: 5px;
+    background: var(--lighter-text-color);
+    transition: all .3s;
+}
+
+.dot .-item.-active {
+    opacity: 1;
+    background: var(--theme-color);
+}

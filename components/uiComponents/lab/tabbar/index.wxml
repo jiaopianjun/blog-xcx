@@ -1,0 +1,13 @@
+<view class="li-tabbar {{show?'-open':'-close'}} {{tabbar.border?'-border':''}} custom-class" style="{{iphoneX?'height:84px;':''}}{{tabbar.selectedColor?'--tabbar-selected-color:'+tabbar.selectedColor+';':''}}{{tabbar.color?'--tabbar-color:'+tabbar.color+';':''}}{{tabbar.background?'--tabbar-background:'+tabbar.background+';':''}}">
+    <view bindtap="event" class="-item {{activeIndex==idx?'-active':''}}" data-index="{{idx}}" style="width:{{100/tabbar.list.length}}%" wx:for="{{tabbar.list}}" wx:for-index="idx">
+        <view class="-icon {{activeIndex==idx?'-active':''}}" wx:if="{{item.icon}}">
+            <text class="iconfont {{item.icon}}"></text>
+        </view>
+        <view class="-name {{activeIndex==idx?'-active':''}} {{item.icon?'-with-icon':''}}" data-index="{{idx}}" wx:if="{{item.name}}">
+            <text>{{item.name}}</text>
+        </view>
+        <view class="-dot {{activeIndex==idx?'-active':''}}"></view>
+    </view>
+    <view class="_clear"></view>
+</view>
+<view class="li-tabbar-space" style="{{iphoneX?'height:84px':''}}" wx:if="{{haveHeight}}"></view>

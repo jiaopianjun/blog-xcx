@@ -1,0 +1,94 @@
+.tab-bar {
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+    position: fixed;
+    bottom: 0;
+    background: var(--module-bg-color);
+    box-sizing: border-box;
+    color: var(--normal-text-color);
+}
+
+.tab-bar,.tab-bar-relative {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    z-index: 3;
+}
+
+.tab-bar .-item {
+    text-align: center;
+    font-size: 24px;
+    position: relative;
+    float: left;
+}
+
+.tab-bar .-item.-active {
+    color: var(--theme-color);
+}
+
+.tab-bar .-item .-content {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+}
+
+.tab-bar .share {
+    height: 120px;
+}
+
+.tips {
+    position: absolute;
+    background: var(--theme-color);
+    height: 40px;
+    line-height: 40px;
+    color: var(--highlight-text-color);
+    text-align: center;
+    padding: 0 10px;
+    border-radius: 6px;
+    top: -55px;
+    left: 50%;
+    transform: translate3d(-50%,0,0);
+    animation: float 2.5s infinite;
+}
+
+@-webkit-keyframes float {
+    0% {
+        transform: translate3d(-50%,0,0);
+    }
+
+    50% {
+        transform: translate3d(-50%,5px,0);
+    }
+
+    100% {
+        transform: translate3d(-50%,0,0);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translate3d(-50%,0,0);
+    }
+
+    50% {
+        transform: translate3d(-50%,5px,0);
+    }
+
+    100% {
+        transform: translate3d(-50%,0,0);
+    }
+}
+
+.tips .-triangle {
+    position: absolute;
+    left: 50%;
+    margin-left: -6px;
+    bottom: -8px;
+    width: 0;
+    height: 0;
+    color: #fff;
+    text-align: center;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 8px solid var(--theme-color);
+}

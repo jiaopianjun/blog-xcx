@@ -1,0 +1,51 @@
+.li-picker-header {
+    --picker-cancel-color: var(--text-color-2);
+    --picker-confirm-color: var(--theme-color);
+    --picker-title-color: var(--text-color-1);
+    position: relative;
+    height: 50px;
+    line-height: 50px;
+    box-sizing: border-box;
+    border-bottom: 1px solid var(--bd-color);
+}
+
+.li-picker-header .-cancel {
+    float: left;
+    text-align: left;
+    padding-left: var(--normal-spacing);
+    color: var(--picker-cancel-color);
+}
+
+.li-picker-header .-cancel,.li-picker-header .-confirm {
+    width: 60px;
+    height: 50px;
+    box-sizing: border-box;
+    font-size: var(--normal-text-size);
+}
+
+.li-picker-header .-confirm {
+    color: var(--picker-confirm-color);
+}
+
+.li-picker-header .-confirm,.li-picker-header .-loading {
+    float: right;
+    text-align: right;
+    padding-right: var(--normal-spacing);
+}
+
+.li-picker-header .-loading {
+    width: 60px;
+    height: 50px;
+    box-sizing: border-box;
+    font-size: 0;
+}
+
+.li-picker-header .-title {
+    width: calc(100% - 120px);
+    float: left;
+    height: 50px;
+    text-align: center;
+    color: var(--picker-title-color);
+    font-size: var(--normal-title-size);
+    font-weight: 700;
+}

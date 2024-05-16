@@ -1,0 +1,51 @@
+<popup scroll bind:cancleEvent="cancle" maskCancle="{{maskCancle}}" show="{{show}}">
+    <view>
+        <picker-view bindchange="changeStartDateTime" bindpickend="handlePickEnd" bindpickstart="handlePickStart" class="sensorTypePicker" indicatorClass="selected" maskClass="mask" style="height: {{endDate?'120px':'250px'}};" value="{{startValue}}">
+            <picker-view-column>
+                <view class="picker-item" wx:for="{{startYearList}}" wx:key="*this">{{item}}年</view>
+            </picker-view-column>
+            <picker-view-column wx:if="{{config.column>1}}">
+                <view class="picker-item" wx:for="{{startMonthList}}" wx:key="*this">{{item}}月</view>
+            </picker-view-column>
+            <picker-view-column wx:if="{{config.column>2}}">
+                <view class="picker-item" wx:for="{{startDayList}}" wx:key="*this">{{item}}日</view>
+            </picker-view-column>
+            <picker-view-column wx:if="{{config.column>3}}">
+                <view class="picker-item" wx:for="{{startHourList}}" wx:key="*this">{{item}}时</view>
+            </picker-view-column>
+            <picker-view-column wx:if="{{config.column>4}}">
+                <view class="picker-item" wx:for="{{startMinuteList}}" wx:key="*this">{{item}}分</view>
+            </picker-view-column>
+            <picker-view-column wx:if="{{config.column>5}}">
+                <view class="picker-item" wx:for="{{startSecondList}}" wx:key="*this">{{item}}秒</view>
+            </picker-view-column>
+        </picker-view>
+    </view>
+    <view wx:if="{{endDate}}">
+        <view class="to" style="margin-top: 4px;margin-bottom: 4px;">至</view>
+        <picker-view bindchange="changeEndDateTime" bindpickend="handlePickEnd" bindpickstart="handlePickStart" class="sensorTypePicker" indicatorStyle="height: 35px;" value="{{endValue}}">
+            <picker-view-column style="min-width: 70px;flex-shrink: 0">
+                <view class="picker-item" style="min-width: 70px;" wx:for="{{endYearList}}" wx:key="*this">{{item}}年</view>
+            </picker-view-column>
+            <picker-view-column>
+                <view class="picker-item" wx:for="{{endMonthList}}" wx:key="*this">{{item}}月</view>
+            </picker-view-column>
+            <picker-view-column>
+                <view class="picker-item" wx:for="{{endDayList}}" wx:key="*this">{{item}}日</view>
+            </picker-view-column>
+            <picker-view-column hidden="{{!hourColumn}}">
+                <view class="picker-item" wx:for="{{endHourList}}" wx:key="*this">{{item}}时</view>
+            </picker-view-column>
+            <picker-view-column hidden="{{!minColumn}}">
+                <view class="picker-item" wx:for="{{endMinuteList}}" wx:key="*this">{{item}}分</view>
+            </picker-view-column>
+            <picker-view-column hidden="{{!secColumn}}">
+                <view class="picker-item" wx:for="{{startSecondList}}" wx:key="*this">{{item}}秒</view>
+            </picker-view-column>
+        </picker-view>
+    </view>
+    <view class="btns">
+        <view bindtap="hideModal" class="-cancle" hoverClass="_hover">取消</view>
+        <view bindtap="onConfirm" class="-confirm" hoverClass="_hover">确定</view>
+    </view>
+</popup>

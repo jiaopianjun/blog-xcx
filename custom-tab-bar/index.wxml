@@ -1,0 +1,4 @@
+<view class="tab-bar ui-BG-1">
+  <view wx:for="{{list}}" wx:key="index" class="tab-bar-item" data-path="{{item.pagePath}}" data-index="{{index}}" bindtap="switchTab">
+  </view>
+</view>

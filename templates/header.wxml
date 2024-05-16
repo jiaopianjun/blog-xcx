@@ -1,0 +1,9 @@
+<template name="tempHeader">
+  <view class="header">
+    <image src="../../images/logo700.png" style="height:200rpx;width:400rpx"></image>
+    <view style='margin-top:40rpx'>
+      一枚佛系前端开发，会一丢丢摄影，喜欢折腾，爱好美食。分享点前端技巧、笔记以及各种有趣的APP和资源教程♥♥
+    </view>
+  </view>
+</template>
+<!-- header end -->

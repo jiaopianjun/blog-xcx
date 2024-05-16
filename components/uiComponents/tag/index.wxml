@@ -1,0 +1,9 @@
+<view class="li-tag custom-class {{square?'-square':''}} {{round?'-round':''}} {{block?'-block _clearfix':''}} -{{size}} -{{tagStyle}} {{'-'+type}}" style="{{borderWidth?'--tag-border-width:'+borderWidth+';':''}}{{borderColor?'--tag-border-color:'+borderColor+';':''}}{{background?'--tag-background:'+background+';':''}}{{color?'--tag-text-color:'+color+';':''}}{{gradientColor?'--tag-text-gradient-color:'+gradientColor+';':''}}">
+    <view class="-border {{borderColor?'-color':''}}" wx:if="{{tagStyle!='solid'}}"></view>
+    <view class="-background" wx:if="{{tagStyle!='hollow'}}"></view>
+    <view class="-text">
+        <text class="iconfont {{icon}} icon-class" style="padding-right:var(--small-spacing)" wx:if="{{icon&&text}}"></text>
+        <text class="iconfont {{icon}} icon-class" wx:if="{{icon&&!text}}"></text>
+        <text class="{{gradientColor?'-gradient':''}}">{{text}}</text>
+    </view>
+</view>

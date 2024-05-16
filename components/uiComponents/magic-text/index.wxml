@@ -1,0 +1,3 @@
+<view class="li-magic-text {{type}} custom-class">
+    <text class="{{in[index]?'-in':''}} -item" wx:for="{{text}}">{{item}}</text>
+</view>

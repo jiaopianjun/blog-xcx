@@ -1,0 +1,8 @@
+.li-grid-group .-title {
+    height: 30px;
+    line-height: 30px;
+    padding: var(--normal-spacing);
+    font-weight: 700;
+    font-size: var(--normal-title-size);
+    border-bottom: 1px solid var(--bd-color);
+}

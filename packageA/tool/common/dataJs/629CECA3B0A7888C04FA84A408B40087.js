@@ -1,0 +1,39 @@
+Object.defineProperty(exports, "__esModule", {
+    value: !0
+}), exports.default = [ {
+    name: "青龙",
+    heihuang: "黄"
+}, {
+    name: "名堂",
+    heihuang: "黄"
+}, {
+    name: "天刑",
+    heihuang: "黑"
+}, {
+    name: "朱雀",
+    heihuang: "黑"
+}, {
+    name: "金匮",
+    heihuang: "黄"
+}, {
+    name: "宝光",
+    heihuang: "黄"
+}, {
+    name: "白虎",
+    heihuang: "黑"
+}, {
+    name: "玉堂",
+    heihuang: "黄"
+}, {
+    name: "天牢",
+    heihuang: "黑"
+}, {
+    name: "玄武",
+    heihuang: "黑"
+}, {
+    name: "司命",
+    heihuang: "黄"
+}, {
+    name: "勾陈",
+    heihuang: "黑"
+} ];

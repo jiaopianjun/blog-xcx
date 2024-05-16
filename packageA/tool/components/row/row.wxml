@@ -1,0 +1,4 @@
+<view class="row custom-class" style="{{style}}">
+    <slot></slot>
+    <view class="_clear"></view>
+</view>

@@ -1,0 +1,117 @@
+.li-checkbox {
+    position: relative;
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    --checkbox-border-radius: 6px;
+    --checkbox-dot-border-radius: 4px;
+    --checkbox-checked-color: var(--theme-color);
+    --checkbox-unchecked-color: var(--bd-color);
+}
+
+.li-checkbox.-circle {
+    --checkbox-border-radius: 50%;
+    --checkbox-dot-border-radius: 50%;
+}
+
+.li-checkbox .-checkbox {
+    height: 20px;
+    width: 20px;
+    float: left;
+    box-sizing: border-box;
+    position: relative;
+    top: var(--small-spacing);
+    margin-right: var(--small-spacing);
+    border-radius: var(--checkbox-border-radius);
+}
+
+.li-checkbox .-checkbox .-background {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    left: 0;
+    top: 0;
+    border: 2px solid var(--checkbox-unchecked-color);
+    box-sizing: border-box;
+    border-radius: var(--checkbox-border-radius);
+    transition: all .1s;
+}
+
+.li-checkbox.-checked .-checkbox .-background {
+    border: 10px solid var(--checkbox-checked-color);
+}
+
+.li-checkbox.-checked.-disabled .-checkbox {
+    opacity: .5;
+    background: none;
+}
+
+.li-checkbox.-disabled .-checkbox {
+    background: rgba(var(--bd-color-rgb),.2);
+}
+
+.li-checkbox .-checkbox.-normal .-dot {
+    position: absolute;
+    width: 4px;
+    height: 10px;
+    border: 2px solid var(--highlight-color);
+    border-top: 0;
+    border-left: 0;
+    transform: rotate(45deg);
+    top: 3px;
+    left: 7px;
+    opacity: 0;
+    transition: all .1s;
+}
+
+.li-checkbox.-checked .-checkbox.-normal .-dot {
+    opacity: 1;
+}
+
+.li-checkbox .-checkbox.-dot .-dot {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: var(--checkbox-dot-border-radius);
+    top: 6px;
+    left: 6px;
+    transform: scale3d(0);
+    opacity: 0;
+    background: var(--highlight-color);
+    transition: all .1s;
+}
+
+.li-checkbox.-checked .-checkbox.-dot .-dot {
+    transform: scale3d(1);
+    opacity: 1;
+}
+
+.li-checkbox .-icon {
+    position: relative;
+    margin-right: var(--small-spacing);
+    line-height: 30px;
+    height: 30px;
+    width: 20px;
+    vertical-align: center;
+    font-size: 20px;
+    float: left;
+    color: var(--checkbox-unchecked-color);
+    transition: all .1s;
+}
+
+.li-checkbox.-checked .-icon {
+    color: var(--checkbox-checked-color);
+}
+
+.li-checkbox .-title {
+    font-size: var(--normal-text-size);
+    height: 30px;
+    line-height: 30px;
+    position: relative;
+    float: left;
+    width: var(--title-width);
+}
+
+.li-checkbox.-disabled .-title {
+    opacity: .5;
+}

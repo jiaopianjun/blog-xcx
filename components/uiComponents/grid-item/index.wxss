@@ -1,0 +1,45 @@
+.li-grid-item {
+    position: relative;
+    text-align: center;
+    height: 100px;
+    float: left;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.-li-grid-hover {
+    background: var(--dark-bg-color);
+}
+
+.li-grid-item .-navigator,.li-grid-item .-open-type {
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+.li-grid-item .-content {
+    position: relative;
+}
+
+.li-grid-item .-icon {
+    font-size: 24px;
+    height: 30px;
+    line-height: 30px;
+    color: var(--theme-color);
+}
+
+.li-grid-item .-lable {
+    color: var(--text-color-2);
+}
+
+.li-grid-item .-lable,.li-grid-item .-title {
+    font-size: var(--normal-text-size);
+    height: 24px;
+    line-height: 24px;
+}

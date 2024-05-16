@@ -1,0 +1,4 @@
+<view class="li-cell-group">
+    <header align="{{headerAlign}}" border="{{headerBorder}}" indent="{{indent}}" indentDistance="{{indentDistance}}" rightIcon="{{headerRightIcon}}" rightText="{{headerRightText}}" subtitle="{{headerSubtitle}}" title="{{headerTitle}}" wx:if="{{header}}"></header>
+    <slot></slot>
+</view>

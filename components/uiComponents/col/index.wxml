@@ -1,0 +1,5 @@
+<view class="li-col col-{{span}} {{offset?'col-offset-'+offset:''}}" style="{{style}}">
+    <view class="content-class">
+        <slot></slot>
+    </view>
+</view>

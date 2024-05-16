@@ -1,0 +1,3 @@
+<view class="loading-page custom-class">
+    <li-loading customClass="loading" text="{{text}}" type="{{type}}"></li-loading>
+</view>

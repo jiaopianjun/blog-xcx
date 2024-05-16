@@ -1,0 +1,138 @@
+.login {
+    text-align: center;
+    padding: 0 30px 30px;
+}
+
+.login .-icon {
+    height: 60px;
+    line-height: 60px;
+    font-size: 56px;
+    padding-top: 40px;
+    color: var(--primary-color);
+}
+
+.login .-content {
+    font-size: var(--normal-text-size);
+    color: var(--text-color-1);
+    margin-bottom: 40px;
+}
+
+.login .-main {
+    position: relative;
+    width: 200px;
+    height: 60px;
+    left: 50%;
+    margin-left: -100px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+.login .-main .-avatar {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    float: left;
+}
+
+.login .-main .-connect-group {
+    height: 50px;
+    width: 46px;
+    margin: 0 27px;
+    float: left;
+    position: relative;
+}
+
+.login .-main .-connect-group .-item {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--darker-bg-color);
+}
+
+.login .-main .-connect-group .-item:nth-child(1) {
+    left: 0;
+    animation-delay: 0s;
+}
+
+.login .-main .-connect-group .-item:nth-child(2) {
+    left: 50%;
+    transform: translateX(-50%)translateY(-50%);
+    animation-delay: .5s;
+}
+
+.login .-main .-connect-group .-item:nth-child(3) {
+    right: 0;
+    animation-delay: 1s;
+}
+
+.login .-main .-connect-group .-item.-flash {
+    animation: dotFlashing 2s infinite;
+}
+
+.login .-main .-connect-group .-item.-flash:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.login .-main .-connect-group .-item.-flash:nth-child(2) {
+    animation-delay: .5s;
+}
+
+.login .-main .-connect-group .-item.-flash:nth-child(3) {
+    animation-delay: 1s;
+}
+
+.login .-main .-logo {
+    float: left;
+    background: var(--dark-bg-color);
+}
+
+.login .-main .-logo,.login .-main image {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.button {
+    width: calc(50% - 10px)!important;
+    margin: 0 5px;
+    float: left;
+}
+
+@-webkit-keyframes dotFlashing {
+    0% {
+        background: var(--primary-color);
+        opacity: 1;
+    }
+
+    50% {
+        background: var(--primary-color);
+        opacity: .5;
+    }
+
+    100% {
+        background: var(--primary-color);
+        opacity: 1;
+    }
+}
+
+@keyframes dotFlashing {
+    0% {
+        background: var(--primary-color);
+        opacity: 1;
+    }
+
+    50% {
+        background: var(--primary-color);
+        opacity: .5;
+    }
+
+    100% {
+        background: var(--primary-color);
+        opacity: 1;
+    }
+}

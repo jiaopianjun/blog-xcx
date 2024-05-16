@@ -1,0 +1,47 @@
+::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+    color: transparent;
+}
+
+.li-scroll-view {
+    position: relative;
+    box-sizing: border-box;
+}
+
+.li-scroll-view .-refresher {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity: 0;
+    position: relative;
+    z-index: 0;
+}
+
+.li-scroll-view .-main {
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+}
+
+.li-scroll-view .-main.-padding {
+    padding: var(--large-spacing);
+    box-sizing: border-box;
+}
+
+.li-scroll-view .-scrollbar {
+    top: 0;
+    position: absolute;
+    width: 3px;
+    background: rgba(0,0,0,.4);
+    border-radius: 3px;
+    transition: right .3s;
+    right: -3px;
+}
+
+.li-scroll-view .-scrollbar.-active {
+    right: 2px;
+}

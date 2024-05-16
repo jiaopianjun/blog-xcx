@@ -1,0 +1,16 @@
+<view class="li-input {{border?'-border-bottom':''}} {{indent?'-indent':''}} {{icon?'-have-icon':''}} {{rightIcon?'-have-right-icon':''}} {{button?'-have-right-button':''}} {{textAlign?'-'+textAlign:''}} custom-class" style="{{indentDistance?'--indent-distance:'+indentDistance+';':''}}{{titleWidth?'--title-width:'+titleWidth-(icon?25:0)+'px;':''}}{{rightSlotWidth?'--right-slot-width:'+rightSlotWidth+10+'px;':''}}">
+    <view class="-icon" wx:if="{{icon}}">
+        <text class="iconfont {{icon}}"></text>
+    </view>
+    <view class="-required" wx:if="{{required}}"></view>
+    <view class="-title _text-overflow" wx:if="{{title}}">{{title}}</view>
+    <input adjustPosition="{{adjustPosition}}" alwaysEmbed="{{alwaysEmbed}}" bindblur="blur" bindconfirm="confirm" bindfocus="focus" bindinput="input" bindkeyboardheightchange="keyboardHeightChange" class="-input" confirmHold="{{confirmHold}}" confirmType="{{confirmType}}" cursor="{{cursor}}" cursorSpacing="{{cursorSpacing}}" disabled="{{disabled}}" focus="{{focus}}" holdKeyboard="{{holdKeyboard}}" maxlength="{{maxlength}}" password="{{password}}" placeholder="{{placeholder}}" placeholderClass="li-input-placeholder" selectionEnd="{{selectionEnd}}" selectionStart="{{selectionStart}}" type="{{type}}" value="{{value}}"></input>
+    <view bindtap="rightIconEvent" class="-right-icon" wx:if="{{rightIcon}}">
+        <text class="iconfont {{rightIcon}}" id="{{rightIconId}}"></text>
+    </view>
+    <view class="-slot" wx:if="{{useRightSlot}}">
+        <slot></slot>
+    </view>
+    <view class="_clear"></view>
+    <view class="-error" wx:if="{{error}}">{{error}}</view>
+</view>

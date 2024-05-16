@@ -1,0 +1,13 @@
+<view catchtouchmove="true" class="li-toast-mask" style="height:{{toastHeight}}px" wx:if="{{mask&&show}}"></view>
+<view catchtouchmove="true" class="li-toast {{show?'-open':'-close'}}" style="{{background?'--toast-background:'+background+';':''}}{{backgroundOpacity?'--toast-background-opacity:'+backgroundOpacity+';':''}}{{color?'--toast-text-color:'+color+';':''}}">
+    <view class="-content">
+        <view class="-bg"></view>
+        <view class="-loading" wx:if="{{type==='loading'}}">
+            <li-loading color="var(--toast-text-color)" size="40px"></li-loading>
+        </view>
+        <view class="-icon" wx:elif="{{icon}}">
+            <text class="iconfont {{icon}}"></text>
+        </view>
+        <view class="-text">{{title}}</view>
+    </view>
+</view>

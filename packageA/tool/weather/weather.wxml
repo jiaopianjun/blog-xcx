@@ -1,0 +1,404 @@
+<container>
+  <navigation 
+    back="{{back}}" 
+    background="{{background}}" 
+    bind:iconevent="iconEvent" 
+    bind:titleevent="titleEvent" 
+    blur="{{blur}}" 
+    border="{{border}}" 
+    borderColor="{{borderColor}}" 
+    borderWidth="{{borderWidth}}"
+    color="{{color}}" 
+    haveHeight="{{haveHeight}}" 
+    icon="{{icon}}" 
+    image="{{image}}" 
+    loading="{{loading}}" 
+    loadingColor="{{loadingColor}}" 
+    subtitle="{{subtitle}}" 
+    title="{{title}}" 
+    titleRightIcon="{{titleRightIcon}}" 
+    useSlot="{{useSlot}}">
+    <view class="navigation-slot" wx:if="{{useSlot}}">slot</view>
+  </navigation>
+  <view class="index clearfix">
+    <official-account></official-account>
+    <view 
+      class="main clearfix {{ getLotion === 'null' || getSuccess === 'false' ? 'load' : ''}}" 
+      wx:if="{{!canvasPic}}">
+      <view 
+        class="homePage" 
+        wx:if="{{homePage && getLotion !== 'null' && getSuccess !== 'false'}}">
+          <!-- 实时天气 -->
+          <view class="air">
+              <!-- 当前位置 -->
+              <view class="onlocation">{{getLotion}}</view>
+              <view class="updatetime">更新于：{{clock}}</view>
+              <!-- 天气图标 -->
+              <view class="airpic">
+                <image 
+                  src="{{realdata.img }}" 
+                  img="{{realdata.img}}" 
+                  class="img" 
+                  title="{{realdata.weather}}"/>
+              </view>   
+              <!-- 实时温度 -->
+              <view class="airhourly">{{realdata.temp}} °<text class="c">C</text></view> 
+              <!-- 当天最高/最低温度，天气 -->
+              <view class="airdetail">{{realdata.templow}}° / {{realdata.temphigh}}°  {{realdata.weather}} {{realdata.winddirect}} {{realdata.windpower}}</view> 
+              <!-- 两小时后预报 -->
+              <view class="airpredict">
+                  {{airPredict}}
+              </view> 
+          </view>
+          <!-- 生活指数 -->
+          <view class="life" bindtap="lookDetailLife"> 
+            <view class="tips">生活指数</view>
+            <view class="boxcont clearfix">
+              <view class="box" wx:for="{{life}}" wx:for-item="list" wx:key>
+                <image src="{{lifeIndex[list.iname]}}" class="img" ></image>
+                <text class="text boxname">{{list.iname}}</text>
+                <text class="text boxvalue">{{list.ivalue}}</text>
+              </view>
+            </view>
+          </view> 
+          <!--空气质量-->
+          <view class="aqi" bindtap="lookAqi">
+            <view class="tips">空气质量</view>
+            <view class="aqiInfo">{{aqiMsg}}</view>
+          </view>
+          <!--七天预报-->
+          <view class="daily">
+            <view class="tips">多日天气</view>
+            <view class="list" 
+              wx:for="{{daily}}" 
+              wx:for-index="idx" 
+              wx:for-item="item" 
+              wx:key="index" 
+              wx:if="{{idx > 2 ? false : true}}">
+                <view class="time">{{item.date}}  • {{item.week}}</view>
+                <view class="status">
+                  <image 
+                    src="{{path}}/images/condicon/{{item.night.img }}.png" 
+                    class="img" 
+                    img="item.night.img" />{{item.night.weather}}
+                </view>
+                <view class="wd">{{item.night.templow}} / {{item.day.temphigh}} °C</view>
+            </view>
+            <view class="more" bindtap="lookMore">查看更多</view>
+          </view> 
+          <!--24小时预报-->
+          <view class="hourly">
+            <view class="tips">24小时预报</view>
+            <view class="cont">
+              <view class="contbox clearfix">
+                <view class="contlist" wx:for="{{hourly}}" wx:for-item="list" wx:key>
+                  <view class="contlistTime">{{list.time}}</view>
+                  <view class="contlistPic">{{list.weather}}</view>
+                  <view class="contlistPic">
+                    <image 
+                      src="{{path}}/images/condicon/{{list.img}}.png" 
+                      class="img"/>
+                    </view>
+                  <view class="contlistTemp">{{list.temp}}°</view>
+                </view>
+              </view>
+            </view>
+          </view>
+          <!-- 设置 -->
+          <view class="opt">
+            <view 
+              class="btn search" 
+              bindtap="goSelectArea">
+                <image src="{{path}}/images/location.png" class="img"/>
+              </view>
+              <button
+                class="btn share"
+                open-type='share'>
+                  <image src="{{path}}/images/share.png" class="img"/>
+                </button>
+              <view 
+                class="btn maked" 
+                bindtap='generate'
+                wx:if="{{hdimg !== '' && hdname !== ''}}">
+                  <image src="{{path}}/images/pic.png" class="img" />
+                </view>
+              <button 
+                class="btn maked" 
+                wx:if="{{canIUse}}" 
+                bindgetuserinfo="bindGetUserInfo" 
+                open-type="getUserInfo"  
+                wx:if="{{hdimg === '' && hdname === ''}}">
+                  <image src="{{path}}/images/pic.png" class="img"/>
+              </button>
+          </view>
+      </view>
+      <!--详细信息-->
+      <view class="detailPage" wx:if="{{detailPage}}">
+          <scroll-view 
+            scroll-y="true" 
+            bindscroll="scroll" 
+            scroll-with-animation='true' 
+            scroll-top='{{scroll}}'>
+          <!-- 返回 -->
+          <view class="back">
+            <view class="backIcon" bindtap="back">
+              <image src="{{path}}/images/back.png" class="img"/></view>
+          </view>
+          <!-- 实时详情 -->
+          <view class="onDetail clearfix" wx:if="{{onDetail}}">
+            <view class="li">
+              <view class="liname">城市：</view>
+              <view class="livalue">{{realdata.city}}</view>
+            </view>
+            <view class="li">
+              <view class="liname">星期：</view>
+              <view class="livalue">{{realdata.week}}</view>
+            </view>
+            <view class="li">
+              <view class="liname">天气：</view>
+              <view class="livalue">{{realdata.weather}}</view>
+            </view>
+            <view class="li">
+              <view class="liname">当前温度：</view>
+              <view class="livalue">{{realdata.temp}}°</view>
+            </view>
+            <view class="li">
+              <view class="liname">最高气温：</view>
+              <view class="livalue">{{realdata.temphigh}}°</view>
+            </view>
+            <view class="li">
+              <view class="liname">最低气温：</view>
+              <view class="livalue">{{realdata.templow}}°</view>
+            </view>
+            <view class="li">
+              <view class="liname">湿度：</view>
+              <view class="livalue">{{realdata.humidity}}</view>
+            </view>
+            <view class="li">
+              <view class="liname">气压：</view>
+              <view class="livalue">{{realdata.pressure}}</view>
+            </view>
+            <view class="li">
+              <view class="liname">风速：</view>
+              <view class="livalue">{{realdata.windspeed}}</view>
+            </view>
+            <view class="li">
+              <view class="liname">风向：</view>
+              <view class="livalue">{{realdata.winddirect}}</view>
+            </view>
+            <view class="li">
+              <view class="liname">风级：</view>
+              <view class="livalue">{{realdata.windpower}}</view>
+            </view>
+          </view>
+          <!-- 空气质量详情 -->
+          <view class="aqiDetail clearfix" wx:if="{{aqiDetail}}">
+            <view class="li">
+              <view class="liname quality">空气质量指数：</view>
+              <view class="livalue">{{aqi.quality}}</view>
+            </view>
+            <view class="li ">
+              <view class="liname aqiinfo">空气质量等级：</view>
+              <view class="livalue">{{aqi.aqiinfo.level}}</view>
+            </view>
+            <view class="li">
+              <view class="liname so2">二氧化硫：</view>
+              <view class="livalue">{{aqi.so2}}</view>
+            </view>
+            <view class="li">
+              <view class="liname no2">二氧化氮：</view>
+              <view class="livalue">{{aqi.no2}}</view>
+            </view>
+              <view class="li">
+                  <view class="liname co">一氧化碳：</view>
+                  <view class="livalue">{{aqi.co}}</view>
+              </view>
+              <view class="li">
+                  <view class="liname pm10">PM10 1小时平均：</view>
+                  <view class="livalue">{{aqi.pm10}}</view>
+              </view>
+              <view class="li">
+                  <view class="liname pm2_5">PM2.5 1小时平均：</view>
+                  <view class="livalue">{{aqi.pm2_5}}</view>
+              </view>
+              <view class="li">
+                  <view class="liname iso2">二氧化硫指数：</view>
+                  <view class="livalue">{{aqi.iso2}}</view>
+              </view>
+              <view class="li">
+                  <view class="liname ino2">二氧化氮指数：</view>
+                  <view class="livalue">{{aqi.ino2}}</view>
+              </view>
+              <view class="li">
+                  <view class="liname ico">一氧化碳指数：</view>
+                  <view class="livalue">{{aqi.ico}}</view>
+              </view>
+              <view class="li">
+                  <view class="liname io3">臭氧指数：</view>
+                  <view class="livalue">{{aqi.io3}}</view>
+              </view>
+              <view class="li">
+                  <view class="liname ipm10">PM10指数：</view>
+                  <view class="livalue">{{aqi.ipm10}}</view>
+              </view>
+              <view class="li">
+                  <view class="liname ipm2_5">PM2.5指数：</view>
+                  <view class="livalue">{{aqi.ipm2_5}}</view>
+              </view>
+              <view class="li">
+                  <view class="liname aqipoint">AQI指数：</view>
+                  <view class="livalue">{{aqi.aqi}}</view>
+              </view>
+              <view class="li">
+                  <view class="liname primarypollutant">主要污染物：</view>
+                  <view class="livalue">{{aqi.primarypollutant}}</view>
+              </view>
+          </view>
+          <!-- 生活指数详情 -->
+          <view class="lifeDetail clearfix" wx:if="{{lifeDetail}}">
+              <view class="lifecard" wx:for="{{life}}" wx:for-item="list" wx:key>
+                  <view class="lifecardname">{{list.iname}}：<text>{{list.ivalue}}</text></view>
+                  <view class="lifecarddetail">{{list.detail}}</view>
+              </view>
+          </view>
+          <!-- 多日天气预报 -->
+          <view class="dailyDetail clearfix" wx:if="{{dailyDetail}}">
+              <view class="card clearfix" wx:for="{{daily}}" wx:for-item="list" wx:key>
+                  <view class="time">
+                      <view class="timenum">{{list.date}} • {{list.week}}</view><view class="sun">日出: {{list.sunrise}} • 日落: {{list.sunset}}</view>
+                  </view>
+                  <view class="cardTime day clearfix">
+                      <view class="tips">白天：</view>
+                      <view class="li">
+                        <view class="liname">天气：</view>
+                        <view class="livalue">{{list['day'].weather}}</view>
+                      </view>
+                      <view class="li">
+                        <view class="liname">最高温度：</view>
+                        <view class="livalue">{{list['day'].temphigh}}°</view>
+                      </view>
+                      <view class="li">
+                        <view class="liname">风力等级：</view>
+                        <view class="livalue">{{list['day'].windpower}}</view>
+                      </view>
+                      <view class="li">
+                        <view class="liname">风力描述：</view>
+                        <view class="livalue">{{list['day'].winddirect}}</view>
+                      </view>
+                  </view>
+                  <view class="cardTime night clearfix">
+                      <view class="tips">夜晚：</view>
+                      <view class="li">
+                          <view class="liname">天气：</view>
+                          <view class="livalue">{{list['night'].weather}}</view>
+                      </view>
+                      <view class="li">
+                          <view class="liname">最低温度：</view>
+                          <view class="livalue">{{list['night'].templow}}°</view>
+                      </view>
+                      <view class="li">
+                          <view class="liname">风力等级：</view>
+                          <view class="livalue">{{list['night'].windpower}}</view>
+                      </view>
+                      <view class="li">
+                          <view class="liname">风力描述：</view>
+                          <view class="livalue">{{list['night'].winddirect}}</view>
+                      </view>
+                  </view>
+              </view>
+          </view>
+        </scroll-view>
+      </view> 
+      <!--选择地区-->
+      <view 
+        class="selectArea {{getLotion === '' ? 'nomargin' :'' }}" 
+        wx:if="{{selectArea}}">
+          <!-- 返回 -->
+          <view class="selectAreaBox" :dss="getLotion">
+            <view class="back" wx:if="{{getLotion === 'null' || getLotion !== ''}}">
+              <view class="backIcon" bindtap="back">
+                <image src="{{path}}/images/back.png" class="img"/>
+              </view>
+            </view>
+            <view class="input">
+              <input type="text" 
+                class="Jinput" 
+                placeholder="请输入地区"  
+                bindinput='writeArea' 
+                value="{{inpuText}}"/>
+              <image src="{{path}}/images/serchicon.png" class="imgicon"/>
+              <view class="clear" bindtap="clearInpuText">
+                <image src="{{path}}/images/clear.png" class="clearicon"/>
+              </view>
+              <view class="sureBtn" bindtap="inputGoWeather">
+                <image src="{{path}}/images/surebtn.png" class="sureicon"/>
+              </view>
+            </view>
+            <view class="tips">历史记录</view>
+            <view class="hisCity">
+              <view 
+                class="hisCityBtn" 
+                data-city="{{list}}" 
+                wx:for="{{historyArea}}" 
+                wx:for-item="list" 
+                wx:key wx:if="historyArea.length > 0"  
+                bindtap="goWeather">{{list}}</view>
+            </view>
+            <view class="tips">热门城市</view>
+            <view class="recCity">
+              <view 
+                class="recCityBtn getLocation" 
+                bindtap="selectLocation">
+                  <image 
+                    class="getLocationimg"
+                    src="{{path}}/images/hoticon.png"/>
+                  定位
+                </view>
+                <view 
+                  class="recCityBtn" 
+                  data-city="{{list}}" 
+                  wx:for="{{hotArea}}" 
+                  wx:for-item="list" 
+                  wx:key bindtap="goWeather">
+                  {{list}}
+                </view>
+            </view>
+          </view>
+      </view> 
+      <!--loading-->
+      <view 
+        class="loading" 
+        height="pageHeight" 
+        style="height:{{pageHeight}}px" 
+        wx:if="{{getLotion === 'null' || getSuccess === 'false'}}">
+          <image src="{{path}}/images/wloading.gif" class="loadingimg"></image>
+          <view class="text">{{msgText}}</view>
+          <view class="btn" wx:if="{{loadingBtn}}" bindtap="goSelectArea">手动选择</view>
+      </view>
+    </view>
+    <!-- 生成图片 -->
+    <view class="saveimage" wx:if="{{canvasPic}}">
+      <view class="loading" wx:if="{{loading}}">
+        <image src="{{path}}/images/wloading.gif" class="loading"/>
+      </view>
+      <canvasdrawer painting="{{painting}}" bind:getImage="eventGetImage"/>
+      <view class="picbox">
+        <view class="saveimageCont"><image src="{{shareImage}}" mode="widthFix"/></view>
+        <button class="keep" catchtap='eventSave'>{{shareText}}</button> 
+        <text class="keep keep2" bindtap="closesaveimage">返回</text>
+      </view>
+    </view>
+  </view>
+  <view class="load" wx:if="{{load}}">
+    <view class="spinner-box">
+      <view class="configure-border-1">
+        <view class="configure-core"></view>
+      </view>
+      <view class="configure-border-2">
+        <view class="configure-core"></view>
+      </view>
+    </view>
+    <text class="msg" wx:if="{{!loadError}}">稍等片刻...</text>
+    <text class="btn" wx:if="{{loadError}}" bindtap="back">加载失败，点击返回</text>
+  </view>
+</container>

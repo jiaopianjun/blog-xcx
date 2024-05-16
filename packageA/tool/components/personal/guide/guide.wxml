@@ -1,0 +1,14 @@
+<popup bind:cancleEvent="cancle" show="{{show}}">
+    <swiper bindchange="swipe" circular="true" class="guide-container" current="0" duration="300">
+        <swiper-item wx:for="{{list}}" wx:for-index="idx" wx:key="idx">
+            <image class="-image" src="{{item.image}}"></image>
+            <view class="-title">{{item.title}}</view>
+            <view class="-description">
+                <view class="-position">{{item.description}}</view>
+            </view>
+        </swiper-item>
+    </swiper>
+    <view class="dot">
+        <view class="-item {{activeIndex===idx?'-active':''}}" wx:for="{{list}}" wx:for-index="idx" wx:key="idx"></view>
+    </view>
+</popup>

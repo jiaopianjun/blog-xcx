@@ -1,0 +1,46 @@
+.selected {
+    height: 50px;
+    line-height: 50px;
+    background: var(--dark-module-bg-color);
+    color: #fff!important;
+    border: none;
+    z-index: 0;
+    outline: none;
+    box-shadow: none!important;
+}
+
+.mask {
+    background: var(--module-bg-color);
+    z-index: -1;
+}
+
+.picker-item {
+    line-height: 50px;
+}
+
+.btns {
+    font-size: 16px;
+    border-top: 1px solid var(--normal-bd-color);
+}
+
+.btns,.btns .-cancle {
+    height: 50px;
+    line-height: 50px;
+    box-sizing: border-box;
+}
+
+.btns .-cancle {
+    color: var(--normal-text-color);
+    border-right: 1px solid var(--normal-bd-color);
+    width: 50%;
+    float: left;
+}
+
+.btns .-confirm {
+    color: #66bb6a;
+    box-sizing: border-box;
+    width: 50%;
+    height: 50px;
+    line-height: 50px;
+    float: left;
+}

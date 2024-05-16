@@ -1,0 +1,7 @@
+<view class="li-tips {{show?'-open':'-close'}}" style="{{background?'--tips-background:'+background+';':''}}{{color?'--tips-text-color:'+color+';':''}}{{contentStyle}}">
+    <view class="-content">
+        <view class="-triangle" style="{{triangleStyle}}"></view>
+        <view class="-bg"></view>
+        <view class="-text">{{title}}</view>
+    </view>
+</view>

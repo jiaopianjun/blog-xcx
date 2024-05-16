@@ -1,0 +1,44 @@
+<page-background></page-background>
+<error bind:event="error" buttonText="{{error.buttonText}}" icon="icon-fail" title="{{error.title}}" wx:if="{{appError}}"></error>
+<container change="{{refresh}}">
+  <navigation 
+    back="{{back}}" 
+    background="{{background}}" 
+    bind:iconevent="iconEvent" 
+    bind:titleevent="titleEvent" 
+    blur="{{blur}}" 
+    border="{{border}}" 
+    borderColor="{{borderColor}}" 
+    borderWidth="{{borderWidth}}"
+    color="{{color}}" 
+    haveHeight="{{haveHeight}}" 
+    icon="{{icon}}" 
+    image="{{image}}" 
+    loading="{{loading}}" 
+    loadingColor="{{loadingColor}}" 
+    subtitle="{{'农历'+li.nongli.date.zh.month+li.nongli.date.zh.day}}" 
+    title="{{li.yangli.date.num.year+'年'+li.yangli.date.num.month+'月'+li.yangli.date.num.day+'日'}}" 
+    wx:if="{{li!==null}}"
+    titleRightIcon="{{titleRightIcon}}" 
+    useSlot="{{useSlot}}">
+    <view class="navigation-slot" wx:if="{{useSlot}}">slot</view>
+  </navigation>
+  <star></star>
+  <row customClass="module-container" gutter="10">
+    <col customClass="module -padding" span="24">
+      <date refresh="{{refresh}}"></date>
+    </col>
+    <col customClass="module -padding" span="24">
+      <term refresh="{{refresh}}"></term>
+    </col>
+    <col customClass="module" span="24">
+      <god-position refresh="{{refresh}}"></god-position>
+    </col>
+    <col customClass="module" span="24">
+      <YIJI refresh="{{refresh}}"></YIJI>
+    </col>
+    <col customClass="module" span="24">
+      <lunar refresh="{{refresh}}"></lunar>
+    </col>
+  </row>
+</container>

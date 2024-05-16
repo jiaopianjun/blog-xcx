@@ -1,0 +1,84 @@
+.cover-page {
+    position: fixed;
+    z-index: 1001;
+    display: -webkit-flex;
+}
+
+.cover-page,.cover-page .-mask {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.cover-page .-mask {
+    position: absolute;
+    transition: opacity .3s;
+    z-index: 1;
+    background: #000;
+}
+
+.cover-page.-close {
+    transition-delay: .3s;
+    transform: translate3d(0,100%,0);
+}
+
+.cover-page.-open {
+    transform: translate3d(0,0,0);
+}
+
+.cover-page.-close .-mask {
+    opacity: 0;
+}
+
+.cover-page.-open .-mask {
+    opacity: .8;
+}
+
+.cover-page .-content {
+    position: absolute;
+    width: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    transition: all .3s;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+    text-align: center;
+    background: var(--page-bg-color);
+}
+
+.cover-page.-close .-content {
+    transform: translate3d(0,100%,0);
+}
+
+.cover-page.-open .-content {
+    transform: translate3d(0,0,0);
+}
+
+.cover-page .-cancle {
+    position: absolute;
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+    margin: auto;
+    left: 0;
+    right: 0;
+    background: var(--dark-module-bg-color);
+    transition: all .3s;
+    text-align: center;
+    color: var(--theme-color);
+    line-height: 50px;
+    z-index: 2;
+    font-size: 24px;
+}
+
+.cover-page.-close .-cancle {
+    transform: translate3d(0,100%,0);
+}
+
+.cover-page.-open .-cancle {
+    transform: translate3d(0,0,0);
+}

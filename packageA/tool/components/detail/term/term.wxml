@@ -1,0 +1,8 @@
+<view wx:if="{{!refresh}}">
+    <view class="pentad72-term">{{li.nongli.term.term}}</view>
+    <view class="pentad72-des">第{{li.nongli.term.diff}}天 {{li.nongli.hou.hou}} {{li.nongli.hou.houName}}</view>
+    <view class="pentad72-date">{{li.nongli.term.begin}} - {{li.nongli.term.end}}</view>
+</view>
+<view class="loading" wx:if="{{refresh}}">
+    <my-loading></my-loading>
+</view>

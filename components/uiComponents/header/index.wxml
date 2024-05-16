@@ -1,0 +1,17 @@
+<view class="li-header {{subtitle?'-custom':'-common'}} {{'-'+align}} {{border?'-border':''}} {{indent?'-indent':''}} custom-class" style="{{indentDistance?'--indent-distance:'+indentDistance+';':''}}{{'--header-right-width:'+(rightWidth>0&&align!='center'?rightWidth+5+'px;':'0px;')}}{{align=='center'?'padding-left:'+rightWidth+5+'px;padding-right:'+rightWidth+5+'px;':''}}">
+    <view catchtap="titleEvent" class="-left">
+        <view class="-title _text-overflow">{{title}}<text class="iconfont {{titleRightIcon}} -title-right-icon" wx:if="{{titleRightIcon}}"></text>
+        </view>
+        <view class="-subtitle _text-overflow" wx:if="{{subtitle}}">{{subtitle}}</view>
+    </view>
+    <view class="-right">
+        <view catchtap="rightEvent" class="-right-icon right-icon-class" wx:if="{{rightIcon}}">
+            <text class="iconfont {{rightIcon}}"></text>
+        </view>
+        <view catchtap="rightEvent" class="-text right-text-class" wx:if="{{!useRightSlot&&rightText}}">{{rightText}}</view>
+        <view class="-slot right-slot-class" wx:if="{{useRightSlot}}">
+            <slot></slot>
+        </view>
+    </view>
+    <view class="_clear"></view>
+</view>

@@ -1,0 +1,194 @@
+.li-switch {
+    --switch-height: 22px;
+    --switch-width: 40px;
+    --switch-loading-size: calc(var(--switch-height) - 8px);
+    --switch-background-border-radius: 6px;
+    --switch-dot-border-radius: 4px;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    height: var(--switch-height);
+    width: var(--switch-width);
+    font-size: 0;
+}
+
+.li-switch.-round {
+    --switch-background-border-radius: calc(var(--switch-height) / 2);
+    --switch-dot-border-radius: 50%;
+}
+
+.li-switch .-disabled {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: var(--card-bg-color);
+    transform: translate3d(0,0,0);
+    opacity: .5;
+    z-index: 1;
+    left: 0;
+}
+
+.li-switch .-switch-loading {
+    --loading-size: var(--switch-loading-size);
+    font-size: 0;
+    position: relative;
+    height: var(--switch-loading-size);
+    width: var(--switch-loading-size);
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%,-50%,0);
+}
+
+.li-switch.-block {
+    display: block;
+}
+
+.li-switch.-normal {
+    --switch-checked-background-color: var(--theme-color);
+    --switch-unchecked-background-color: var(--highlight-color);
+    --switch-checked-dot-color: var(--highlight-color);
+    --switch-unchecked-dot-color: var(--theme-color);
+    --switch-checked-border-color: var(--theme-color);
+    --switch-unchecked-border-color: var(--theme-color);
+    --switch-checked-text-color: var(--theme-color);
+    --switch-unchecked-text-color: var(--highlight-color);
+}
+
+.li-switch.-normal .-background {
+    position: absolute;
+    height: var(--switch-height);
+    width: var(--switch-width);
+    top: 0;
+    left: 0;
+    border-radius: var(--switch-background-border-radius);
+    background: var(--switch-unchecked-background-color);
+    box-sizing: border-box;
+    transition: all .3s;
+}
+
+.li-switch.-normal .-background.-border {
+    border: 1px solid var(--switch-unchecked-border-color);
+}
+
+.li-switch.-normal .-dot {
+    position: absolute;
+    width: calc(var(--switch-height) - 4px);
+    height: calc(var(--switch-height) - 4px);
+    background: var(--switch-unchecked-dot-color);
+    left: 2px;
+    top: 2px;
+    border-radius: var(--switch-dot-border-radius);
+    transform: translate3d(0,0,0);
+    transition: all .3s;
+    z-index: 0;
+}
+
+.li-switch.-normal .-switch-loading {
+    --loading-color: var(--switch-unchecked-text-color);
+    --loading-size: calc(var(--switch-loading-size) - 4px);
+    height: calc(var(--switch-loading-size) - 4px);
+    width: calc(var(--switch-loading-size) - 4px);
+}
+
+.li-switch.-normal .-dot .-icon {
+    display: block;
+    text-align: center;
+    color: var(--switch-unchecked-text-color);
+    height: calc(var(--switch-height) - 4px);
+    width: calc(var(--switch-height) - 4px);
+    line-height: calc(var(--switch-height) - 4px);
+    font-size: calc(var(--switch-height) - 8px);
+}
+
+.li-switch.-normal .-background.-active {
+    background: var(--switch-checked-background-color);
+}
+
+.li-switch.-normal .-background.-border.-active {
+    border: 1px solid var(--switch-checked-border-color);
+}
+
+.li-switch.-normal .-dot.-active {
+    background: var(--switch-checked-dot-color);
+    transform: translate3d(calc(var(--switch-width) - var(--switch-height)),0,0);
+}
+
+.li-switch.-normal .-dot.-active .-switch-loading {
+    --loading-color: var(--switch-checked-text-color);
+}
+
+.li-switch.-normal .-dot.-active .-icon {
+    color: var(--switch-checked-text-color);
+}
+
+.li-switch.-material {
+    --switch-checked-color: var(--theme-color);
+    --switch-unchecked-color: var(--darker-bg-color);
+    --switch-checked-text-color: var(--highlight-color);
+    --switch-unchecked-text-color: var(--text-color-3);
+}
+
+.li-switch.-material .-background {
+    height: 4px;
+    width: var(--switch-width);
+    top: calc((var(--switch-height) - 4px) / 2);
+    border-radius: 2px;
+    filter: brightness(.9);
+}
+
+.li-switch.-material .-background,.li-switch.-material .-dot {
+    position: absolute;
+    left: 0;
+    background: var(--switch-unchecked-color);
+    transition: all .3s;
+}
+
+.li-switch.-material .-dot {
+    width: var(--switch-height);
+    height: var(--switch-height);
+    top: 0;
+    border-radius: var(--switch-dot-border-radius);
+    transform: translate3d(0,0,0);
+}
+
+.li-switch.-material .-dot .-disabled-icon {
+    color: var(--highlight-color);
+    display: block;
+    height: var(--switch-height);
+    width: var(--switch-height);
+    text-align: center;
+    line-height: var(--switch-height);
+    font-size: calc(var(--switch-height) - 8px);
+    opacity: .6;
+    filter: brightness(.7);
+}
+
+.li-switch.-material .-switch-loading {
+    --loading-color: var(--switch-unchecked-text-color);
+}
+
+.li-switch.-material .-dot .-icon {
+    color: var(--switch-unchecked-text-color);
+    display: block;
+    height: var(--switch-height);
+    width: var(--switch-height);
+    text-align: center;
+    line-height: var(--switch-height);
+    font-size: calc(var(--switch-height) - 8px);
+}
+
+.li-switch.-material .-dot.-active .-icon {
+    color: var(--switch-checked-text-color);
+}
+
+.li-switch.-material .-background.-active,.li-switch.-material .-dot.-active {
+    background: var(--switch-checked-color);
+}
+
+.li-switch.-material .-dot.-active {
+    transform: translate3d(calc(var(--switch-width) - var(--switch-height)),0,0);
+}
+
+.li-switch.-material .-dot.-active .-switch-loading {
+    --loading-color: var(--switch-checked-text-color);
+}

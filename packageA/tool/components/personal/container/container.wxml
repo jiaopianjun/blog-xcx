@@ -1,0 +1,4 @@
+<view bindtouchstart="touchStart" class="container _{{darkMode}} _{{theme}} custom-class" style="--navigation-height:{{navigationHeight}}px;--navigation-header-height:{{navigationHeight-systemInfo.statusBarHeight}}px;--navigation-header-content-height:{{navigationHeight-systemInfo.statusBarHeight-4}}px;--tabbar-height:{{tabbarHeight}}px;--window-height:{{systemInfo.windowHeight}}px;--content-height:{{contentHeight}}px;--window-width:{{systemInfo.windowWidth}}px;--screen-height:{{systemInfo.screenHeight}}px;--screen-width:{{systemInfo.screenWidth}}px;--statusbar-height:{{systemInfo.statusBarHeight}}px;--menu-width:{{menuInfo.width}}px;--menu-height:{{menuInfo.height}}px;--menu-left:{{menuInfo.left}}px;--menu-right:{{menuInfo.right}}px;--menu-top:{{menuInfo.top}}px;--menu-bottom:{{menuInfo.bottom}}px;--safe-area-bottom-height:{{iphoneX?34:0}}px">
+    <view class="-background background-class"></view>
+    <slot></slot>
+</view>

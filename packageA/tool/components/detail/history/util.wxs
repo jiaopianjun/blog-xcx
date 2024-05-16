@@ -1,0 +1,8 @@
+function format(data) {
+    var index = data.indexOf(':');
+    var str = data.substring(index + 1);
+    return (str)
+};
+module.exports = ({
+    format: format,
+});

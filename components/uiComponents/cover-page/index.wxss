@@ -1,0 +1,98 @@
+.li-cover-page {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.li-cover-page .-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transition: opacity .3s;
+    z-index: 1;
+    background: #000;
+}
+
+.li-cover-page.-close {
+    transition-delay: .3s;
+    transform: translate3d(0,calc(-100% - 200px),0);
+}
+
+.li-cover-page.-open {
+    transform: translate3d(0,0,0);
+}
+
+.li-cover-page.-close .-mask {
+    opacity: 0;
+}
+
+.li-cover-page.-open .-mask {
+    opacity: .6;
+}
+
+.li-cover-page .-container {
+    position: absolute;
+    width: 100%;
+    transition: all .3s;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    background: rgba(var(--card-bg-color-rgb),1);
+    box-sizing: border-box;
+    overflow: hidden;
+    will-change: transform;
+    transform: translate3d(0,100%,0);
+}
+
+.li-cover-page .-container.-square {
+    border-radius: 0!important;
+}
+
+.li-cover-page .-container .-content {
+    position: relative;
+    width: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    transition: all .3s;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    box-sizing: border-box;
+}
+
+.li-cover-page .-container .-main {
+    position: relative;
+}
+
+.li-cover-page.-close .-container {
+    --container-transform: translate3d(0,100%,0);
+}
+
+.li-cover-page.-close .-container,.li-cover-page.-open .-container {
+    transform: var(--container-transform);
+}
+
+.li-cover-page.-open .-container {
+    --container-transform: translate3d(0,0,0);
+}
+
+.li-cover-page .-close-button {
+    position: relative;
+    bottom: 0;
+    font-size: 24px!important;
+}
+
+.li-cover-page .-safe-area-space {
+    position: relative;
+    height: 24px;
+    width: 100%;
+}

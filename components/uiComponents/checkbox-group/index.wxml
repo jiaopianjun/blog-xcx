@@ -1,0 +1,3 @@
+<view class="li-radio-group">
+    <slot></slot>
+</view>

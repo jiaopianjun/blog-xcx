@@ -1,0 +1,55 @@
+<container>
+  <navigation 
+    back="{{back}}" 
+    background="{{background}}" 
+    bind:iconevent="iconEvent" 
+    bind:titleevent="titleEvent" 
+    blur="{{blur}}" 
+    border="{{border}}" 
+    borderColor="{{borderColor}}" 
+    borderWidth="{{borderWidth}}"
+    color="{{color}}" 
+    haveHeight="{{haveHeight}}" 
+    icon="{{icon}}" 
+    image="{{image}}" 
+    loading="{{loading}}" 
+    loadingColor="{{loadingColor}}" 
+    subtitle="{{subtitle}}" 
+    title="{{title}}" 
+    titleRightIcon="{{titleRightIcon}}" 
+    useSlot="{{useSlot}}">
+    <view class="navigation-slot" wx:if="{{useSlot}}">slot</view>
+  </navigation>
+  <view class="hotnews clearfix" wx:if="{{!load}}">
+    <view class="head">
+      <view class="slgan">
+        <text class="logoTitle">今日简报</text>
+        <view class="date">
+          <view>{{time}}</view>
+          <veiw>{{lunar}}</veiw>
+          <view>{{calendar.ncWeek}}</view>
+        </view>
+      </view>
+      <view class="weather">
+        {{weather.city}}今日：{{weather.detail.low}} ℃ ~ {{weather.detail.high}} ℃，
+        {{weather.detail.text_day}} 转 {{weather.detail.text_night}}，
+        {{weather.detail.wind_direction}}风 {{weather.detail.wind_scale}} 级
+      </view>
+    </view>
+    <view class="newsList">
+      <view data-text="{{item.title}}" data-url="{{item.url}}" wx:for="{{newsList}}" wx:for-item="item" wx:for-index="index" class="list {{index < 3 ? 'hot':'ww'}}" bindtap="copyUrl" wx:key>{{item.title || item}}</view>
+    </view>
+  </view>
+  <view class="load" wx:if="{{load}}">
+    <view class="spinner-box">
+      <view class="configure-border-1">
+        <view class="configure-core"></view>
+      </view>
+      <view class="configure-border-2">
+        <view class="configure-core"></view>
+      </view>
+    </view>
+    <text class="msg" wx:if="{{!loadError}}">稍等片刻...</text>
+    <text class="btn" wx:if="{{loadError}}" bindtap="back">加载失败，点击返回</text>
+  </view>
+</container>

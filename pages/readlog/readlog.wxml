@@ -1,0 +1,31 @@
+
+ 
+<import src="../../templates/copyright.wxml" />
+<import src="../../templates/login-popup.wxml" />
+<ui-sys title="我的{{pagetitle}}">
+<view class=" ui-BG-card ui-BG">
+
+ 
+	<view class=" ">
+		<view class="showerror" style="display:{{showerror}}">
+			<text class=" cuIcon-warn lg text-grey" style="height:50px;width:50px;font-size:48px;"   catchtap="exit"></text>
+			<view class="errortext">
+				暂时无法访问网络
+			</view>
+		</view>
+		<template is="login-popup" data="{{show: isLoginPopup, userInfo: userInfo}}"></template>
+
+		<view class="log-list">
+			<view wx:key="id" wx:for="{{readLogs}}" >
+				<view class="log-items" index="{{index}}" id="{{item[0]}}" data-itemtype="{{item[2]}}" catchtap="redictDetail">
+					<text class="ren_mtie_xx text-lg ui-TC"> <text class="ren_mtie{{index + 1}}">{{index + 1}}</text> {{item[1]}}</text>
+				</view>
+			</view>
+			<view class="log-items"  wx:if="{{readLogs.length<1}}">
+				<text class="log_tips">没有相关文章！</text>
+			</view>
+		</view>
+
+	</view>
+</view>
+ </ui-sys>

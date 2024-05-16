@@ -1,0 +1,11 @@
+<view catchtap="{{!disabled?'event':''}}" class="li-checkbox {{circle?'-circle':''}} {{checked?'-checked':''}} {{disabled?'-disabled':''}} custom-class" style="{{checkedColor?'--checkbox-checked-color:'+checkedColor+';':''}}{{uncheckedColor?'--checkbox-unchecked-color:'+uncheckedColor+';':''}}" value="{{value}}">
+    <view class="-checkbox -{{type}}" wx:if="{{!checkedIcon&&!uncheckedIcon}}">
+        <view class="-background"></view>
+        <view class="-dot"></view>
+    </view>
+    <view class="-icon" wx:if="{{checkedIcon||uncheckedIcon}}">
+        <text class="iconfont {{checked?checkedIcon:uncheckedIcon}}"></text>
+    </view>
+    <view class="-title _text-overflow" wx:if="{{title}}">{{title}}</view>
+    <view class="_clear"></view>
+</view>

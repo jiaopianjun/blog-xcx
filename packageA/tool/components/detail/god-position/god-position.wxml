@@ -1,0 +1,17 @@
+<row customClass="index-number" wx:if="{{!refresh}}">
+    <col customClass="-item" span="8" wx:for="{{data}}" wx:for-index="idx" wx:key="idx">
+        <view bindtap="event" class="-content -col8 _border-bottom {{(idx+1)%3!==0?'_border-right':''}}" data-key="{{item.key}}" hoverClass="_hover">
+            <view class="-key">{{item.key}}</view>
+            <view class="-value">{{item.value}}</view>
+        </view>
+    </col>
+    <col customClass="-item" span="12" wx:for="{{_data}}" wx:for-index="idx" wx:key="idx">
+        <view class="-content -col8 {{idx==0?'_border-right':''}}">
+            <view class="-key">{{item.key}}</view>
+            <view class="-value">{{item.value}}</view>
+        </view>
+    </col>
+</row>
+<view class="loading" wx:if="{{refresh}}">
+    <my-loading></my-loading>
+</view>

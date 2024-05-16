@@ -1,0 +1,14 @@
+<cover-page bind:cancleEvent="cancle" show="{{show}}">
+    <view class="share">
+        <button class="share-button" hoverClass="none" openType="share"></button>
+        <view class="-item">
+            <text class="-icon iconfont icon-wechat"></text>
+            <text class="-name">好友</text>
+        </view>
+        <button bindgetuserinfo="bindGetUserInfo" class="get-user-info-button" hoverClass="none" openType="getUserInfo"></button>
+        <view class="-item">
+            <text class="-icon iconfont icon-shutter"></text>
+            <text class="-name">海报</text>
+        </view>
+    </view>
+</cover-page>

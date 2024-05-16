@@ -1,0 +1,11 @@
+<view class="popup custom-class {{show?'-open':'-close'}}">
+    <view bindtap="{{maskCancle?customClose?'customClose':'close':''}}" catchtouchmove="true" class="-mask"></view>
+    <scroll-view bindscroll="move" catchtouchmove="{{disableTouch&&!scroll?'disableTouch':''}}" class="-content" scrollY="true">
+        <view class="-main">
+            <slot></slot>
+        </view>
+    </scroll-view>
+    <view bindtap="{{customClose?'customClose':'close'}}" class="-cancle" wx:if="{{showCancle}}">
+        <text class="iconfont icon-close-outline"></text>
+    </view>
+</view>

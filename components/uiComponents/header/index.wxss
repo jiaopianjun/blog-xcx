@@ -1,0 +1,99 @@
+.li-header {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    padding: var(--normal-spacing) var(--indent-distance);
+    --indent-distance: 0px;
+    --header-right-width: 0px;
+}
+
+.li-header.-indent {
+    --indent-distance: var(--normal-spacing);
+}
+
+.li-header.-border {
+    border-bottom: 1px solid var(--bd-color);
+}
+
+.li-header.-center {
+    text-align: center;
+}
+
+.li-header.-left {
+    text-align: left;
+}
+
+.li-header .-right {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate3d(0,-50%,0);
+}
+
+.li-header.-indent .-right {
+    right: var(--indent-distance);
+}
+
+.li-header.-custom {
+    --header-height: 60px;
+    height: var(--header-height);
+}
+
+.li-header.-common {
+    --header-height: 50px;
+    height: var(--header-height);
+}
+
+.li-header.-common .-left .-title {
+    font-size: var(--normal-title-size);
+    font-weight: 700;
+    height: calc(var(--header-height) - var(--normal-spacing) * 2);
+    line-height: calc(var(--header-height) - var(--normal-spacing) * 2);
+    max-width: calc(100% - var(--header-right-width));
+}
+
+.li-header.-custom .-left .-title {
+    font-size: var(--small-title-size);
+    font-weight: 700;
+    height: 20px;
+    line-height: 20px;
+    max-width: calc(100% - var(--header-right-width));
+}
+
+.li-header.-custom .-left .-subtitle {
+    font-size: var(--small-text-size);
+    height: 16px;
+    line-height: 16px;
+    margin-top: 4px;
+    color: var(--text-color-2);
+    max-width: calc(100% - var(--header-right-width));
+}
+
+.li-header .-left .-title .-title-right-icon {
+    margin-left: 5px;
+}
+
+.li-header .-right .-right-icon {
+    font-size: 20px;
+    text-align: right;
+    margin-left: var(--small-spacing);
+    width: 20px;
+}
+
+.li-header .-right .-right-icon,.li-header .-right .-text {
+    height: calc(var(--header-height) - var(--normal-spacing) * 2);
+    line-height: calc(var(--header-height) - var(--normal-spacing) * 2);
+    color: var(--text-color-3);
+    float: right;
+}
+
+.li-header .-right .-text {
+    font-size: var(--normal-text-size);
+}
+
+.li-header .-right .-slot {
+    height: calc(var(--header-height) - var(--normal-spacing) * 2);
+    font-size: 0;
+    display: flex;
+    align-items: center;
+}

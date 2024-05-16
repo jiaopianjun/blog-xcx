@@ -1,0 +1,9 @@
+<view class="li-date-time-picker">
+    <picker-header bind:cancel="cancel" bind:confirm="confirm" loading="{{changing}}" title="{{title}}"></picker-header>
+    <view class="-content" style="height:{{rows*50+(haveEndDate?row*50+50:0)}}px;line-height:{{rows*50+(haveEndDate?row*50+50:0)}}px;">
+        <li-loading wx:if="{{loading}}"></li-loading>
+        <li-picker bind:change="change" bind:end="end" bind:start="start" columnClass="-column" data="{{startDateData}}" data-type="start" header="{{false}}" rows="{{rows}}" value="{{startDateValue}}" wx:if="{{!Loading}}"></li-picker>
+        <view class="-to" wx:if="{{haveEndDate&&!loading}}">至</view>
+        <li-picker bind:change="change" bind:end="end" bind:start="start" columnClass="-column" data="{{endDateData}}" data-type="end" header="{{false}}" rows="{{rows}}" value="{{endDateValue}}" wx:if="{{haveEndDate&&!loading}}"></li-picker>
+    </view>
+</view>

@@ -1,0 +1,52 @@
+.error-page {
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color-2);
+    height: var(--content-height);
+    --cancel-button-background: var(--card-bg-color);
+    --cancel-button-color: var(--text-color-2);
+    --confirm-button-background: var(--card-bg-color);
+    --confirm-button-color: var(--text-color-2);
+}
+
+.error-page .-content {
+    width: calc(100% - 60px);
+    position: relative;
+}
+
+.error-page .-icon {
+    font-size: 56px;
+    margin-bottom: var(--large-spacing);
+    height: 60px;
+    line-height: 60px;
+}
+
+.error-page .-title {
+    font-size: var(--normal-text-size);
+    margin-bottom: 100px;
+    padding: var(--normal-spacing) 0;
+    line-height: 24px;
+}
+
+.error-page .-button.-full {
+    width: 200px;
+}
+
+.error-page .-button.-cancel.-half {
+    width: calc(50% - var(--small-spacing));
+    margin-right: var(--small-spacing);
+    float: left;
+}
+
+.error-page .-button.-confirm.-half {
+    width: calc(50% - var(--small-spacing));
+    margin-left: var(--small-spacing);
+    float: left;
+}

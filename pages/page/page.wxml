@@ -1,0 +1,15 @@
+<import src="../../templates/header.wxml" />
+<view class="container">
+  <view class="content-article ">
+    <view class="entry-title">
+      {{pageData.title.rendered}}
+    </view>
+    <view class="entry-summary">
+      <mp-html content="{{ pageData.content.rendered }}" bindlinktap="wxParseTagATap" copy-link="{{false}}" selectable="{{true}}" lazy-load="{{true}}" markdown="{{true}}" />
+    </view>
+  </view>
+
+  <view class="ditail-copyright" style="display:{{display}}">
+
+  </view>
+</view>
