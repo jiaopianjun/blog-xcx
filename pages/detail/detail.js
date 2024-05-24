@@ -367,6 +367,7 @@ Page({
           return false;
         }
         // 设置页面标题：文章分类
+        console.log(res.data.title.rendered, 'cuix')
         if (res.data.category_name) {
           wx.setNavigationBarTitle({
             title: res.data.title.rendered
@@ -1087,6 +1088,7 @@ Page({
     })
   },
   creatArticlePoster: function (appPage, api, util, modalView, poster) {
+    console.log(appPage.data, 'appPage')
     var postId = appPage.data.detail.id;
     var title = appPage.data.detail.title.rendered;
     var excerpt = appPage.data.detail.excerpt.rendered ? appPage.data.detail.excerpt.rendered : '';
@@ -1100,8 +1102,8 @@ Page({
     var imageInlocalFlag = false;
     var downloadFileDomain = appPage.data.downloadFileDomain;
     var logo = appPage.data.logo;
-    var defaultPostImageUrl = appPage.data.detail.postImageUrl;
-    var postImageUrl = appPage.data.detail.post_full_image;
+    var defaultPostImageUrl = appPage.data.detail.content_first_image || appPage.data.detail.postImageUrl;
+    var postImageUrl = appPage.data.detail.content_first_image || appPage.data.detail.post_full_image;
     //获取文章首图临时地址，若没有就用默认的图片,如果图片不是request域名，使用本地图片
     if (postImageUrl) {
       var n = 0;

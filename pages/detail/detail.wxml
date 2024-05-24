@@ -16,6 +16,7 @@
       </view>
       <!-- 文章互动数据 -->
       <view class="entry-data">
+        <text class="entry-data-source">原创</text>
         <text class="entry-data-author">{{author.name}}</text>
         <text class="entry-data-date">{{detailDate}}</text>
       </view>
@@ -36,8 +37,24 @@
           </view>
         </view>
       </view>
+      <!-- 赞赏 -->
+      <view class="reward_area">
+        <view class="reward-avatar">
+          <image src="{{detail.author.avatar ? detail.author.avatar : '../../images/icon_avatar.svg'}}" mode="" class="reward-avatar-img" />
+        </view>
+        <view class="reward-author">{{detail.author.name}}</view>
+        <view class="reward-tips">
+          {{ detail.author.description ? detail.author.description : '"  请我喝瓶营养快线吧[Emm]  "'}}
+        </view>
+        <view class="reward-area-whisper" catchtap="praise">
+          <view class="reward-area-whisper-button">
+            <text class="icon-reward"></text>
+            <text class="text-reward">喜欢作者</text>
+          </view>
+        </view>
+      </view>
       <!-- 点个赞 -->
-      <view class="likePost">
+      <view class="likePost" wx:if="{{false}}">
         <view class="likePost_title ">
           <view class="like ui-BG-Main" id="liketop" catchtap="clickLike">
             赞<text class="likeNum">({{likeCount}})</text>
@@ -50,30 +67,23 @@
         </view>
       </view>
       <!-- 版权声明 -->
-      <view 
-        wx:if="{{detail.copyright_state !=''}}" 
-        class="bottomlink2 text-sm  bg-grey-thin" 
-        style="{{('display:'+display)}}">
+      <view wx:if="{{detail.copyright_state !=''}}" class="bottomlink2 text-sm  bg-grey-thin" style="{{('display:'+display)}}">
         <view style="padding: 0 40rpx">
-          <mp-html 
-            content="{{ detail.copyright_state }}" 
-            bindlinktap="tagATap" 
-            copy-link="{{false}}" 
-            selectable="{{true}}" 
-            lazy-load="{{true}}" 
-            markdown="{{true}}" 
-            use-anchor="{{true}}" />
+          <mp-html content="{{ detail.copyright_state }}" bindlinktap="tagATap" copy-link="{{false}}" selectable="{{true}}" lazy-load="{{true}}" markdown="{{true}}" use-anchor="{{true}}" />
         </view>
       </view>
+      <!-- 分类 -->
+      <view class="cate-cont">
+        <navigator wx:for="{{detail.category}}" wx:key="cate" wx:for-index="idx" wx:for-item="cateItem" url="../list/list?categoryID={{cateItem.id}}" open-type="redirect" hover-class="relatedNavigator">
+          <text class="cate-cont-link"> # {{cateItem.name}}</text>
+        </navigator>
+      </view>
       <!-- 上下文 -->
-      <view 
-        wx:if="{{detail.previous_post_id || detail.next_post_id}}" class="up-down-post ui-BG">
+      <view wx:if="{{detail.previous_post_id || detail.next_post_id}}" class="up-down-post">
         <view class="up-down-post-cont">
           <!-- 上一篇 -->
           <view wx:if="{{detail.previous_post_id}}" class="up-post">
-            <navigator 
-              url="../detail/detail?id={{detail.previous_post_id}}" open-type="redirect" 
-              hover-class="relatedNavigator">
+            <navigator url="../detail/detail?id={{detail.previous_post_id}}" open-type="redirect" hover-class="relatedNavigator">
               <view class="cont-post">
                 <text>上一篇：</text>
                 <text>{{detail.previous_post_title}}</text>
@@ -82,9 +92,7 @@
           </view>
           <!-- 下一篇 -->
           <view wx:if="{{detail.next_post_id}}" class="down-post">
-            <navigator 
-              url="../detail/detail?id={{detail.next_post_id}}" open-type="redirect" 
-              hover-class="relatedNavigator">
+            <navigator url="../detail/detail?id={{detail.next_post_id}}" open-type="redirect" hover-class="relatedNavigator">
               <view class="cont-post">
                 <text>下一篇: </text>
                 <text>{{detail.next_post_title}}</text>
@@ -98,36 +106,22 @@
           <text class="linkText">阅读原文</text>
           <text class="linkSubText">阅读 {{detail.pageviews}}</text>
         </view>
-        <view class="right">
+        <!-- <view class="right">
           <text class="cicon-popover-o"> {{total_comments}}</text>
           <text class="cicon-favorite-o"> {{likeCount}}</text>
-        </view>
+        </view> -->
       </view>
     </view>
     <!-- 小程序广告 -->
-    <view 
-      class="ad-box-video" 
-      wx:if="{{detail.videoAdId !='' && detail.detailAd=='1' && detailAdsuccess}}">
-      <ad 
-        unit-id="{{detail.videoAdId}}" 
-        ad-intervals="30" 
-        ad-type="video" 
-        binderror="adbinderror"></ad>
+    <view class="ad-box-video" wx:if="{{detail.videoAdId !='' && detail.detailAd=='1' && detailAdsuccess}}">
+      <ad unit-id="{{detail.videoAdId}}" ad-intervals="30" ad-type="video" binderror="adbinderror"></ad>
     </view>
     <!-- 猜你喜欢 -->
-    <view 
-      wx:if="{{postList.length != 0}}" 
-      class="relatedPost ui-BG-card ui-BG" 
-      style="display:{{display}}">
+    <view wx:if="{{postList.length != 0}}" class="relatedPost ui-BG-card ui-BG" style="display:{{display}}">
       <view class="subTitle ui-TC">猜你喜欢</view>
       <view class="subTitle_line"></view>
-      <block 
-        wx:key="id" 
-        wx:for="{{postList}}">
-        <navigator 
-          url="../detail/detail?id={{item.id}}" 
-          open-type="redirect" 
-          hover-class="relatedNavigator">
+      <block wx:key="id" wx:for="{{postList}}">
+        <navigator url="../detail/detail?id={{item.id}}" open-type="redirect" hover-class="relatedNavigator">
           <view class="relatedText ui-TC-1  ">
             <text class="dot ui-BG-Main"></text>
             {{item.title.rendered}}
@@ -136,9 +130,7 @@
       </block>
     </view>
     <!-- 评论列表 -->
-    <view 
-      style="display:{{display}}" 
-      class="comment-container ui-BG">
+    <view style="display:{{display}}" class="comment-container ui-BG">
       <!-- 小标题 -->
       <view class="subTitle" id="relatedTitle">
         {{commentCount}}
@@ -147,71 +139,29 @@
       <block wx:key="id" wx:for="{{commentsList}}">
         <view class="comment">
           <view class="comment-user">
-            <image 
-              src="{{item.userid == 1 && item.author_name == '坚果大叔' ? adminImage : item.author_url}}" 
-              class="comment-gravatar"></image>
+            <image src="{{item.userid == 1 && item.author_name == '坚果大叔' ? adminImage : item.author_url}}" class="comment-gravatar"></image>
             <view class="comment-user-right">
               <view class="comment-user-right-top">
-                <view 
-                  data-key='drawer' 
-                  bindtap="replay" 
-                  data-id="{{item.id}}" 
-                  data-name="{{item.author_name}}" 
-                  data-userid="{{item.userid}}" 
-                  data-formId="{{item.formId}}" 
-                  data-commentdate="{{item.date}}">
+                <view data-key='drawer' bindtap="replay" data-id="{{item.id}}" data-name="{{item.author_name}}" data-userid="{{item.userid}}" data-formId="{{item.formId}}" data-commentdate="{{item.date}}">
                   {{item.author_name}}
-                  <text 
-                    class="roleAdmin" 
-                    wx:if="{{item.userid == 1 && item.author_name == '坚果大叔'}}">管理员</text>
+                  <text class="roleAdmin" wx:if="{{item.userid == 1 && item.author_name == '坚果大叔'}}">管理员</text>
                 </view>
-                <view 
-                  class="comment-time" 
-                  data-key='drawer' 
-                  bindtap="replay" 
-                  data-id="{{item.id}}" 
-                  data-name="{{item.author_name}}" 
-                  data-userid="{{item.userid}}" 
-                  data-formId="{{item.formId}}" 
-                  data-commentdate="{{item.date}}">
+                <view class="comment-time" data-key='drawer' bindtap="replay" data-id="{{item.id}}" data-name="{{item.author_name}}" data-userid="{{item.userid}}" data-formId="{{item.formId}}" data-commentdate="{{item.date}}">
                   {{item.date}}
                 </view>
               </view>
-              <view 
-                class="comment-summary ui-TC-1" 
-                bindtap="replay" 
-                data-key='drawer' 
-                data-id="{{item.id}}" 
-                data-name="{{item.author_name}}" 
-                data-userid="{{item.userid}}" 
-                data-formId="{{item.formId}}" 
-                data-commentdate="{{item.date}}">
+              <view class="comment-summary ui-TC-1" bindtap="replay" data-key='drawer' data-id="{{item.id}}" data-name="{{item.author_name}}" data-userid="{{item.userid}}" data-formId="{{item.formId}}" data-commentdate="{{item.date}}">
                 {{item.content}}
               </view>
               <!-- 一级回复 -->
-              <view 
-                class="replay-cont" 
-                wx:for="{{item.child}}" 
-                wx:key="itemid1" 
-                wx:for-index="idx" 
-                wx:for-item="item1">
-                <view 
-                  class="replay-user" 
-                  bindtap="replay" 
-                  data-key='drawer' 
-                  data-id="{{item1.id}}" 
-                  data-name="{{item1.author_name}}" 
-                  data-userid="{{item1.userid}}" 
-                  data-formId="{{item1.formId}}" 
-                  data-commentdate="{{item1.date}}">
+              <view class="replay-cont" wx:for="{{item.child}}" wx:key="itemid1" wx:for-index="idx" wx:for-item="item1">
+                <view class="replay-user" bindtap="replay" data-key='drawer' data-id="{{item1.id}}" data-name="{{item1.author_name}}" data-userid="{{item1.userid}}" data-formId="{{item1.formId}}" data-commentdate="{{item1.date}}">
                   <image src="{{item1.userid == 1 ? adminImage : item1.author_url}}" class="comment-gravatar"></image>
                   <view class="comment-user-right">
                     <view class="comment-user-right-top">
                       <view class="comment-user-right-top-left">
                         <text class="comment-username">{{item1.author_name}}</text>
-                        <text 
-                          class="roleAdmin" 
-                          wx:if="{{item1.userid == 1 && item1.author_name == '坚果大叔'}}">管理员</text>
+                        <text class="roleAdmin" wx:if="{{item1.userid == 1 && item1.author_name == '坚果大叔'}}">管理员</text>
                         <text style="margin: 0 6rpx; color: #959595;">回复</text>
                         <text class="comment-username">{{item.author_name}} ：</text>
                       </view>
@@ -223,21 +173,8 @@
                   </view>
                 </view>
                 <!-- 二级回复 -->
-                <view 
-                  class="m-20"
-                  wx:for="{{item1.child}}" 
-                  wx:key="itemid2" 
-                  wx:for-index="idx" 
-                  wx:for-item="item2">
-                  <view 
-                    class="replay-user" 
-                    bindtap="replay" 
-                    data-key='drawer' 
-                    data-id="{{item2.id}}" 
-                    data-name="{{item2.author_name}}" 
-                    data-userid="{{item2.userid}}" 
-                    data-formId="{{item2.formId}}" 
-                    data-commentdate="{{item2.date}}">
+                <view class="m-20" wx:for="{{item1.child}}" wx:key="itemid2" wx:for-index="idx" wx:for-item="item2">
+                  <view class="replay-user" bindtap="replay" data-key='drawer' data-id="{{item2.id}}" data-name="{{item2.author_name}}" data-userid="{{item2.userid}}" data-formId="{{item2.formId}}" data-commentdate="{{item2.date}}">
                     <image src="{{item2.userid == 1 ? adminImage : item2.author_url}}" class="comment-gravatar"></image>
                     <view class="comment-user-right">
                       <view class="comment-user-right-top">
@@ -253,20 +190,8 @@
                     </view>
                   </view>
                   <!-- 三级回复 -->
-                  <view 
-                    wx:for="{{item2.child}}" 
-                    wx:key="itemid3" 
-                    wx:for-index="idx" 
-                    wx:for-item="item3">
-                    <view 
-                      class="replay-user" 
-                      bindtap="replay" 
-                      data-key='drawer' 
-                      data-id="{{item3.id}}" 
-                      data-name="{{item3.author_name}}" 
-                      data-userid="{{item3.userid}}" 
-                      data-formId="{{item3.formId}}" 
-                      data-commentdate="{{item3.date}}">
+                  <view wx:for="{{item2.child}}" wx:key="itemid3" wx:for-index="idx" wx:for-item="item3">
+                    <view class="replay-user" bindtap="replay" data-key='drawer' data-id="{{item3.id}}" data-name="{{item3.author_name}}" data-userid="{{item3.userid}}" data-formId="{{item3.formId}}" data-commentdate="{{item3.date}}">
                       <text class="comment-username">{{item3.author_name}}</text>
                       <text style="margin: 0 6rpx; color: #959595;">回复</text>
                       <text class="comment-username">{{item2.author_name}}</text>
@@ -274,11 +199,7 @@
                       <text class="ui-TC-1">{{item3.content}}</text>
                     </view>
                     <!-- 四级回复 -->
-                    <view 
-                      wx:for="{{item3.child}}" 
-                      wx:key="itemid4" 
-                      wx:for-index="idx" 
-                      wx:for-item="item4">
+                    <view wx:for="{{item3.child}}" wx:key="itemid4" wx:for-index="idx" wx:for-item="item4">
                       <view class="replay-user">
                         <text class="comment-username">{{item4.author_name}}</text>
                         <text style="margin: 0 6rpx; color: #959595;">回复</text>
@@ -306,25 +227,13 @@
           <view class="no-more">- 无更多评论 -</view>
         </view>
       </view>
-      <modal 
-        title="{{dialog.title}}" 
-        hidden="{{dialog.hidden}}" 
-        no-cancel 
-        bindconfirm="confirm">
+      <modal title="{{dialog.title}}" hidden="{{dialog.hidden}}" no-cancel bindconfirm="confirm">
         {{dialog.content}}
       </modal>
     </view>
     <template is="modalView" data="{{...__modalView__}}" />
-    <poster 
-      id="poster" 
-      hide-loading="{{false}}" 
-      preload="{{false}}" 
-      config="{{posterConfig}}" 
-      bind:success="onPosterSuccess" 
-      bind:fail="onPosterFail"></poster>
-    <template 
-      is="login-popup" 
-      data="{{show: isLoginPopup, userInfo: userInfo}}"></template>
+    <poster id="poster" hide-loading="{{false}}" preload="{{false}}" config="{{posterConfig}}" bind:success="onPosterSuccess" bind:fail="onPosterFail"></poster>
+    <template is="login-popup" data="{{show: isLoginPopup, userInfo: userInfo}}"></template>
     <!-- 评论区 -->
     <view style="display:{{enableComment?'block':'none'}}">
       <view class="foot ui-BG" style="display:{{display}}">
@@ -332,9 +241,9 @@
           <view class=" comment ui-BG-2 ui-TC-2" bindtap="showCustomizeModal" data-key='drawer'>
             <text class="cicon-popover-o ">说点什么吧...</text>
           </view>
-          <view class="icon" catchtap="praise">
+          <!-- <view class="icon" catchtap="praise">
             <text class="iconfont icon-money" style="font-size: 19px;"></text>
-          </view>
+          </view> -->
           <view class="icon" catchtap="onCreatePoster">
             <text class="iconfont icon-share-poster" style="font-size: 16px;"></text>
           </view>
@@ -351,13 +260,9 @@
       <view class="errortext">{{errMessage}}</view>
     </view>
   </view>
-  <view 
-    class="menuBackground" 
-    catchtap="hiddenBar" 
-    style="display:{{menuBackgroup ? 'block' : 'none'}}"></view>
+  <view class="menuBackground" catchtap="hiddenBar" style="display:{{menuBackgroup ? 'block' : 'none'}}"></view>
   <!-- 评论内容输入框 -->
-  <view 
-    class="ui-BG comment-textarea-box {{target === 'drawer' ? '' : 'commentinputdialog-box-hidden'}}">
+  <view class="ui-BG comment-textarea-box {{target === 'drawer' ? '' : 'commentinputdialog-box-hidden'}}">
     <form catchsubmit="formSubmit" report-submit="true">
       <view>
         <text class="comment-button ui-TC touch-active" bindtap="showCustomizeModal" data-key=''>
@@ -365,26 +270,8 @@
         </text>
         <button class="comment-button ui-TC touch-active" formType="submit">发送</button>
       </view>
-      <textarea 
-        maxlength="100" 
-        name="inputComment" 
-        cursor-spacing="80" 
-        value="{{content}}" 
-        placeholder="{{placeholder}}" 
-        bindblur="onReplyBlur" 
-        bindfocus="onRepleyFocus" 
-        focus="{{focus}}" 
-        auto-height="{{false}}" 
-        fixed="{{true}}" 
-        class="ui-TC" 
-        show-confirm-bar="{{false}}" />
-      <input 
-        class="comment-input radius" 
-        cursor-spacing="140" 
-        maxlength="200" 
-        name="inputPostID" 
-        value="{{detail.id}}" 
-        style="display:none" />
+      <textarea maxlength="100" name="inputComment" cursor-spacing="80" value="{{content}}" placeholder="{{placeholder}}" bindblur="onReplyBlur" bindfocus="onRepleyFocus" focus="{{focus}}" auto-height="{{false}}" fixed="{{true}}" class="ui-TC" show-confirm-bar="{{false}}" />
+      <input class="comment-input radius" cursor-spacing="140" maxlength="200" name="inputPostID" value="{{detail.id}}" style="display:none" />
     </form>
   </view>
 </ui-sys>

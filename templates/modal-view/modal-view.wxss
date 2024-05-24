@@ -20,9 +20,10 @@
   /*height: 90%;*/
   overflow: hidden;
   position: fixed;
-  top: 2%;
+  top: 50%;
   left: 75rpx;
   z-index: 9999;
+  transform: translateY(-50%);
   background: #f9f9f9;
 }
 .modal-title {

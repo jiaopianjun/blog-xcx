@@ -1,4 +1,4 @@
-<template  name="modalView">
+<template name="modalView">
   <view class="modal-mask" bindtap="__modalView__onHideModal" catchtouchmove="__modalView__onPreventTouchMove" wx:if="{{reveal}}"></view>
   <view class="modal-dialog" wx:if="{{reveal}}">
     <!-- <view class="modal-title">{{title}}</view> -->
