@@ -1,4 +1,4 @@
-# blog-xcx
+ # blog-xcx
 ## WordPress 博客微信小程序
 
 基于 微慕开源版二开的 WordPress 博客微信小程序。
@@ -17,6 +17,8 @@ var WECHAT = "微信号：Lecooe"; //客服联系方式,如 微信号：iamxjb �
 ```
 
 ### 界面 
+
+![详细介绍](https://mp.weixin.qq.com/s/aWBdhkqIjNMTRYj0PN2NRw)
 
 ![](https://jiaopianjun.github.io/post-images/1715825531634.jpg)
 
