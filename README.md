@@ -18,7 +18,7 @@ var WECHAT = "微信号：Lecooe"; //客服联系方式,如 微信号：iamxjb �
 
 ### 界面 
 
-![详细介绍](https://mp.weixin.qq.com/s/aWBdhkqIjNMTRYj0PN2NRw)
+[详细介绍](https://mp.weixin.qq.com/s/aWBdhkqIjNMTRYj0PN2NRw)
 
 ![](https://jiaopianjun.github.io/post-images/1715825531634.jpg)
 
